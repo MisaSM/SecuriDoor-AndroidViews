@@ -634,3 +634,4 @@ C:\Users\cd10\source\repos\VistasSecuriDoor\VistasSecuriDoor\VistasSecuriDoor.An
 C:\Users\cd10\source\repos\VistasSecuriDoor\VistasSecuriDoor\VistasSecuriDoor.Android\obj\Debug\130\stamp\_GenerateJavaStubs.stamp
 C:\Users\cd10\source\repos\VistasSecuriDoor\VistasSecuriDoor\VistasSecuriDoor.Android\obj\Debug\130\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\cd10\source\repos\VistasSecuriDoor\VistasSecuriDoor\VistasSecuriDoor.Android\obj\Debug\130\stamp\_ResolveLibraryProjectImports.stamp
+C:\Users\cd10\source\repos\VistasSecuriDoor\VistasSecuriDoor\VistasSecuriDoor.Android\obj\Debug\130\res\drawable\chart.png

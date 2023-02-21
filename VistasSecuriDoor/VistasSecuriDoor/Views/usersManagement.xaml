@@ -3,10 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="VistasSecuriDoor.Views.usersManagement">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Area de gestión de invitados!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
+            <Label Text="Gestor de Invitados" FontSize="Title"/>
+
+
+            <Frame BackgroundColor="LightGray">
+                <Label Text="Coso"/>
+            </Frame>
+
         </StackLayout>
+
+ 
     </ContentPage.Content>
 </ContentPage>
