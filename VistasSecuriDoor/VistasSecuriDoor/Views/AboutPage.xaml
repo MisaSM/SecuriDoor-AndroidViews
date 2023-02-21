@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="VistasSecuriDoor.Views.AboutPage"
              xmlns:vm="clr-namespace:VistasSecuriDoor.ViewModels"
-             Title="SecuriDoor">
+             Title="{Binding Title}"
+             >
     
     <ContentPage.BindingContext>
         <vm:AboutViewModel />
@@ -11,26 +12,31 @@
     
     <ContentPage.Resources>
         <ResourceDictionary>
-            <Color x:Key="Accent">#96d1ff</Color>
+            <Color x:Key="Accent">#082c44</Color>
         </ResourceDictionary>
     </ContentPage.Resources>
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <ScrollView Grid.Row="1">
+        <ScrollView Grid.Row="0">
             <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
                 <Label Text="Integrantes del equipo" FontSize="Title"/>
                 <Label Text="Jorge Arturo Bernal Espinoza" FontSize="16" Padding="0,0,0,0"/>
                 <Label Text="Misael Sarabia Molina" FontSize="16" Padding="0,0,0,0"/>
             </StackLayout>
             
-            
-            
 
+        </ScrollView>
+        <ScrollView Grid.Row="1">
+            <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="5">
+                <Label Text="Sobre nuestro proyecto" FontSize="Title"/>
+                <Label Text="{Binding ProjDescription}" FontSize="16" Padding="0,0,0,0" FontAttributes="Italic"/>
+            </StackLayout>
         </ScrollView>
     </Grid>
 

@@ -81,9 +81,7 @@
     <FlyoutItem Title="Acerca de nosotros" Icon="icon_about.png">
         <ShellContent Route="AboutPage" ContentTemplate="{DataTemplate local:AboutPage}" />
     </FlyoutItem>
-    <FlyoutItem Title="Browse" Icon="icon_feed.png">
-        <ShellContent Route="ItemsPage" ContentTemplate="{DataTemplate local:ItemsPage}" />
-    </FlyoutItem>
+
     <FlyoutItem Title="Panel de control">
         <ShellContent Route="controlPanel" ContentTemplate="{DataTemplate local:controlPanel}"/>
     </FlyoutItem>
