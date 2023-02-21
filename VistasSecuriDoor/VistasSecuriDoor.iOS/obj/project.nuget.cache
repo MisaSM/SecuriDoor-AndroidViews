@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "geG+iZB68Rf8RSPGe2sFwU3YvzvGGSYU4fCsYnih6h5a6hArWBu2i169CU5Zo1ZynQyTH3CK/hdLpl5Bo15QaQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\cd10\\source\\repos\\VistasSecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor.iOS\\VistasSecuriDoor.iOS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\cd10\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\cd10\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
+    "C:\\Users\\cd10\\.nuget\\packages\\xamarin.forms\\5.0.0.2196\\xamarin.forms.5.0.0.2196.nupkg.sha512"
+  ],
+  "logs": []
+}
