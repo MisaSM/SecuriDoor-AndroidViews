@@ -7,8 +7,14 @@
             <Label Text="Gestor de Invitados" FontSize="Title"/>
 
 
-            <Frame BackgroundColor="LightGray">
-                <Label Text="Coso"/>
+            <Frame CornerRadius="5" HasShadow="True" BorderColor="LightGray">
+                <StackLayout>
+                    <Label Text="Usuario" Margin="0, -10, 0, 0"/>
+                    <Label Text="Nombre"/>
+                    <Label Text="Rol"/>
+                    <Button  ImageSource=""/>
+                    <Button ImageSource="" BackgroundColor="Red"/>
+                </StackLayout>
             </Frame>
 
         </StackLayout>
