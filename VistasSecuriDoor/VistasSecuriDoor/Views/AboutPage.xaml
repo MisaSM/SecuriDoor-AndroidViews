@@ -24,19 +24,46 @@
         </Grid.RowDefinitions>
 
         <ScrollView Grid.Row="0">
+
+            <Frame CornerRadius="5" HasShadow="True" BorderColor="LightGray">
+                
+            
+            
             <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
+
+                <StackLayout.Resources>
+                    <Style TargetType="Label">
+                        <Setter Property="TextColor" Value="Black"/>
+                        <Setter Property="FontSize" Value="20"/>
+                    </Style>
+                </StackLayout.Resources>
+
                 <Label Text="Integrantes del equipo" FontSize="Title"/>
                 <Label Text="Jorge Arturo Bernal Espinoza" FontSize="16" Padding="0,0,0,0"/>
                 <Label Text="Misael Sarabia Molina" FontSize="16" Padding="0,0,0,0"/>
             </StackLayout>
-            
+            </Frame>
 
         </ScrollView>
         <ScrollView Grid.Row="1">
+            <Frame CornerRadius="5" HasShadow="True" BorderColor="LightGray">
+                
+
             <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="5">
+                
+                <StackLayout.Resources>
+                    <Style TargetType="Label">
+                        <Setter Property="TextColor" Value="Black"/>
+                        <Setter Property="FontSize" Value="20"/>
+                    </Style>
+                </StackLayout.Resources>
+                
+                
+                
                 <Label Text="Sobre nuestro proyecto" FontSize="Title"/>
                 <Label Text="{Binding ProjDescription}" FontSize="16" Padding="0,0,0,0" FontAttributes="Italic"/>
             </StackLayout>
+            </Frame>
         </ScrollView>
     </Grid>
 

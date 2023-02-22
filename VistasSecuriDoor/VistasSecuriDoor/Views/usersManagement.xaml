@@ -9,11 +9,38 @@
 
             <Frame CornerRadius="5" HasShadow="True" BorderColor="LightGray">
                 <StackLayout>
+
+                    <StackLayout.Resources>
+                        <Style TargetType="Label">
+                            <Setter Property="TextColor" Value="Black"/>
+                            <Setter Property="FontSize" Value="20"/>
+                        </Style>
+                    </StackLayout.Resources>
+                    
                     <Label Text="Usuario" Margin="0, -10, 0, 0"/>
                     <Label Text="Nombre"/>
                     <Label Text="Rol"/>
-                    <Button  ImageSource=""/>
-                    <Button ImageSource="" BackgroundColor="Red"/>
+
+
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="20">
+
+                        <StackLayout.Resources>
+                            <Style TargetType="ImageButton">
+                                <Setter Property="CornerRadius" Value="15"/>
+                                <Setter Property="WidthRequest" Value="50"/>
+                            </Style>
+                        </StackLayout.Resources>
+
+                        <Button BackgroundColor="#003a81" Text="&#xf14b;"
+                                FontFamily="{StaticResource FontAwesomeSolid}"
+                                FontSize="Large"/>
+
+                        <Button BackgroundColor="Red" Text="&#xf2ed;"
+                                FontFamily="{StaticResource FontAwesomeSolid}"
+                                FontSize="Large"/>
+                        
+                    </StackLayout>
+
                 </StackLayout>
             </Frame>
 

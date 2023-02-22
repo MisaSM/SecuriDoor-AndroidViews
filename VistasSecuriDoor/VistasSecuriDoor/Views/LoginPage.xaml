@@ -5,10 +5,47 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="VistasSecuriDoor.Views.LoginPage"
-             Shell.NavBarIsVisible="False">
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="#08141c">
     <ContentPage.Content>
         <StackLayout Padding="10,0,10,0" VerticalOptions="Center">
-            <Button VerticalOptions="Center" Text="Login" Command="{Binding LoginCommand}"/>
+
+            <StackLayout.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="BorderColor" Value="White"/>
+                    <Setter Property="BorderWidth" Value="1"/>
+                    <Setter Property="CornerRadius" Value="10"/>
+                    <Setter Property="MinimumWidthRequest" Value="10"/>
+                </Style>
+            </StackLayout.Resources>
+
+
+            <Label Text="SecuriDoor"
+                   HorizontalOptions="Center"
+                   FontSize="36"
+                   TextColor="White"
+                   FontAttributes="Bold"/>
+
+            <Frame BackgroundColor="#382c2c" CornerRadius="10">
+                <StackLayout Orientation="Vertical">
+                    <Label Text="Inicio de sesion"
+                           HorizontalOptions="Center"
+                           FontSize="24"
+                           TextColor="White"
+                           FontAttributes="Bold"/>
+                    <Label Text="Introduzca su nombre de usuario y contraseña"
+                           HorizontalOptions="Center"
+                           FontSize="14"
+                           TextColor="LightGray"
+                           FontAttributes="Bold"/>
+
+                    <Entry PlaceholderColor="LightGray" TextColor="White" Placeholder="Nombre de usuario"/>
+                    <Entry IsPassword="True" PlaceholderColor="LightGray" TextColor="White" Placeholder="Contraseña"/>
+
+                    <Button Margin="0, 20, 0, 0" BackgroundColor="#382c2c" VerticalOptions="Center" Text="Iniciar sesión" Command="{Binding LoginCommand}"/>
+                </StackLayout>
+            </Frame>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
