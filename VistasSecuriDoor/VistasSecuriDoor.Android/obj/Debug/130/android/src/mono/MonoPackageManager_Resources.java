@@ -4,6 +4,12 @@ public class MonoPackageManager_Resources {
 		/* We need to ensure that "VistasSecuriDoor.Android.dll" comes first in this list. */
 		"VistasSecuriDoor.Android.dll",
 		"FormsViewGroup.dll",
+		"Microcharts.dll",
+		"Microcharts.Droid.dll",
+		"Microcharts.Forms.dll",
+		"SkiaSharp.dll",
+		"SkiaSharp.Views.Android.dll",
+		"SkiaSharp.Views.Forms.dll",
 		"VistasSecuriDoor.dll",
 		"Xamarin.AndroidX.Activity.dll",
 		"Xamarin.AndroidX.Annotation.dll",

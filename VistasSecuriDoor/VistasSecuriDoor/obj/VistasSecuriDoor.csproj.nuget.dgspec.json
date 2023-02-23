@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\PracticasMovil\\SecuriDoor-AndroidViews\\VistasSecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor.csproj": {}
+    "E:\\UTS\\5Cuatrimestre\\DMM\\SecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor.csproj": {}
   },
   "projects": {
-    "D:\\PracticasMovil\\SecuriDoor-AndroidViews\\VistasSecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor.csproj": {
+    "E:\\UTS\\5Cuatrimestre\\DMM\\SecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PracticasMovil\\SecuriDoor-AndroidViews\\VistasSecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor.csproj",
+        "projectUniqueName": "E:\\UTS\\5Cuatrimestre\\DMM\\SecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor.csproj",
         "projectName": "VistasSecuriDoor",
-        "projectPath": "D:\\PracticasMovil\\SecuriDoor-AndroidViews\\VistasSecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor.csproj",
-        "packagesPath": "C:\\Users\\Anemone\\.nuget\\packages\\",
-        "outputPath": "D:\\PracticasMovil\\SecuriDoor-AndroidViews\\VistasSecuriDoor\\VistasSecuriDoor\\obj\\",
+        "projectPath": "E:\\UTS\\5Cuatrimestre\\DMM\\SecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor.csproj",
+        "packagesPath": "C:\\Users\\jabe4\\.nuget\\packages\\",
+        "outputPath": "E:\\UTS\\5Cuatrimestre\\DMM\\SecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\Microsoft\\VSShared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Anemone\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\jabe4\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -45,6 +45,14 @@
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
           "dependencies": {
+            "Microcharts": {
+              "target": "Package",
+              "version": "[0.9.5.9, )"
+            },
+            "Microcharts.Forms": {
+              "target": "Package",
+              "version": "[0.9.5.9, )"
+            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",

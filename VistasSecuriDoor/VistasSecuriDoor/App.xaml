@@ -6,6 +6,7 @@
         Define global resources and styles here, that apply to all pages in your app.
     -->
     <Application.Resources>
+
         <ResourceDictionary>
             <Color x:Key="Primary">#082c44</Color>
             <Style TargetType="Button">
@@ -31,7 +32,6 @@
             <OnPlatform x:TypeArguments="x:String" x:Key="FontAwesomeSolid">
                 <On Platform="Android" Value="fawesome-s.otf#Solid"/>
             </OnPlatform>
-            
             
         </ResourceDictionary>        
     </Application.Resources>
