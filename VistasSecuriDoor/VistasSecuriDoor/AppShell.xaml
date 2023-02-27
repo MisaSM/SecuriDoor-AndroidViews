@@ -72,6 +72,17 @@
             </Style>
         </ResourceDictionary>
     </Shell.Resources>
+    
+    <!--
+        TabBar lets you define content that won't show up in a flyout menu. When this content is active
+        the flyout menu won't be available. This is useful for creating areas of the application where 
+        you don't want users to be able to navigate away from. If you would like to navigate to this 
+        content you can do so by calling 
+        await Shell.Current.GoToAsync("//LoginPage");
+    -->
+    <TabBar>
+        <ShellContent Route="LoginPage" ContentTemplate="{DataTemplate local:LoginPage}" />
+    </TabBar>
 
     <!-- 
         When the Flyout is visible this defines the content to display in the flyout.
@@ -82,12 +93,12 @@
         <ShellContent Route="dashboardPage" ContentTemplate="{DataTemplate local:dashboardPage}"/>
     </FlyoutItem>
     
-
-    <FlyoutItem Title="Panel de control">
-        <ShellContent Route="controlPanel" ContentTemplate="{DataTemplate local:controlPanel}"/>
+    <FlyoutItem Title="Notificaciones">
+        <ShellContent Route="notifyPage" ContentTemplate="{DataTemplate local:notifyPage}"/>
     </FlyoutItem>
-    <FlyoutItem Title="Estadisticas de uso">
-        <ShellContent Route="useStatistics" ContentTemplate="{DataTemplate local:useStatistics}"/>
+
+    <FlyoutItem Title="Control de puertas">
+        <ShellContent Route="controlPanel" ContentTemplate="{DataTemplate local:controlPanel}"/>
     </FlyoutItem>
 
     <FlyoutItem Title="Gestión de Invitados">
@@ -102,16 +113,6 @@
     <MenuItem Text="Logout" StyleClass="MenuItemLayoutStyle" Clicked="OnMenuItemClicked">
     </MenuItem>
 
-    <!--
-        TabBar lets you define content that won't show up in a flyout menu. When this content is active
-        the flyout menu won't be available. This is useful for creating areas of the application where 
-        you don't want users to be able to navigate away from. If you would like to navigate to this 
-        content you can do so by calling 
-        await Shell.Current.GoToAsync("//LoginPage");
-    -->
-    <TabBar>
-        <ShellContent Route="LoginPage" ContentTemplate="{DataTemplate local:LoginPage}" />
-    </TabBar>
 
     <!-- Optional Templates 
     // These may be provided inline as below or as separate classes.

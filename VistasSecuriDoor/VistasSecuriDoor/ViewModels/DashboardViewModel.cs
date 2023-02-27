@@ -6,12 +6,10 @@ using Xamarin.Forms;
 
 namespace VistasSecuriDoor.ViewModels
 {
-    public class DashboardViewModel : BaseViewModel
-    {
+    public class DashboardViewModel : BaseViewModel {
         string title;
 
-        public string Title
-        {
+        public string Title {
             get { return title; }
             set { title = value; }
         }

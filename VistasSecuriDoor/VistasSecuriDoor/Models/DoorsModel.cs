@@ -5,10 +5,21 @@ using VistasSecuriDoor.ViewModels;
 
 namespace VistasSecuriDoor.Models
 {
-    public class DoorsModel : BaseViewModel
-    {
+    public class DoorsModel : BaseViewModel {
         public string DoorName { get; set; }
         public string DoorLocation { get; set;}
         public bool DoorState { get; set; }
+
+        public string _backgroundColor;
+        public bool _buttonWasClicked;
+
+        public string BackgroundColor {
+            get { return _backgroundColor; }
+            set { SetProperty(ref _backgroundColor, value); }
+        }
+        public bool ButtonWasClicked {
+            get { return _buttonWasClicked; }
+            set { SetProperty(ref _buttonWasClicked, value); }
+        }
     }
 }

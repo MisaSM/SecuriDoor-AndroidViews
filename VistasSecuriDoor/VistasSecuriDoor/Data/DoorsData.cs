@@ -33,7 +33,7 @@ namespace VistasSecuriDoor.Data
                 {
                     DoorName = "Aula magna",
                     DoorLocation = "Escuela",
-                    DoorState = true
+                    DoorState = false
                 },
                 new DoorsModel()
                 {

@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="VistasSecuriDoor.Views.controlPanel">
+             x:Class="VistasSecuriDoor.Views.controlPanel"
+             Title="{Binding Title}">
     <ContentPage.Content>
         <StackLayout>
             <CollectionView ItemsSource="{Binding Doors}" x:Name="DoorsList">
@@ -17,12 +18,18 @@
                                     </Style>
                                 </StackLayout.Resources>
 
-                                <Label Text="{Binding DoorName}" Margin="0, -10, 0, 0"/>
-                                <Label Text="{Binding DoorLocation}"/>
-                                <Label Text="Rol"/>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Cerradura: "/>
+                                    <Label Text="{Binding DoorName}"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Lugar: "/>
+                                    <Label Text="{Binding DoorLocation}"/>
+                                </StackLayout>
 
+                                
 
-                                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="20">
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="20">
 
                                     <StackLayout.Resources>
                                         <Style TargetType="ImageButton">
@@ -35,11 +42,16 @@
                                 FontFamily="{StaticResource FontAwesomeSolid}"
                                 FontSize="Large"/>
 
-                                    <Button BackgroundColor="Red" Text="&#xf2ed;"
-                                FontFamily="{StaticResource FontAwesomeSolid}"
-                                FontSize="Large"/>
+                                    <Button BackgroundColor="red" Text="&#xf2ed;"
+                                        FontFamily="{StaticResource FontAwesomeSolid}"
+                                        FontSize="Large"/>
 
                                 </StackLayout>
+                                <Button BackgroundColor="{Binding BackgroundColor}" Text="&#xf011;"
+                                        FontFamily="{StaticResource FontAwesomeSolid}"
+                                        CornerRadius="50"    
+                                        WidthRequest="50"
+                                        Command="{Binding ButtonCmd}"/>
 
                             </StackLayout>
                         </Frame>
