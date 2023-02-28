@@ -3815,24 +3815,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Anemone\\.nuget\\packages\\": {},
-    "D:\\Microsoft\\VSShared\\NuGetPackages": {}
+    "C:\\Users\\jabe4\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\PracticasMovil\\SecuriDoor-AndroidViews\\VistasSecuriDoor\\VistasSecuriDoor.Android\\VistasSecuriDoor.Android.csproj",
+      "projectUniqueName": "E:\\UTS\\5Cuatrimestre\\DMM\\SecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor.Android\\VistasSecuriDoor.Android.csproj",
       "projectName": "VistasSecuriDoor.Android",
-      "projectPath": "D:\\PracticasMovil\\SecuriDoor-AndroidViews\\VistasSecuriDoor\\VistasSecuriDoor.Android\\VistasSecuriDoor.Android.csproj",
-      "packagesPath": "C:\\Users\\Anemone\\.nuget\\packages\\",
-      "outputPath": "D:\\PracticasMovil\\SecuriDoor-AndroidViews\\VistasSecuriDoor\\VistasSecuriDoor.Android\\obj\\",
+      "projectPath": "E:\\UTS\\5Cuatrimestre\\DMM\\SecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor.Android\\VistasSecuriDoor.Android.csproj",
+      "packagesPath": "C:\\Users\\jabe4\\.nuget\\packages\\",
+      "outputPath": "E:\\UTS\\5Cuatrimestre\\DMM\\SecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
-        "D:\\Microsoft\\VSShared\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Anemone\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\jabe4\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3846,8 +3846,8 @@
       "frameworks": {
         "monoandroid13.0": {
           "projectReferences": {
-            "D:\\PracticasMovil\\SecuriDoor-AndroidViews\\VistasSecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor.csproj": {
-              "projectPath": "D:\\PracticasMovil\\SecuriDoor-AndroidViews\\VistasSecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor.csproj"
+            "E:\\UTS\\5Cuatrimestre\\DMM\\SecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor.csproj": {
+              "projectPath": "E:\\UTS\\5Cuatrimestre\\DMM\\SecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor.csproj"
             }
           }
         }
