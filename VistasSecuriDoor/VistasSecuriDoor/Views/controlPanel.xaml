@@ -1,63 +1,85 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:extensions="http://xamarin.com/schemas/2020/toolkit"
              x:Class="VistasSecuriDoor.Views.controlPanel"
              Title="{Binding Title}">
     <ContentPage.Content>
-        <StackLayout>
-            <CollectionView ItemsSource="{Binding Doors}" x:Name="DoorsList">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <Frame CornerRadius="5" HasShadow="True" BorderColor="LightGray">
-                            <StackLayout>
+        <StackLayout BindableLayout.ItemsSource="{Binding Groups}">
+            <BindableLayout.ItemTemplate>
+                <DataTemplate>
+                    <extensions:Expander>
+                        <extensions:Expander.Header>
+                            <Label Text="{Binding Location}"
+                                           TextColor="Black"
+                                           FontAttributes="Bold"
+                                           FontSize="20"
+                                           Padding="10, 20, 0, 0"/>
+                        </extensions:Expander.Header>
 
-                                <StackLayout.Resources>
-                                    <Style TargetType="Label">
-                                        <Setter Property="TextColor" Value="Black"/>
-                                        <Setter Property="FontSize" Value="20"/>
-                                    </Style>
-                                </StackLayout.Resources>
 
-                                <StackLayout Orientation="Horizontal">
-                                    <Label Text="Cerradura: "/>
-                                    <Label Text="{Binding DoorName}"/>
-                                </StackLayout>
-                                <StackLayout Orientation="Horizontal">
-                                    <Label Text="Lugar: "/>
-                                    <Label Text="{Binding DoorLocation}"/>
-                                </StackLayout>
 
-                                
+                        <extensions:Expander.ContentTemplate>
+                            <DataTemplate>
+                                <CollectionView ItemsSource="{Binding GroupedDoors}">
+                                    <CollectionView.ItemTemplate>
+                                        <DataTemplate>
+                                            <Frame CornerRadius="5" HasShadow="True" BorderColor="LightGray">
+                                                <StackLayout>
 
-                                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="20">
+                                                    <StackLayout.Resources>
+                                                        <Style TargetType="Label">
+                                                            <Setter Property="TextColor" Value="Black"/>
+                                                            <Setter Property="FontSize" Value="20"/>
+                                                        </Style>
+                                                    </StackLayout.Resources>
 
-                                    <StackLayout.Resources>
-                                        <Style TargetType="ImageButton">
-                                            <Setter Property="CornerRadius" Value="15"/>
-                                            <Setter Property="WidthRequest" Value="50"/>
-                                        </Style>
-                                    </StackLayout.Resources>
+                                                    <StackLayout Orientation="Horizontal">
+                                                        <Label Text="Cerradura: "/>
+                                                        <Label Text="{Binding DoorName}"/>
+                                                    </StackLayout>
+                                                    <StackLayout Orientation="Horizontal">
+                                                        <Label Text="Lugar: "/>
+                                                        <Label Text="{Binding DoorLocation}"/>
+                                                    </StackLayout>
 
-                                    <Button BackgroundColor="#003a81" Text="&#xf14b;"
-                                FontFamily="{StaticResource FontAwesomeSolid}"
-                                FontSize="Large"/>
 
-                                    <Button BackgroundColor="red" Text="&#xf2ed;"
-                                        FontFamily="{StaticResource FontAwesomeSolid}"
-                                        FontSize="Large"/>
 
-                                </StackLayout>
-                                <Button BackgroundColor="{Binding BackgroundColor}" Text="&#xf011;"
-                                        FontFamily="{StaticResource FontAwesomeSolid}"
-                                        CornerRadius="50"    
-                                        WidthRequest="50"
-                                        Command="{Binding ButtonCmd}"/>
+                                                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="20">
 
-                            </StackLayout>
-                        </Frame>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
+                                                        <StackLayout.Resources>
+                                                            <Style TargetType="ImageButton">
+                                                                <Setter Property="CornerRadius" Value="15"/>
+                                                                <Setter Property="WidthRequest" Value="50"/>
+                                                            </Style>
+                                                        </StackLayout.Resources>
+
+                                                        <Button BackgroundColor="#003a81" Text="&#xf14b;"
+                                            FontFamily="{StaticResource FontAwesomeSolid}"
+                                            FontSize="Large"/>
+
+                                                        <Button BackgroundColor="red" Text="&#xf2ed;"
+                                                    FontFamily="{StaticResource FontAwesomeSolid}"
+                                                    FontSize="Large"/>
+
+                                                    </StackLayout>
+                                                    <Button BackgroundColor="{Binding BackgroundColor}" Text="&#xf011;"
+                                                    FontFamily="{StaticResource FontAwesomeSolid}"
+                                                    CornerRadius="50"    
+                                                    WidthRequest="50"
+                                                    Command="{Binding ButtonCmd}"/>
+
+                                                </StackLayout>
+                                            </Frame>
+                                        </DataTemplate>
+                                    </CollectionView.ItemTemplate>
+                                </CollectionView>
+
+                            </DataTemplate>
+                        </extensions:Expander.ContentTemplate>
+                    </extensions:Expander>
+
+                </DataTemplate>
+            </BindableLayout.ItemTemplate>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

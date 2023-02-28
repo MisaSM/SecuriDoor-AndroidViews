@@ -256,3 +256,10 @@ E:\UTS\5Cuatrimestre\DMM\SecuriDoor\VistasSecuriDoor\VistasSecuriDoor.iOS\bin\iP
 E:\UTS\5Cuatrimestre\DMM\SecuriDoor\VistasSecuriDoor\VistasSecuriDoor.iOS\bin\iPhone\Debug\VistasSecuriDoor.dll
 E:\UTS\5Cuatrimestre\DMM\SecuriDoor\VistasSecuriDoor\VistasSecuriDoor.iOS\bin\iPhone\Debug\VistasSecuriDoor.pdb
 E:\UTS\5Cuatrimestre\DMM\SecuriDoor\VistasSecuriDoor\VistasSecuriDoor.iOS\obj\iPhone\Debug\VistasSecuriDoor.iOS.csproj.CopyComplete
+D:\PracticasMovil\SecuriDoor-AndroidViews\VistasSecuriDoor\VistasSecuriDoor.iOS\bin\iPhone\Debug\Microcharts.dll
+D:\PracticasMovil\SecuriDoor-AndroidViews\VistasSecuriDoor\VistasSecuriDoor.iOS\bin\iPhone\Debug\Microcharts.iOS.dll
+D:\PracticasMovil\SecuriDoor-AndroidViews\VistasSecuriDoor\VistasSecuriDoor.iOS\bin\iPhone\Debug\Microcharts.Forms.dll
+D:\PracticasMovil\SecuriDoor-AndroidViews\VistasSecuriDoor\VistasSecuriDoor.iOS\bin\iPhone\Debug\SkiaSharp.dll
+D:\PracticasMovil\SecuriDoor-AndroidViews\VistasSecuriDoor\VistasSecuriDoor.iOS\bin\iPhone\Debug\SkiaSharp.Views.iOS.dll
+D:\PracticasMovil\SecuriDoor-AndroidViews\VistasSecuriDoor\VistasSecuriDoor.iOS\bin\iPhone\Debug\SkiaSharp.Views.Forms.dll
+D:\PracticasMovil\SecuriDoor-AndroidViews\VistasSecuriDoor\VistasSecuriDoor.iOS\bin\iPhone\Debug\Xamarin.CommunityToolkit.dll

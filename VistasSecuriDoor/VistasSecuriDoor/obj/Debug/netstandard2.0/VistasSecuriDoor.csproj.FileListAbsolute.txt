@@ -29,7 +29,6 @@ D:\PracticasMovil\SecuriDoor-AndroidViews\VistasSecuriDoor\VistasSecuriDoor\obj\
 D:\PracticasMovil\SecuriDoor-AndroidViews\VistasSecuriDoor\VistasSecuriDoor\obj\Debug\netstandard2.0\Views\controlPanel.xaml.g.cs
 D:\PracticasMovil\SecuriDoor-AndroidViews\VistasSecuriDoor\VistasSecuriDoor\obj\Debug\netstandard2.0\Views\LoginPage.xaml.g.cs
 D:\PracticasMovil\SecuriDoor-AndroidViews\VistasSecuriDoor\VistasSecuriDoor\obj\Debug\netstandard2.0\Views\usersManagement.xaml.g.cs
-D:\PracticasMovil\SecuriDoor-AndroidViews\VistasSecuriDoor\VistasSecuriDoor\obj\Debug\netstandard2.0\Views\useStatistics.xaml.g.cs
 D:\PracticasMovil\SecuriDoor-AndroidViews\VistasSecuriDoor\VistasSecuriDoor\obj\Debug\netstandard2.0\VistasSecuriDoor.AssemblyInfoInputs.cache
 D:\PracticasMovil\SecuriDoor-AndroidViews\VistasSecuriDoor\VistasSecuriDoor\obj\Debug\netstandard2.0\VistasSecuriDoor.AssemblyInfo.cs
 D:\PracticasMovil\SecuriDoor-AndroidViews\VistasSecuriDoor\VistasSecuriDoor\obj\Debug\netstandard2.0\VistasSecuriDoor.csproj.CoreCompileInputs.cache
@@ -80,3 +79,5 @@ E:\UTS\5Cuatrimestre\DMM\SecuriDoor\VistasSecuriDoor\VistasSecuriDoor\obj\Debug\
 E:\UTS\5Cuatrimestre\DMM\SecuriDoor\VistasSecuriDoor\VistasSecuriDoor\obj\Debug\netstandard2.0\VistasSecuriDoor.pdb
 E:\UTS\5Cuatrimestre\DMM\SecuriDoor\VistasSecuriDoor\VistasSecuriDoor\obj\Debug\netstandard2.0\ref\VistasSecuriDoor.dll
 E:\UTS\5Cuatrimestre\DMM\SecuriDoor\VistasSecuriDoor\VistasSecuriDoor\obj\Debug\netstandard2.0\Views\notifyPage.xaml.g.cs
+D:\PracticasMovil\SecuriDoor-AndroidViews\VistasSecuriDoor\VistasSecuriDoor\obj\Debug\netstandard2.0\Views\dashboardPage.xaml.g.cs
+D:\PracticasMovil\SecuriDoor-AndroidViews\VistasSecuriDoor\VistasSecuriDoor\obj\Debug\netstandard2.0\Views\notifyPage.xaml.g.cs

@@ -14,10 +14,12 @@ namespace VistasSecuriDoor.ViewModels
         #region Variables
         string _title = "Control de puertas";
         public ObservableCollection<DoorsModel> _doorsList { get; set; }
+        public ObservableCollection<DoorGroupModel> _doorGroups { get; set; }
         #endregion
         #region Contructor
         public controlPanelViewModel(INavigation navigation) {
             Navigation = navigation;
+            ShowGroups();
             ShowDoors();
         }
         #endregion
@@ -30,11 +32,27 @@ namespace VistasSecuriDoor.ViewModels
             get { return _doorsList; }
             set { _doorsList = value; }
         }
+
+        public ObservableCollection<DoorGroupModel> Groups 
+        {
+            get { return _doorGroups; }
+            set  { _doorGroups = value;  }
+        }
+
+
+
         #endregion
         #region Procesos
         public void ShowDoors() { 
             Doors = new ObservableCollection<DoorsModel>(Data.DoorsData.ShowDoors());
         }
+
+        public void ShowGroups() 
+        {
+            Groups = new ObservableCollection<DoorGroupModel>(Data.DoorsData.ShowGroups());
+        }
+
+
         public void updateState(DoorsModel model) {
             var index = _doorsList
                 .ToList()
