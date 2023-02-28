@@ -18,7 +18,7 @@ namespace VistasSecuriDoor.Data
                     NotificationTitle = "Oficina",
                     Notification = "Se detectó un indicio de forcejeo",
                     DateNotification = DateTime.Now,
-                    NotificationType = "https://ibb.co/pvBqVCb"
+                    NotificationType = "https://i.ibb.co/DDHdc3z/26a0.png"
                 }
             };
         }

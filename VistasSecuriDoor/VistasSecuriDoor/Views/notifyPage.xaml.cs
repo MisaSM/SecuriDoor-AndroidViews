@@ -16,7 +16,12 @@ namespace VistasSecuriDoor.Views
         public notifyPage()
         {
             InitializeComponent();
-            this.BindingContext = new NotificationsViewModel(Navigation );
+            this.BindingContext = new NotificationsViewModel(Navigation);
+        }
+
+        private void Image_SizeChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
