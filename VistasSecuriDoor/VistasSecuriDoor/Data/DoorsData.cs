@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Text;
 using VistasSecuriDoor.Models;
 using VistasSecuriDoor.ViewModels;
@@ -43,5 +44,25 @@ namespace VistasSecuriDoor.Data
                 }
                 };
             }
+
+        public static ObservableCollection<DoorGroupModel> ShowGroups()
+        {
+            var groups = ShowDoors().GroupBy(d => d.DoorLocation);
+
+            var groupsList = groups.Select(g => new DoorGroupModel
+            {
+                Location = g.Key,
+                GroupedDoors = new ObservableCollection<DoorsModel>(g.ToList())
+            });
+
+            return new ObservableCollection<DoorGroupModel>(groupsList);
+
         }
+
+    }
+
+   
+
+ 
+
 }

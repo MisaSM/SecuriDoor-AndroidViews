@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "E:\\UTS\\5Cuatrimestre\\DMM\\SecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor.csproj": {}
+    "D:\\PracticasMovil\\SecuriDoor-AndroidViews\\VistasSecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor.csproj": {}
   },
   "projects": {
-    "E:\\UTS\\5Cuatrimestre\\DMM\\SecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor.csproj": {
+    "D:\\PracticasMovil\\SecuriDoor-AndroidViews\\VistasSecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\UTS\\5Cuatrimestre\\DMM\\SecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor.csproj",
+        "projectUniqueName": "D:\\PracticasMovil\\SecuriDoor-AndroidViews\\VistasSecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor.csproj",
         "projectName": "VistasSecuriDoor",
-        "projectPath": "E:\\UTS\\5Cuatrimestre\\DMM\\SecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor.csproj",
-        "packagesPath": "C:\\Users\\jabe4\\.nuget\\packages\\",
-        "outputPath": "E:\\UTS\\5Cuatrimestre\\DMM\\SecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor\\obj\\",
+        "projectPath": "D:\\PracticasMovil\\SecuriDoor-AndroidViews\\VistasSecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor.csproj",
+        "packagesPath": "C:\\Users\\Anemone\\.nuget\\packages\\",
+        "outputPath": "D:\\PracticasMovil\\SecuriDoor-AndroidViews\\VistasSecuriDoor\\VistasSecuriDoor\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "D:\\Microsoft\\VSShared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\jabe4\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Anemone\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -59,13 +59,17 @@
               "version": "[2.0.3, )",
               "autoReferenced": true
             },
+            "Xamarin.CommunityToolkit": {
+              "target": "Package",
+              "version": "[2.0.5, )"
+            },
             "Xamarin.Essentials": {
               "target": "Package",
-              "version": "[1.7.0, )"
+              "version": "[1.7.5, )"
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[5.0.0.2196, )"
+              "version": "[5.0.0.2545, )"
             }
           },
           "imports": [
@@ -79,7 +83,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }
