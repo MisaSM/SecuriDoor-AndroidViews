@@ -12,11 +12,11 @@ embedassembliesintoapk=false
 androidlinkmode=none
 androidlinkskip=
 androidsdkbuildtoolsversion=32.0.0
-androidsdkpath=c:\program files (x86)\android\android-sdk\
+androidsdkpath=d:\android\android-sdk\
 androidndkpath=
-javasdkpath=c:\program files\microsoft\jdk-11.0.16.101-hotspot\
+javasdkpath=c:\program files\microsoft\jdk-11.0.12.7-hotspot\
 androidsequencepointsmode=none
-xamarinandroidversion=13.2.0-0
+xamarinandroidversion=13.1.0-1
 monosymbolarchive=false
 androiduselatestplatformsdk=false
 targetframeworkversion=v13.0
@@ -25,11 +25,10 @@ androidgeneratejnimarshalmethods=false
 os=windows_nt
 androidincludedebugsymbols=true
 androidpackagenamingpolicy=lowercasecrc64
-_nugetassetstimestamp=638131732877588408
+_nugetassetstimestamp=638133410092893623
 typemapkind=strings-asm
 androidsupportedabis=arm64-v8a
 armeabi-v7a
 x86
 x86_64
 androidmanifestplaceholders=
-projectfullpath=e:\uts\5cuatrimestre\dmm\securidoor\vistassecuridoor\vistassecuridoor.android\vistassecuridoor.android.csproj

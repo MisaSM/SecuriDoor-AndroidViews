@@ -1,19 +1,21 @@
 {
   "version": 2,
-  "dgSpecHash": "y1jr1KFq/XFNDnhDlvKczpoC362tMIV4w4QMedJ6bRrarVaW/B7RMyzdVMymAdE04FF/gBdZLZvRGrXWDrUnRg==",
+  "dgSpecHash": "Q9UV6enzY133QRA+cPnxHtchAuqd8m7wDwjQe749TZlSGc6Cnd9vxVv6ngChhokLxok8ZATencIstd/pPVAbLg==",
   "success": true,
-  "projectFilePath": "E:\\UTS\\5Cuatrimestre\\DMM\\SecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor.iOS\\VistasSecuriDoor.iOS.csproj",
+  "projectFilePath": "D:\\Test\\SecuriDoor-AndroidViews\\VistasSecuriDoor\\VistasSecuriDoor.iOS\\VistasSecuriDoor.iOS.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\jabe4\\.nuget\\packages\\microcharts\\0.9.5.9\\microcharts.0.9.5.9.nupkg.sha512",
-    "C:\\Users\\jabe4\\.nuget\\packages\\microcharts.forms\\0.9.5.9\\microcharts.forms.0.9.5.9.nupkg.sha512",
-    "C:\\Users\\jabe4\\.nuget\\packages\\skiasharp\\2.80.2\\skiasharp.2.80.2.nupkg.sha512",
-    "C:\\Users\\jabe4\\.nuget\\packages\\skiasharp.views\\2.80.2\\skiasharp.views.2.80.2.nupkg.sha512",
-    "C:\\Users\\jabe4\\.nuget\\packages\\skiasharp.views.forms\\2.80.2\\skiasharp.views.forms.2.80.2.nupkg.sha512",
-    "C:\\Users\\jabe4\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
-    "C:\\Users\\jabe4\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512",
-    "C:\\Users\\jabe4\\.nuget\\packages\\xamarin.communitytoolkit\\2.0.5\\xamarin.communitytoolkit.2.0.5.nupkg.sha512",
-    "C:\\Users\\jabe4\\.nuget\\packages\\xamarin.essentials\\1.7.5\\xamarin.essentials.1.7.5.nupkg.sha512",
-    "C:\\Users\\jabe4\\.nuget\\packages\\xamarin.forms\\5.0.0.2545\\xamarin.forms.5.0.0.2545.nupkg.sha512"
+    "C:\\Users\\Anemone\\.nuget\\packages\\microcharts\\0.9.5.9\\microcharts.0.9.5.9.nupkg.sha512",
+    "C:\\Users\\Anemone\\.nuget\\packages\\microcharts.forms\\0.9.5.9\\microcharts.forms.0.9.5.9.nupkg.sha512",
+    "C:\\Users\\Anemone\\.nuget\\packages\\skiasharp\\2.80.2\\skiasharp.2.80.2.nupkg.sha512",
+    "C:\\Users\\Anemone\\.nuget\\packages\\skiasharp.views\\2.80.2\\skiasharp.views.2.80.2.nupkg.sha512",
+    "C:\\Users\\Anemone\\.nuget\\packages\\skiasharp.views.forms\\2.80.2\\skiasharp.views.forms.2.80.2.nupkg.sha512",
+    "C:\\Users\\Anemone\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\Anemone\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512",
+    "C:\\Users\\Anemone\\.nuget\\packages\\xamarin.communitytoolkit\\2.0.5\\xamarin.communitytoolkit.2.0.5.nupkg.sha512",
+    "C:\\Users\\Anemone\\.nuget\\packages\\xamarin.essentials\\1.7.5\\xamarin.essentials.1.7.5.nupkg.sha512",
+    "C:\\Users\\Anemone\\.nuget\\packages\\xamarin.forms\\5.0.0.2545\\xamarin.forms.5.0.0.2545.nupkg.sha512",
+    "C:\\Users\\Anemone\\.nuget\\packages\\xamarin.forms.visual.material\\5.0.0.2545\\xamarin.forms.visual.material.5.0.0.2545.nupkg.sha512",
+    "C:\\Users\\Anemone\\.nuget\\packages\\xamarin.ios.materialcomponents\\92.0.0\\xamarin.ios.materialcomponents.92.0.0.nupkg.sha512"
   ],
   "logs": []
 }

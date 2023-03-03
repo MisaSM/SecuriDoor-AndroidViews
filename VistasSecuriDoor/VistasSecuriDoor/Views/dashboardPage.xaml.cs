@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Microcharts;
 using Microcharts.Forms;
 using SkiaSharp;
-
+using VistasSecuriDoor.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -19,7 +19,8 @@ namespace VistasSecuriDoor.Views
 		public dashboardPage ()
 		{
 			InitializeComponent ();
-		}
+            this.BindingContext = new NotificationsViewModel(Navigation);
+        }
 
         protected override void OnAppearing()
         {

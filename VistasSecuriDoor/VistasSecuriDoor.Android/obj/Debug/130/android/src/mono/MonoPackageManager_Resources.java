@@ -66,6 +66,7 @@ public class MonoPackageManager_Resources {
 		"Xamarin.CommunityToolkit.dll",
 		"Xamarin.Essentials.dll",
 		"Xamarin.Forms.Core.dll",
+		"Xamarin.Forms.Material.dll",
 		"Xamarin.Forms.Platform.Android.dll",
 		"Xamarin.Forms.Platform.dll",
 		"Xamarin.Forms.Xaml.dll",

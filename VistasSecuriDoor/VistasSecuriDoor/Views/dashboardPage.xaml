@@ -4,21 +4,56 @@
              xmlns:microcharts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
              x:Class="VistasSecuriDoor.Views.dashboardPage"
              xmlns:vm="clr-namespace:VistasSecuriDoor.ViewModels"
+             Visual="Material"
              Title="{Binding Title}">
-    
+
     <ContentPage.BindingContext>
         <vm:DashboardViewModel/>
     </ContentPage.BindingContext>
-    
+
     <ContentPage.Content>
         <StackLayout>
             <Frame >
                 <StackLayout >
+
+
+
                     <microcharts:ChartView x:Name="chartView" HeightRequest="200"/>
+
+                    <Label Text="Notificación más reciente" Padding="0, 20, 0, 0"
+                           TextColor="Black"
+                           FontSize="20"
+                           FontAttributes="Bold"/>
+
+                    <StackLayout>
+
+
+
+                        <TableView>
+                            <TableRoot>
+                                <TableSection Title="" TextColor="Black">
+                                    <ViewCell>
+                                        <StackLayout BindingContext="{Binding lastNotification}" Orientation="Horizontal">
+                                        <Label FontSize="18" TextColor="Black" Text="{Binding NotificationTitle}"/>
+                                        <Label FontSize="18" TextColor="Black" Text="{Binding DateNotification}"/>
+                                        </StackLayout>
+                                    </ViewCell>
+                                </TableSection>
+                            </TableRoot>
+                        </TableView>
+
+
+
+
+                    </StackLayout>
+
+
+
+
                 </StackLayout>
             </Frame>
             <Frame>
-                
+
             </Frame>
         </StackLayout>
     </ContentPage.Content>

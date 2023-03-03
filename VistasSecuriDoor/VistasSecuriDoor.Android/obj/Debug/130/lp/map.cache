@@ -57,6 +57,7 @@ Xamarin.AndroidX.ViewPager.dll
 Xamarin.AndroidX.ViewPager2.dll
 Xamarin.CommunityToolkit.dll
 Xamarin.Essentials.dll
+Xamarin.Forms.Material.dll
 Xamarin.Forms.Platform.Android.dll
 Xamarin.Forms.Platform.dll
 Xamarin.Google.Android.Material.dll
@@ -95,6 +96,7 @@ androidx.appcompat.appcompat.aar
 androidx.constraintlayout.constraintlayout.aar
 androidx.cardview.cardview.aar
 com.google.android.material.material.aar
+androidx.lifecycle.lifecycle-livedata.aar
 androidx.swiperefreshlayout.swiperefreshlayout.aar
 androidx.slidingpanelayout.slidingpanelayout.aar
 androidx.preference.preference.aar
@@ -102,7 +104,6 @@ androidx.navigation.navigation-common.aar
 androidx.navigation.navigation-runtime.aar
 androidx.navigation.navigation-ui.aar
 androidx.media.media.aar
-androidx.lifecycle.lifecycle-livedata.aar
 androidx.asynclayoutinflater.asynclayoutinflater.aar
 androidx.legacy.legacy-support-core-ui.aar
 androidx.legacy.legacy-support-v4.aar

@@ -16,7 +16,6 @@ namespace VistasSecuriDoor.ViewModels
 
         public DashboardViewModel() {
             Title = "Dashboard";
-
             OpenWebCommand = new Command(async () => await Browser.OpenAsync("https://aka.ms/xamarin-quickstart"));
         }
         public ICommand OpenWebCommand { get; }

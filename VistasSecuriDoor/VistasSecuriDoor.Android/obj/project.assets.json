@@ -1848,6 +1848,26 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
+      "Xamarin.Forms.Visual.Material/5.0.0.2545": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.AndroidX.Lifecycle.LiveData": "[2.3.1.1, 2.5.1.1]",
+          "Xamarin.Google.Android.Material": "[1.4.0.2, 1.5.0)"
+        },
+        "compile": {
+          "lib/MonoAndroid10.0/Xamarin.Forms.Material.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/MonoAndroid10.0/Xamarin.Forms.Material.dll": {
+            "related": ".pdb"
+          }
+        },
+        "build": {
+          "buildTransitive/MonoAndroid10/Xamarin.Forms.Visual.Material.targets": {}
+        }
+      },
       "Xamarin.Google.Android.Material/1.4.0.2": {
         "type": "package",
         "dependencies": {
@@ -1913,7 +1933,8 @@
           "Microcharts.Forms": "0.9.5.9",
           "Xamarin.CommunityToolkit": "2.0.5",
           "Xamarin.Essentials": "1.7.5",
-          "Xamarin.Forms": "5.0.0.2545"
+          "Xamarin.Forms": "5.0.0.2545",
+          "Xamarin.Forms.Visual.Material": "5.0.0.2545"
         },
         "compile": {
           "bin/placeholder/VistasSecuriDoor.dll": {}
@@ -3757,6 +3778,28 @@
         "xamarin.forms.nuspec"
       ]
     },
+    "Xamarin.Forms.Visual.Material/5.0.0.2545": {
+      "sha512": "VGOSVd7HOJEkMGOIDUMJFRLMq3bl9URGnW9U2R/WctkhD4NQojyHJu2IcwHCrAdOTZcipDqHWwbEP/SOintAfg==",
+      "type": "package",
+      "path": "xamarin.forms.visual.material/5.0.0.2545",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Assets/xamarin_128x128.png",
+        "build/MonoAndroid10/Xamarin.Forms.Visual.Material.targets",
+        "buildTransitive/MonoAndroid10/Xamarin.Forms.Visual.Material.targets",
+        "lib/MonoAndroid10.0/Xamarin.Forms.Material.dll",
+        "lib/MonoAndroid10.0/Xamarin.Forms.Material.pdb",
+        "lib/MonoAndroid10/_._",
+        "lib/Xamarin.iOS10/Xamarin.Forms.Material.dll",
+        "lib/Xamarin.iOS10/Xamarin.Forms.Material.pdb",
+        "lib/netstandard1.0/_._",
+        "lib/tizen40/Xamarin.Forms.Material.dll",
+        "lib/tizen40/Xamarin.Forms.Material.pdb",
+        "xamarin.forms.visual.material.5.0.0.2545.nupkg.sha512",
+        "xamarin.forms.visual.material.nuspec"
+      ]
+    },
     "Xamarin.Google.Android.Material/1.4.0.2": {
       "sha512": "2dH8pSYjlVmZk8E64E6/hZzsoTcubsH1DHLMYpnsXnteqVuFU42uG5pIuJZIOcLxgKX/QjLdMzth6/w+Oje8sQ==",
       "type": "package",
@@ -3811,28 +3854,29 @@
       "VistasSecuriDoor >= 1.0.0",
       "Xamarin.CommunityToolkit >= 2.0.5",
       "Xamarin.Essentials >= 1.7.5",
-      "Xamarin.Forms >= 5.0.0.2545"
+      "Xamarin.Forms >= 5.0.0.2545",
+      "Xamarin.Forms.Visual.Material >= 5.0.0.2545"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\jabe4\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Anemone\\.nuget\\packages\\": {},
+    "D:\\Microsoft\\VSShared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\UTS\\5Cuatrimestre\\DMM\\SecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor.Android\\VistasSecuriDoor.Android.csproj",
+      "projectUniqueName": "D:\\Test\\SecuriDoor-AndroidViews\\VistasSecuriDoor\\VistasSecuriDoor.Android\\VistasSecuriDoor.Android.csproj",
       "projectName": "VistasSecuriDoor.Android",
-      "projectPath": "E:\\UTS\\5Cuatrimestre\\DMM\\SecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor.Android\\VistasSecuriDoor.Android.csproj",
-      "packagesPath": "C:\\Users\\jabe4\\.nuget\\packages\\",
-      "outputPath": "E:\\UTS\\5Cuatrimestre\\DMM\\SecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor.Android\\obj\\",
+      "projectPath": "D:\\Test\\SecuriDoor-AndroidViews\\VistasSecuriDoor\\VistasSecuriDoor.Android\\VistasSecuriDoor.Android.csproj",
+      "packagesPath": "C:\\Users\\Anemone\\.nuget\\packages\\",
+      "outputPath": "D:\\Test\\SecuriDoor-AndroidViews\\VistasSecuriDoor\\VistasSecuriDoor.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "D:\\Microsoft\\VSShared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\jabe4\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Anemone\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3846,8 +3890,8 @@
       "frameworks": {
         "monoandroid13.0": {
           "projectReferences": {
-            "E:\\UTS\\5Cuatrimestre\\DMM\\SecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor.csproj": {
-              "projectPath": "E:\\UTS\\5Cuatrimestre\\DMM\\SecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor.csproj"
+            "D:\\Test\\SecuriDoor-AndroidViews\\VistasSecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor.csproj": {
+              "projectPath": "D:\\Test\\SecuriDoor-AndroidViews\\VistasSecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor.csproj"
             }
           }
         }
@@ -3873,6 +3917,10 @@
             "version": "[1.7.5, )"
           },
           "Xamarin.Forms": {
+            "target": "Package",
+            "version": "[5.0.0.2545, )"
+          },
+          "Xamarin.Forms.Visual.Material": {
             "target": "Package",
             "version": "[5.0.0.2545, )"
           }

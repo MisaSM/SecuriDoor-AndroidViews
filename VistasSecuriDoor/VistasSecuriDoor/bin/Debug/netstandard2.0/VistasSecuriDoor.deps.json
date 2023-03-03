@@ -14,7 +14,8 @@
           "NETStandard.Library": "2.0.3",
           "Xamarin.CommunityToolkit": "2.0.5",
           "Xamarin.Essentials": "1.7.5",
-          "Xamarin.Forms": "5.0.0.2545"
+          "Xamarin.Forms": "5.0.0.2545",
+          "Xamarin.Forms.Visual.Material": "5.0.0.2545"
         },
         "runtime": {
           "VistasSecuriDoor.dll": {}
@@ -181,6 +182,11 @@
             "fileVersion": "5.0.0.960"
           }
         }
+      },
+      "Xamarin.Forms.Visual.Material/5.0.0.2545": {
+        "dependencies": {
+          "Xamarin.Forms": "5.0.0.2545"
+        }
       }
     }
   },
@@ -308,6 +314,13 @@
       "sha512": "sha512-mjfNx4Y/RD0FYjrBfETT2iNdFD1WCXN5wNHPhQaXm3k0u5XYJaOx5K83EZ8nVun+FPi7Wo3rQPIN0DLCs5PG4A==",
       "path": "xamarin.forms/5.0.0.2545",
       "hashPath": "xamarin.forms.5.0.0.2545.nupkg.sha512"
+    },
+    "Xamarin.Forms.Visual.Material/5.0.0.2545": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VGOSVd7HOJEkMGOIDUMJFRLMq3bl9URGnW9U2R/WctkhD4NQojyHJu2IcwHCrAdOTZcipDqHWwbEP/SOintAfg==",
+      "path": "xamarin.forms.visual.material/5.0.0.2545",
+      "hashPath": "xamarin.forms.visual.material.5.0.0.2545.nupkg.sha512"
     }
   }
 }

@@ -300,6 +300,31 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
+      "Xamarin.Forms.Visual.Material/5.0.0.2545": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.iOS.MaterialComponents": "92.0.0"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Xamarin.Forms.Material.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Xamarin.Forms.Material.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
+      "Xamarin.iOS.MaterialComponents/92.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/Xamarin.iOS/MaterialComponents.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS/MaterialComponents.dll": {}
+        }
+      },
       "VistasSecuriDoor/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -308,7 +333,8 @@
           "Microcharts.Forms": "0.9.5.9",
           "Xamarin.CommunityToolkit": "2.0.5",
           "Xamarin.Essentials": "1.7.5",
-          "Xamarin.Forms": "5.0.0.2545"
+          "Xamarin.Forms": "5.0.0.2545",
+          "Xamarin.Forms.Visual.Material": "5.0.0.2545"
         },
         "compile": {
           "bin/placeholder/VistasSecuriDoor.dll": {}
@@ -599,6 +625,31 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
+      "Xamarin.Forms.Visual.Material/5.0.0.2545": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.iOS.MaterialComponents": "92.0.0"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Xamarin.Forms.Material.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Xamarin.Forms.Material.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
+      "Xamarin.iOS.MaterialComponents/92.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/Xamarin.iOS/MaterialComponents.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS/MaterialComponents.dll": {}
+        }
+      },
       "VistasSecuriDoor/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -607,7 +658,8 @@
           "Microcharts.Forms": "0.9.5.9",
           "Xamarin.CommunityToolkit": "2.0.5",
           "Xamarin.Essentials": "1.7.5",
-          "Xamarin.Forms": "5.0.0.2545"
+          "Xamarin.Forms": "5.0.0.2545",
+          "Xamarin.Forms.Visual.Material": "5.0.0.2545"
         },
         "compile": {
           "bin/placeholder/VistasSecuriDoor.dll": {}
@@ -901,6 +953,31 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
+      "Xamarin.Forms.Visual.Material/5.0.0.2545": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.iOS.MaterialComponents": "92.0.0"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Xamarin.Forms.Material.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Xamarin.Forms.Material.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
+      "Xamarin.iOS.MaterialComponents/92.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/Xamarin.iOS/MaterialComponents.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS/MaterialComponents.dll": {}
+        }
+      },
       "VistasSecuriDoor/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -909,7 +986,8 @@
           "Microcharts.Forms": "0.9.5.9",
           "Xamarin.CommunityToolkit": "2.0.5",
           "Xamarin.Essentials": "1.7.5",
-          "Xamarin.Forms": "5.0.0.2545"
+          "Xamarin.Forms": "5.0.0.2545",
+          "Xamarin.Forms.Visual.Material": "5.0.0.2545"
         },
         "compile": {
           "bin/placeholder/VistasSecuriDoor.dll": {}
@@ -1203,6 +1281,31 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
+      "Xamarin.Forms.Visual.Material/5.0.0.2545": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.iOS.MaterialComponents": "92.0.0"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Xamarin.Forms.Material.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Xamarin.Forms.Material.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
+      "Xamarin.iOS.MaterialComponents/92.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/Xamarin.iOS/MaterialComponents.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS/MaterialComponents.dll": {}
+        }
+      },
       "VistasSecuriDoor/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -1211,7 +1314,8 @@
           "Microcharts.Forms": "0.9.5.9",
           "Xamarin.CommunityToolkit": "2.0.5",
           "Xamarin.Essentials": "1.7.5",
-          "Xamarin.Forms": "5.0.0.2545"
+          "Xamarin.Forms": "5.0.0.2545",
+          "Xamarin.Forms.Visual.Material": "5.0.0.2545"
         },
         "compile": {
           "bin/placeholder/VistasSecuriDoor.dll": {}
@@ -1800,6 +1904,41 @@
         "xamarin.forms.nuspec"
       ]
     },
+    "Xamarin.Forms.Visual.Material/5.0.0.2545": {
+      "sha512": "VGOSVd7HOJEkMGOIDUMJFRLMq3bl9URGnW9U2R/WctkhD4NQojyHJu2IcwHCrAdOTZcipDqHWwbEP/SOintAfg==",
+      "type": "package",
+      "path": "xamarin.forms.visual.material/5.0.0.2545",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Assets/xamarin_128x128.png",
+        "build/MonoAndroid10/Xamarin.Forms.Visual.Material.targets",
+        "buildTransitive/MonoAndroid10/Xamarin.Forms.Visual.Material.targets",
+        "lib/MonoAndroid10.0/Xamarin.Forms.Material.dll",
+        "lib/MonoAndroid10.0/Xamarin.Forms.Material.pdb",
+        "lib/MonoAndroid10/_._",
+        "lib/Xamarin.iOS10/Xamarin.Forms.Material.dll",
+        "lib/Xamarin.iOS10/Xamarin.Forms.Material.pdb",
+        "lib/netstandard1.0/_._",
+        "lib/tizen40/Xamarin.Forms.Material.dll",
+        "lib/tizen40/Xamarin.Forms.Material.pdb",
+        "xamarin.forms.visual.material.5.0.0.2545.nupkg.sha512",
+        "xamarin.forms.visual.material.nuspec"
+      ]
+    },
+    "Xamarin.iOS.MaterialComponents/92.0.0": {
+      "sha512": "I0mVxJBHsaR2NtFbZmafSLmIB4FUOSfSOf1SW3i2UA0TyoWr+F0AdrLtPRQtXq97LUg0fEnWhaq+4suVxbDbFw==",
+      "type": "package",
+      "path": "xamarin.ios.materialcomponents/92.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "THIRD-PARTY-NOTICES.txt",
+        "lib/Xamarin.iOS/MaterialComponents.dll",
+        "xamarin.ios.materialcomponents.92.0.0.nupkg.sha512",
+        "xamarin.ios.materialcomponents.nuspec"
+      ]
+    },
     "VistasSecuriDoor/1.0.0": {
       "type": "project",
       "path": "../VistasSecuriDoor/VistasSecuriDoor.csproj",
@@ -1813,28 +1952,29 @@
       "VistasSecuriDoor >= 1.0.0",
       "Xamarin.CommunityToolkit >= 2.0.5",
       "Xamarin.Essentials >= 1.7.5",
-      "Xamarin.Forms >= 5.0.0.2545"
+      "Xamarin.Forms >= 5.0.0.2545",
+      "Xamarin.Forms.Visual.Material >= 5.0.0.2545"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\jabe4\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Anemone\\.nuget\\packages\\": {},
+    "D:\\Microsoft\\VSShared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\UTS\\5Cuatrimestre\\DMM\\SecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor.iOS\\VistasSecuriDoor.iOS.csproj",
+      "projectUniqueName": "D:\\Test\\SecuriDoor-AndroidViews\\VistasSecuriDoor\\VistasSecuriDoor.iOS\\VistasSecuriDoor.iOS.csproj",
       "projectName": "VistasSecuriDoor.iOS",
-      "projectPath": "E:\\UTS\\5Cuatrimestre\\DMM\\SecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor.iOS\\VistasSecuriDoor.iOS.csproj",
-      "packagesPath": "C:\\Users\\jabe4\\.nuget\\packages\\",
-      "outputPath": "E:\\UTS\\5Cuatrimestre\\DMM\\SecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor.iOS\\obj\\",
+      "projectPath": "D:\\Test\\SecuriDoor-AndroidViews\\VistasSecuriDoor\\VistasSecuriDoor.iOS\\VistasSecuriDoor.iOS.csproj",
+      "packagesPath": "C:\\Users\\Anemone\\.nuget\\packages\\",
+      "outputPath": "D:\\Test\\SecuriDoor-AndroidViews\\VistasSecuriDoor\\VistasSecuriDoor.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "D:\\Microsoft\\VSShared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\jabe4\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Anemone\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -1848,8 +1988,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "E:\\UTS\\5Cuatrimestre\\DMM\\SecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor.csproj": {
-              "projectPath": "E:\\UTS\\5Cuatrimestre\\DMM\\SecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor.csproj"
+            "D:\\Test\\SecuriDoor-AndroidViews\\VistasSecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor.csproj": {
+              "projectPath": "D:\\Test\\SecuriDoor-AndroidViews\\VistasSecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor.csproj"
             }
           }
         }
@@ -1875,6 +2015,10 @@
             "version": "[1.7.5, )"
           },
           "Xamarin.Forms": {
+            "target": "Package",
+            "version": "[5.0.0.2545, )"
+          },
+          "Xamarin.Forms.Visual.Material": {
             "target": "Package",
             "version": "[5.0.0.2545, )"
           }

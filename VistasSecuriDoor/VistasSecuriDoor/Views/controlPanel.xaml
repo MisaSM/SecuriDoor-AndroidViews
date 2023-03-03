@@ -2,18 +2,22 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:extensions="http://xamarin.com/schemas/2020/toolkit"
              x:Class="VistasSecuriDoor.Views.controlPanel"
+             Visual="Material"
              Title="{Binding Title}">
     <ContentPage.Content>
         <StackLayout BindableLayout.ItemsSource="{Binding Groups}">
+            <StackLayout.Resources>
+                <Style TargetType="Label">
+                    <Setter Property="TextColor" Value="Black"/>
+                    <Setter Property="FontSize" Value="20"/>
+                    <Setter Property="FontAttributes" Value="Bold"/>
+                </Style>
+            </StackLayout.Resources>
             <BindableLayout.ItemTemplate>
                 <DataTemplate>
                     <extensions:Expander>
                         <extensions:Expander.Header>
-                            <Label Text="{Binding Location}"
-                                           TextColor="Black"
-                                           FontAttributes="Bold"
-                                           FontSize="20"
-                                           Padding="10, 20, 0, 0"/>
+                            <Label Text="{Binding Location}" Padding="10, 20, 0, 0"/>
                         </extensions:Expander.Header>
 
 
