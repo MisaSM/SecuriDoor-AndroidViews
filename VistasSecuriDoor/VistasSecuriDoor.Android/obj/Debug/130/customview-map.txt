@@ -26,6 +26,8 @@ com.google.android.material.tabs.TabLayout;D:\Test\SecuriDoor-AndroidViews\Vista
 com.google.android.material.tabs.TabLayout;D:\Test\SecuriDoor-AndroidViews\VistasSecuriDoor\VistasSecuriDoor.Android\obj\Debug\130\lp\60\jl\res\layout\tabbar.xml
 corners;D:\Test\SecuriDoor-AndroidViews\VistasSecuriDoor\VistasSecuriDoor.Android\obj\Debug\130\lp\59\jl\res\drawable\materialprogressbar.xml
 declare-styleable;D:\Test\SecuriDoor-AndroidViews\VistasSecuriDoor\VistasSecuriDoor.Android\obj\Debug\130\lp\60\jl\res\values\attrs.xml
+domain;obj\Debug\130\res\xml\network_security_config.xml
+domain-config;obj\Debug\130\res\xml\network_security_config.xml
 external-cache-path;D:\Test\SecuriDoor-AndroidViews\VistasSecuriDoor\VistasSecuriDoor.Android\obj\Debug\130\lp\58\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 external-path;D:\Test\SecuriDoor-AndroidViews\VistasSecuriDoor\VistasSecuriDoor.Android\obj\Debug\130\lp\58\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 foreground;obj\Debug\130\res\mipmap-anydpi-v26\icon.xml
@@ -41,6 +43,7 @@ item;obj\Debug\130\res\values\styles.xml
 layer-list;D:\Test\SecuriDoor-AndroidViews\VistasSecuriDoor\VistasSecuriDoor.Android\obj\Debug\130\lp\59\jl\res\drawable\materialprogressbar.xml
 layer-list;obj\Debug\130\res\drawable\splash_screen.xml
 LinearLayout;D:\Test\SecuriDoor-AndroidViews\VistasSecuriDoor\VistasSecuriDoor.Android\obj\Debug\130\lp\60\jl\res\layout\bottomtablayout.xml
+network-security-config;obj\Debug\130\res\xml\network_security_config.xml
 paths;D:\Test\SecuriDoor-AndroidViews\VistasSecuriDoor\VistasSecuriDoor.Android\obj\Debug\130\lp\58\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 resources;D:\Test\SecuriDoor-AndroidViews\VistasSecuriDoor\VistasSecuriDoor.Android\obj\Debug\130\lp\1\jl\res\values\strings.xml
 resources;D:\Test\SecuriDoor-AndroidViews\VistasSecuriDoor\VistasSecuriDoor.Android\obj\Debug\130\lp\59\jl\res\values\styles.xml

@@ -3407,3 +3407,11 @@ D:\Test\SecuriDoor-AndroidViews\VistasSecuriDoor\VistasSecuriDoor.Android\obj\De
 D:\Test\SecuriDoor-AndroidViews\VistasSecuriDoor\VistasSecuriDoor.Android\obj\Debug\130\android\src\crc647c4c06b10f3352ff\MaterialSliderRenderer.java
 D:\Test\SecuriDoor-AndroidViews\VistasSecuriDoor\VistasSecuriDoor.Android\obj\Debug\130\android\src\crc647c4c06b10f3352ff\MaterialStepperRenderer.java
 D:\Test\SecuriDoor-AndroidViews\VistasSecuriDoor\VistasSecuriDoor.Android\obj\Debug\130\android\src\crc647c4c06b10f3352ff\MaterialTimePickerRenderer.java
+D:\Test\SecuriDoor-AndroidViews\VistasSecuriDoor\VistasSecuriDoor.Android\obj\Debug\130\android\assets\Newtonsoft.Json.dll
+D:\Test\SecuriDoor-AndroidViews\VistasSecuriDoor\VistasSecuriDoor.Android\obj\Debug\130\res\xml\network_security_config.xml
+D:\Test\SecuriDoor-AndroidViews\VistasSecuriDoor\VistasSecuriDoor.Android\obj\Debug\130\res\drawable\dashbicon.png
+D:\Test\SecuriDoor-AndroidViews\VistasSecuriDoor\VistasSecuriDoor.Android\obj\Debug\130\res\drawable\notificon.png
+D:\Test\SecuriDoor-AndroidViews\VistasSecuriDoor\VistasSecuriDoor.Android\obj\Debug\130\res\drawable\logouticon.png
+D:\Test\SecuriDoor-AndroidViews\VistasSecuriDoor\VistasSecuriDoor.Android\obj\Debug\130\res\drawable\infoicon.png
+D:\Test\SecuriDoor-AndroidViews\VistasSecuriDoor\VistasSecuriDoor.Android\obj\Debug\130\res\drawable\dooricon.png
+D:\Test\SecuriDoor-AndroidViews\VistasSecuriDoor\VistasSecuriDoor.Android\obj\Debug\130\res\drawable\usersicon.png

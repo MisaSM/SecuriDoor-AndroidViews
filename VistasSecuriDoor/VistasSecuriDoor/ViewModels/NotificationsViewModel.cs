@@ -12,6 +12,7 @@ namespace VistasSecuriDoor.ViewModels
     {
 
         public NotificationsModel _lastNotification { get; set; }
+
         public ObservableCollection<NotificationsModel> _notificationsList { get; set; }
 
 

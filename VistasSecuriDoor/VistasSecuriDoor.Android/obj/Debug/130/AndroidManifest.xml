@@ -7,10 +7,10 @@
     -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.companyname.vistassecuridoor">
   <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="33" />
-  <uses-permission android:name="android.permission.INTERNET" />
   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-  <application android:label="VistasSecuriDoor.Android" android:theme="@style/MainTheme" android:name="android.app.Application" android:allowBackup="true" android:icon="@mipmap/icon" android:debuggable="true" android:extractNativeLibs="true">
+  <uses-permission android:name="android.permission.INTERNET" />
+  <application android:usesCleartextTraffic="true" android:label="VistasSecuriDoor.Android" android:theme="@style/MainTheme" android:networkSecurityConfig="@xml/network_security_config" android:name="android.app.Application" android:allowBackup="true" android:icon="@mipmap/icon" android:debuggable="true" android:extractNativeLibs="true">
     <activity android:configChanges="orientation|smallestScreenSize|screenLayout|screenSize|uiMode" android:icon="@mipmap/icon" android:label="VistasSecuriDoor" android:theme="@style/MainTheme" android:name="crc649c3cd105dc69ff13.MainActivity" />
     <activity android:configChanges="screenSize" android:label="VistasSecuriDoor" android:noHistory="true" android:theme="@style/SplashTheme" android:name="crc649c3cd105dc69ff13.SplashActivity" android:exported="true">
       <intent-filter>

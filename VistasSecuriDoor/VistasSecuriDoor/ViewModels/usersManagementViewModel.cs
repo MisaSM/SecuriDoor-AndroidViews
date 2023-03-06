@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Input;
 using VistasSecuriDoor.Models;
 using Xamarin.Forms;
 
@@ -26,8 +28,10 @@ namespace VistasSecuriDoor.ViewModels
             set { _usersList = value; }
         }
 
-        public void ShowUsers() {
-            Users = new ObservableCollection<UsersModel>(Data.UsersData.ShowUsers());
+        public async Task ShowUsers() {
+            ObservableCollection<UsersModel> users = await Data.UsersData.ShowUsers();
+            Users = new ObservableCollection<UsersModel>(users);
         }
+
     }
 }

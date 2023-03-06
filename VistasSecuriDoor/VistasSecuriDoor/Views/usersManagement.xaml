@@ -24,7 +24,7 @@
                                         <Label Text="{Binding Name}"/>
                                     </StackLayout>
                                     <StackLayout Orientation="Horizontal">
-                                        <Label Text="{Binding IdRol}"/>
+                                        <Label Text="{Binding Id}"/>
                                     </StackLayout>
 
                                     <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="20">

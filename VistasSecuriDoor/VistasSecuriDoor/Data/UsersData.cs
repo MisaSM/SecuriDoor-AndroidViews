@@ -1,33 +1,55 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
+using System.Linq;
+using System.Net.Http;
 using System.Text;
+using System.Net;
+using System.Threading.Tasks;
 using VistasSecuriDoor.Models;
 
 namespace VistasSecuriDoor.Data
 {
     public class UsersData {
-        public static ObservableCollection<UsersModel> ShowUsers() {
-            return new ObservableCollection<UsersModel>() {
-                new UsersModel() {
-                    Id = 1,
-                    Name = "Jorge",
-                    Password = "password",
-                    IdRol = 1
-                },
-                new UsersModel() {
-                    Id = 2,
-                    Name = "Sofia",
-                    Password = "password",
-                    IdRol = 2
-                },
-                new UsersModel() {
-                    Id = 3,
-                    Name = "Cesar",
-                    Password = "password",
-                    IdRol = 2
+        public static async Task<ObservableCollection<UsersModel>> ShowUsers() {
+
+            try
+            {
+                var request = new HttpRequestMessage();
+                request.RequestUri = new Uri("http://www.securidoorapi.somee.com/api/users");
+                request.Method = HttpMethod.Get;
+
+                var client = new HttpClient();
+                HttpResponseMessage response = await client.SendAsync(request);
+
+                if (response.StatusCode == HttpStatusCode.OK)
+                {
+                    string content = await response.Content.ReadAsStringAsync();
+                    var result = JsonConvert.DeserializeObject<ObservableCollection<UsersModel>>(content);
+                    foreach (UsersModel user in result) 
+                    {
+                        Debug.WriteLine($"Id:{user.Id}, Name: {user.Name}");
+                    }
+                    return result;
                 }
-            };
+                else
+                {
+                    Debug.WriteLine($"Server Error: {response.StatusCode} - {response.ReasonPhrase}");
+                    return null;
+                }
+
+
+            }
+            catch (Exception ex) 
+            {
+                Debug.WriteLine($"Hola! Soy lo que buscas. Network Error: {ex.Message}");
+                return null;
+            }
+
+
+            
         }
     }
 }

@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "Q9UV6enzY133QRA+cPnxHtchAuqd8m7wDwjQe749TZlSGc6Cnd9vxVv6ngChhokLxok8ZATencIstd/pPVAbLg==",
+  "dgSpecHash": "wgsNtSiD263uq5JT2qBrzT3qdhJczenmHDFzGaQgST/4T546XxCbSukujItnpJIitGPk/c+7bvnLqnudqcqfJA==",
   "success": true,
   "projectFilePath": "D:\\Test\\SecuriDoor-AndroidViews\\VistasSecuriDoor\\VistasSecuriDoor.iOS\\VistasSecuriDoor.iOS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Anemone\\.nuget\\packages\\microcharts\\0.9.5.9\\microcharts.0.9.5.9.nupkg.sha512",
     "C:\\Users\\Anemone\\.nuget\\packages\\microcharts.forms\\0.9.5.9\\microcharts.forms.0.9.5.9.nupkg.sha512",
+    "C:\\Users\\Anemone\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512",
     "C:\\Users\\Anemone\\.nuget\\packages\\skiasharp\\2.80.2\\skiasharp.2.80.2.nupkg.sha512",
     "C:\\Users\\Anemone\\.nuget\\packages\\skiasharp.views\\2.80.2\\skiasharp.views.2.80.2.nupkg.sha512",
     "C:\\Users\\Anemone\\.nuget\\packages\\skiasharp.views.forms\\2.80.2\\skiasharp.views.forms.2.80.2.nupkg.sha512",

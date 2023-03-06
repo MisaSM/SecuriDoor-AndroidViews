@@ -13,6 +13,11 @@
 
     <Shell.Resources>
         <ResourceDictionary>
+
+            <OnPlatform x:TypeArguments="x:String" x:Key="FontAwesomeSolid">
+                <On Platform="Android" Value="fawesome-s.otf#Solid"/>
+            </OnPlatform>
+
             <Style x:Key="BaseStyle" TargetType="Element">
                 <Setter Property="Shell.BackgroundColor" Value="{StaticResource Primary}" />
                 <Setter Property="Shell.ForegroundColor" Value="White" />
@@ -89,28 +94,28 @@
         FlyoutDisplayOptions="AsMultipleItems" will create a separate flyout item for each child element    
         https://docs.microsoft.com/dotnet/api/xamarin.forms.shellgroupitem.flyoutdisplayoptions?view=xamarin-forms
     -->
-    <FlyoutItem Title="Dashboard" Icon="&#xf624;">
+    <FlyoutItem Title="Dashboard" FlyoutIcon="dashbIcon.png">
         <ShellContent Route="dashboardPage" ContentTemplate="{DataTemplate local:dashboardPage}"/>
     </FlyoutItem>
     
-    <FlyoutItem Title="Notificaciones">
+    <FlyoutItem Title="Notificaciones" FlyoutIcon="notifIcon.png">
         <ShellContent Route="notifyPage" ContentTemplate="{DataTemplate local:notifyPage}"/>
     </FlyoutItem>
 
-    <FlyoutItem Title="Control de puertas">
+    <FlyoutItem Title="Control de puertas" FlyoutIcon="doorIcon.png">
         <ShellContent Route="controlPanel" ContentTemplate="{DataTemplate local:controlPanel}"/>
     </FlyoutItem>
 
-    <FlyoutItem Title="Gestión de Invitados">
+    <FlyoutItem FlyoutIcon="usersIcon.png" Title="Gestión de Invitados">
         <ShellContent Route="usersManagement" ContentTemplate="{DataTemplate local:usersManagement}"/>
     </FlyoutItem>
 
-    <FlyoutItem Title="Acerca de nosotros" Icon="icon_about.png">
+    <FlyoutItem Title="Acerca de nosotros" Icon="infoIcon.png">
         <ShellContent Route="AboutPage" ContentTemplate="{DataTemplate local:AboutPage}"/>
     </FlyoutItem>
 
     <!-- When the Flyout is visible this will be a menu item you can tie a click behavior to  -->
-    <MenuItem Text="Logout" StyleClass="MenuItemLayoutStyle" Clicked="OnMenuItemClicked">
+    <MenuItem IconImageSource="logoutIcon.png" Text="Logout" StyleClass="MenuItemLayoutStyle" Clicked="OnMenuItemClicked">
     </MenuItem>
 
 
