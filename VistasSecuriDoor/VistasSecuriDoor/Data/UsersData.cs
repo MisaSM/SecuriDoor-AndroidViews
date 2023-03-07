@@ -28,10 +28,7 @@ namespace VistasSecuriDoor.Data
                 {
                     string content = await response.Content.ReadAsStringAsync();
                     var result = JsonConvert.DeserializeObject<ObservableCollection<UsersModel>>(content);
-                    foreach (UsersModel user in result) 
-                    {
-                        Debug.WriteLine($"Id:{user.Id}, Name: {user.Name}");
-                    }
+
                     return result;
                 }
                 else

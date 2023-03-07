@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -29,8 +31,13 @@ namespace VistasSecuriDoor.ViewModels
         }
 
         public async Task ShowUsers() {
-            ObservableCollection<UsersModel> users = await Data.UsersData.ShowUsers();
-            Users = new ObservableCollection<UsersModel>(users);
+           Users = await Data.UsersData.ShowUsers();
+            Users.ToList();
+            foreach(UsersModel user in Users) 
+            {
+                Debug.WriteLine($"Nombre: {user.Name}, Id: {user.Id}");
+            }
+            
         }
 
     }

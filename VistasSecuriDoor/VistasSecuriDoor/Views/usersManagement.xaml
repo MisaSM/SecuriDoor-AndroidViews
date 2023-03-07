@@ -6,8 +6,8 @@
              Title="{Binding Title}">
     <ContentPage.Content>
         <StackLayout>
-            <StackLayout>
-                <CollectionView ItemsSource="{Binding Users}" x:Name="UserList">
+            <StackLayout BindingContext="{Binding Users}">
+                <CollectionView x:Name="UserList">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
                             <Frame CornerRadius="5" HasShadow="True" BorderColor="LightGray" Margin="0,0,10,0">
