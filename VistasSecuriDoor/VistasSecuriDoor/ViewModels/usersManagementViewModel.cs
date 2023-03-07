@@ -31,14 +31,9 @@ namespace VistasSecuriDoor.ViewModels
         }
 
         public async Task ShowUsers() {
-           Users = await Data.UsersData.ShowUsers();
-            Users.ToList();
-            foreach(UsersModel user in Users) 
-            {
-                Debug.WriteLine($"Nombre: {user.Name}, Id: {user.Id}");
-            }
-            
-        }
+            Users = await Data.UsersData.ShowUsers()
+
+        }   
 
     }
 }
