@@ -11,6 +11,10 @@ namespace VistasSecuriDoor.Models
 
         [JsonProperty("name")]
         public string Name { get; set; }
+
+        [JsonProperty("username")]
+        public string userName { get; set; }
+
         public string Password { get; set; }
         public int IdRol { get; set; }
     }

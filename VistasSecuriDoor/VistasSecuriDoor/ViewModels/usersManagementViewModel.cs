@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using VistasSecuriDoor.Data;
 using VistasSecuriDoor.Models;
 using Xamarin.Forms;
 
@@ -13,7 +14,7 @@ namespace VistasSecuriDoor.ViewModels
 {
     public class usersManagementViewModel : BaseViewModel {
         string _title = "Control de usuarios";
-        public ObservableCollection<UsersModel> _usersList { get; set; }
+        public ObservableCollection<UsersModel> _usersList;
 
         public usersManagementViewModel(INavigation navigation) {
             Navigation = navigation;
@@ -27,11 +28,11 @@ namespace VistasSecuriDoor.ViewModels
 
         public ObservableCollection<UsersModel> Users {
             get { return _usersList; }
-            set { _usersList = value; }
+            set { SetProperty(ref _usersList, value); }
         }
 
         public async Task ShowUsers() {
-            Users = await Data.UsersData.ShowUsers()
+            Users = await UsersData.ShowUsers();
 
         }   
 
