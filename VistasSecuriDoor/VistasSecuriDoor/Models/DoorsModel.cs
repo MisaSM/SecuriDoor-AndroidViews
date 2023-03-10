@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using VistasSecuriDoor.ViewModels;
@@ -6,8 +7,13 @@ using VistasSecuriDoor.ViewModels;
 namespace VistasSecuriDoor.Models
 {
     public class DoorsModel : BaseViewModel {
+
+        [JsonProperty("door1")]
         public string DoorName { get; set; }
+
+        [JsonProperty("location")]
         public string DoorLocation { get; set;}
+
         public bool DoorState { get; set; }
 
         public string _backgroundColor;

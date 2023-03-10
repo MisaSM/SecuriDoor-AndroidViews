@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using VistasSecuriDoor.Models;
 using Xamarin.Forms;
@@ -13,8 +14,8 @@ namespace VistasSecuriDoor.ViewModels
     {
         #region Variables
         string _title = "Control de puertas";
-        public ObservableCollection<DoorsModel> _doorsList { get; set; }
-        public ObservableCollection<DoorGroupModel> _doorGroups { get; set; }
+        public ObservableCollection<DoorsModel> _doorsList;
+        public ObservableCollection<DoorGroupModel> _doorGroups;
         #endregion
         #region Contructor
         public controlPanelViewModel(INavigation navigation) {
@@ -30,26 +31,26 @@ namespace VistasSecuriDoor.ViewModels
         }
         public ObservableCollection<DoorsModel> Doors {
             get { return _doorsList; }
-            set { _doorsList = value; }
+            set { SetProperty(ref _doorsList, value); }
         }
 
         public ObservableCollection<DoorGroupModel> Groups 
         {
             get { return _doorGroups; }
-            set  { _doorGroups = value;  }
+            set  { SetProperty(ref _doorGroups, value); }
         }
 
 
 
         #endregion
         #region Procesos
-        public void ShowDoors() { 
-            Doors = new ObservableCollection<DoorsModel>(Data.DoorsData.ShowDoors());
+        public async Task ShowDoors() { 
+            Doors = await Data.DoorsData.ShowDoors();
         }
 
-        public void ShowGroups() 
+        public async Task ShowGroups() 
         {
-            Groups = new ObservableCollection<DoorGroupModel>(Data.DoorsData.ShowGroups());
+            Groups = await Data.DoorsData.ShowGroups();
         }
 
 

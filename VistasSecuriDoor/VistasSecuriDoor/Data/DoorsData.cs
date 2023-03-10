@@ -1,55 +1,63 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
+using System.Net.Http;
+using System.Net;
 using System.Text;
 using VistasSecuriDoor.Models;
 using VistasSecuriDoor.ViewModels;
+using System.Threading.Tasks;
 
 namespace VistasSecuriDoor.Data
 {
     public class DoorsData
     {
-        public static ObservableCollection<DoorsModel> ShowDoors()
+        public static async Task<ObservableCollection<DoorsModel>> ShowDoors()
         {
-            return new ObservableCollection<DoorsModel>()
+            try
             {
-                new DoorsModel()
+                var request = new HttpRequestMessage();
+                request.RequestUri = new Uri("http://www.securidoorapi.somee.com/api/doors");
+                request.Method = HttpMethod.Get;
+
+                var client = new HttpClient();
+                HttpResponseMessage response = await client.SendAsync(request);
+
+                if (response.StatusCode == HttpStatusCode.OK)
                 {
-                    DoorName = "Oficina",
-                    DoorLocation = "Empresa",
-                    DoorState = false
-                },
-                new DoorsModel() {
-                    DoorName = "Bodega",
-                    DoorLocation = "Empresa",
-                    DoorState = true
-                },
-                new DoorsModel() {
-                    DoorName = "LabCisco",
-                    DoorLocation = "Escuela",
-                    DoorState = true
-                },
-                new DoorsModel()
-                {
-                    DoorName = "Aula magna",
-                    DoorLocation = "Escuela",
-                    DoorState = false
-                },
-                new DoorsModel()
-                {
-                    DoorName = "Estudio",
-                    DoorLocation = "Casa",
-                    DoorState = true
+                    string content = await response.Content.ReadAsStringAsync();
+                    var result = JsonConvert.DeserializeObject<ObservableCollection<DoorsModel>>(content);
+
+                    return result;
                 }
-                };
+                else
+                {
+                    Debug.WriteLine($"Server Error: {response.StatusCode} - {response.ReasonPhrase}");
+                    return null;
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Hola! Soy lo que buscas. Network Error: {ex.Message}");
+                return null;
             }
 
-        public static ObservableCollection<DoorGroupModel> ShowGroups()
-        {
-            var groups = ShowDoors().GroupBy(d => d.DoorLocation);
 
-            var groupsList = groups.Select(g => new DoorGroupModel
+
+        }
+
+        public static async Task<ObservableCollection<DoorGroupModel>> ShowGroups()
+        {
+            var groups = await ShowDoors();
+
+            var result = groups.GroupBy(d => d.DoorLocation);
+
+            var groupsList = result.Select(g => new DoorGroupModel
             {
                 Location = g.Key,
                 GroupedDoors = new ObservableCollection<DoorsModel>(g.ToList())
@@ -59,10 +67,6 @@ namespace VistasSecuriDoor.Data
 
         }
 
+
     }
-
-   
-
- 
-
 }
