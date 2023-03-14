@@ -11,9 +11,8 @@ namespace VistasSecuriDoor.ViewModels
     public class NotificationsViewModel : BaseViewModel
     {
 
-        public NotificationsModel _lastNotification { get; set; }
-
-        public ObservableCollection<NotificationsModel> _notificationsList { get; set; }
+        public ObservableCollection<NotificationsModel> _notificationsList;
+        public ObservableCollection<NotificationsModel> _lastNotifs;
 
 
         public NotificationsViewModel(INavigation navigation)
@@ -22,25 +21,23 @@ namespace VistasSecuriDoor.ViewModels
             ShowNotification();
         }
 
-        public NotificationsModel lastNotification
-        {
-            get { return _lastNotification; }
-            set { _lastNotification = value; }
-        }
 
         public ObservableCollection<NotificationsModel> notificationsList
         {
             get { return _notificationsList; }
-            set { _notificationsList = value; }
+            set { SetProperty(ref _notificationsList, value); }
+        }
+        public ObservableCollection<NotificationsModel> lastNotifs
+        {
+            get { return _lastNotifs; }
+            set { SetProperty(ref _lastNotifs, value); }
         }
 
         public void ShowNotification()
         {
-            notificationsList = new ObservableCollection<NotificationsModel>(Data.NotificationsData.ShowNotification());
-            lastNotification = notificationsList.LastOrDefault();
+            notificationsList = Data.NotificationsData.ShowNotification();
+            lastNotifs = new ObservableCollection<NotificationsModel>(notificationsList.Skip(Math.Max(0, notificationsList.Count - 5)));
         }
-
-
 
 
     }

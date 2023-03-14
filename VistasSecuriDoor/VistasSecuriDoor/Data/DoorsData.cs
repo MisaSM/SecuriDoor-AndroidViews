@@ -19,52 +19,53 @@ namespace VistasSecuriDoor.Data
         {
             try
             {
-                var request = new HttpRequestMessage();
-                request.RequestUri = new Uri("http://www.securidoorapi.somee.com/api/doors");
-                request.Method = HttpMethod.Get;
-
-                var client = new HttpClient();
-                HttpResponseMessage response = await client.SendAsync(request);
-
-                if (response.StatusCode == HttpStatusCode.OK)
+                using (var request = new HttpRequestMessage())
                 {
-                    string content = await response.Content.ReadAsStringAsync();
-                    var result = JsonConvert.DeserializeObject<ObservableCollection<DoorsModel>>(content);
+                    request.RequestUri = new Uri("http://www.securidoorapi.somee.com/api/doors");
+                    request.Method = HttpMethod.Get;
 
-                    return result;
+                    using (var client = new HttpClient())
+                    {
+                        HttpResponseMessage response = await client.SendAsync(request).ConfigureAwait(false);
+
+                        switch (response.StatusCode)
+                        {
+                            case HttpStatusCode.OK:
+                                string content = await response.Content.ReadAsStringAsync();
+                                var result = JsonConvert.DeserializeObject<ObservableCollection<DoorsModel>>(content);
+                                return result;
+
+                            case HttpStatusCode.NotFound:
+                                Debug.WriteLine("Server Error: Not Found");
+                                return null;
+
+                            default:
+                                Debug.WriteLine($"Server Error: {response.StatusCode} - {response.ReasonPhrase}");
+                                return null;
+                        }
+                    }
                 }
-                else
-                {
-                    Debug.WriteLine($"Server Error: {response.StatusCode} - {response.ReasonPhrase}");
-                    return null;
-                }
-
-
             }
             catch (Exception ex)
             {
-                Debug.WriteLine($"Hola! Soy lo que buscas. Network Error: {ex.Message}");
+                Debug.WriteLine($"Network Error: {ex.Message}");
                 return null;
             }
-
-
-
         }
 
         public static async Task<ObservableCollection<DoorGroupModel>> ShowGroups()
         {
-            var groups = await ShowDoors();
+            var groups = await ShowDoors().ConfigureAwait(false);
 
             var result = groups.GroupBy(d => d.DoorLocation);
 
             var groupsList = result.Select(g => new DoorGroupModel
             {
                 Location = g.Key,
-                GroupedDoors = new ObservableCollection<DoorsModel>(g.ToList())
+                GroupedDoors = new ObservableCollection<DoorsModel>(g)
             });
 
             return new ObservableCollection<DoorGroupModel>(groupsList);
-
         }
 
 

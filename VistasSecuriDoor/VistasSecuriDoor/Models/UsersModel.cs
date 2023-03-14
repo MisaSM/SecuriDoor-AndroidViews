@@ -6,13 +6,13 @@ using System.Text;
 namespace VistasSecuriDoor.Models
 {
     public class UsersModel {
-        [JsonProperty("idUser")]
-        public int Id { get; set; }
+        [JsonProperty("_id")]
+        public string Id { get; set; }
 
-        [JsonProperty("name")]
+        [JsonProperty("owner_name")]
         public string Name { get; set; }
 
-        [JsonProperty("username")]
+        [JsonProperty("owner_user")]
         public string userName { get; set; }
 
         public string Password { get; set; }

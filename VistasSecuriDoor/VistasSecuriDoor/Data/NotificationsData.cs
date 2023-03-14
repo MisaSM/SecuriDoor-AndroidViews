@@ -27,6 +27,34 @@ namespace VistasSecuriDoor.Data
                     Notification = "Se detectó una entrada forzada",
                     DateNotification = DateTime.Parse("2/1/2023"),
                     NotificationType = "https://i.ibb.co/DDHdc3z/26a0.png"
+                },
+                new NotificationsModel()
+                {
+                    NotificationTitle = "Hola",
+                    Notification = "Se detectó un indicio de forcejeo",
+                    DateNotification = DateTime.Now,
+                    NotificationType = "https://i.ibb.co/DDHdc3z/26a0.png"
+                },
+                new NotificationsModel()
+                {
+                    NotificationTitle = "Adios",
+                    Notification = "Se detectó una entrada forzada",
+                    DateNotification = DateTime.Parse("2/1/2023"),
+                    NotificationType = "https://i.ibb.co/DDHdc3z/26a0.png"
+                },
+                new NotificationsModel()
+                {
+                    NotificationTitle = "Golpe",
+                    Notification = "Se detectó una entrada forzada",
+                    DateNotification = DateTime.Parse("2/1/2023"),
+                    NotificationType = "https://i.ibb.co/DDHdc3z/26a0.png"
+                },
+                new NotificationsModel()
+                {
+                    NotificationTitle = "Golpe 2!",
+                    Notification = "Se detectó una entrada forzada",
+                    DateNotification = DateTime.Parse("2/1/2023"),
+                    NotificationType = "https://i.ibb.co/DDHdc3z/26a0.png"
                 }
             };
         }

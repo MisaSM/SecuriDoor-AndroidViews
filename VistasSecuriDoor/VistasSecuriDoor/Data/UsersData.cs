@@ -12,41 +12,31 @@ using VistasSecuriDoor.Models;
 
 namespace VistasSecuriDoor.Data
 {
-    public class UsersData {
-        public static async Task<ObservableCollection<UsersModel>> ShowUsers() {
-
+    public class UsersData
+    {
+        public static async Task<ObservableCollection<UsersModel>> ShowUsers()
+        {
             try
             {
-                var request = new HttpRequestMessage();
-                request.RequestUri = new Uri("http://www.securidoorapi.somee.com/api/users");
-                request.Method = HttpMethod.Get;
-
                 var client = new HttpClient();
-                HttpResponseMessage response = await client.SendAsync(request);
+                var response = await client.GetAsync("https://securidoor-web-api.onrender.com/api/owner");
 
-                if (response.StatusCode == HttpStatusCode.OK)
+                if (response.IsSuccessStatusCode)
                 {
-                    string content = await response.Content.ReadAsStringAsync();
-                    var result = JsonConvert.DeserializeObject<ObservableCollection<UsersModel>>(content);
-
-                    return result;
+                    var content = await response.Content.ReadAsStringAsync();
+                    return JsonConvert.DeserializeObject<ObservableCollection<UsersModel>>(content);
                 }
                 else
                 {
                     Debug.WriteLine($"Server Error: {response.StatusCode} - {response.ReasonPhrase}");
                     return null;
                 }
-
-
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
-                Debug.WriteLine($"Hola! Soy lo que buscas. Network Error: {ex.Message}");
+                Debug.WriteLine($"Network Error: {ex.Message}");
                 return null;
             }
-
-
-            
         }
     }
 }

@@ -10,12 +10,11 @@
 
         <CollectionView ItemsSource="{Binding Users}" x:Name="_usersList">
             <CollectionView.ItemTemplate>
+                
+                
                 <DataTemplate>
                     <Frame CornerRadius="5" HasShadow="True" BorderColor="LightGray" Margin="0,0,10,0">
                         <StackLayout>
-
-
-
                             <StackLayout.Resources>
                                 <Style TargetType="Label">
                                     <Setter Property="TextColor" Value="Black"/>

@@ -13,42 +13,81 @@
 
     <ContentPage.Content>
         <StackLayout>
-            <Frame >
-                <StackLayout >
-
-
+            <Frame>
+                <StackLayout>
 
                     <microcharts:ChartView x:Name="chartView" HeightRequest="200"/>
 
-                    <Label Text="Notificación más reciente" Padding="0, 20, 0, 0"
+                    <Label Text="Notificaciones más reciente" Padding="0, 20, 0, 0"
                            TextColor="Black"
                            FontSize="20"
                            FontAttributes="Bold"/>
 
-                    <StackLayout>
+                    <StackLayout Padding="10">
 
+                        <CollectionView ItemsSource="{Binding lastNotifs}" x:Name="notificationsList">
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
 
+                                    <SwipeView>
+                                        <SwipeView.RightItems>
+                                            <SwipeItems>
+                                                <SwipeItem Text="Eliminar"
+                                                           BackgroundColor="Red"/>
+                                            </SwipeItems>
+                                        </SwipeView.RightItems>
 
-                        <TableView>
-                            <TableRoot>
-                                <TableSection Title="" TextColor="Black">
-                                    <ViewCell>
-                                        <StackLayout BindingContext="{Binding lastNotification}" Orientation="Horizontal">
-                                        <Label FontSize="18" TextColor="Black" Text="{Binding NotificationTitle}"/>
-                                        <Label FontSize="18" TextColor="Black" Text="{Binding DateNotification}"/>
+                                        <StackLayout Padding="5, 10">
+
+                                            <StackLayout.Resources>
+                                                <Style TargetType="Label">
+                                                    <Setter Property="TextColor" Value="Black"/>
+                                                    <Setter Property="FontSize" Value="20"/>
+                                                </Style>
+                                            </StackLayout.Resources>
+                                            <Grid>
+                                                <StackLayout Grid.Row="0">
+                                                    <Label Text="{Binding NotificationTitle}" 
+                                                       FontSize="18"
+                                                       FontAttributes="Bold"/>
+                                                </StackLayout>
+                                                <StackLayout Grid.Row="0" Grid.Column="2">
+
+                                                    <Label Text="{Binding DateNotification}"
+                                                        FontSize="10"
+                                                        HorizontalOptions="End"/>
+                                                </StackLayout>
+                                                <StackLayout Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+                                                    <Label Text="{Binding Notification}"
+                                                        FontSize="16"/>
+                                                </StackLayout>
+                                                <StackLayout Grid.Row="1" Grid.Column="2">
+                                                    <Image Source="{Binding NotificationType}"
+                                                       HorizontalOptions="End"
+                                                       HeightRequest="40"/>
+                                                </StackLayout>
+                                            </Grid>
+
+                                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="20">
+
+                                                <StackLayout.Resources>
+                                                    <Style TargetType="ImageButton">
+                                                        <Setter Property="CornerRadius" Value="15"/>
+                                                        <Setter Property="WidthRequest" Value="50"/>
+                                                    </Style>
+                                                </StackLayout.Resources>
+                                            </StackLayout>
                                         </StackLayout>
-                                    </ViewCell>
-                                </TableSection>
-                            </TableRoot>
-                        </TableView>
 
 
+                                    </SwipeView>
+
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
 
 
                     </StackLayout>
-
-
-
 
                 </StackLayout>
             </Frame>

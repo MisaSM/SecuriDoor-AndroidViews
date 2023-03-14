@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Test\\SecuriDoor-AndroidViews\\VistasSecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor.csproj": {}
+    "C:\\Users\\ShadowCompany\\Desktop\\SecuriDoor-AndroidViews\\VistasSecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor.csproj": {}
   },
   "projects": {
-    "D:\\Test\\SecuriDoor-AndroidViews\\VistasSecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor.csproj": {
+    "C:\\Users\\ShadowCompany\\Desktop\\SecuriDoor-AndroidViews\\VistasSecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Test\\SecuriDoor-AndroidViews\\VistasSecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor.csproj",
+        "projectUniqueName": "C:\\Users\\ShadowCompany\\Desktop\\SecuriDoor-AndroidViews\\VistasSecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor.csproj",
         "projectName": "VistasSecuriDoor",
-        "projectPath": "D:\\Test\\SecuriDoor-AndroidViews\\VistasSecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor.csproj",
-        "packagesPath": "C:\\Users\\Anemone\\.nuget\\packages\\",
-        "outputPath": "D:\\Test\\SecuriDoor-AndroidViews\\VistasSecuriDoor\\VistasSecuriDoor\\obj\\",
+        "projectPath": "C:\\Users\\ShadowCompany\\Desktop\\SecuriDoor-AndroidViews\\VistasSecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor.csproj",
+        "packagesPath": "C:\\Users\\ShadowCompany\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ShadowCompany\\Desktop\\SecuriDoor-AndroidViews\\VistasSecuriDoor\\VistasSecuriDoor\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\Microsoft\\VSShared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Anemone\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ShadowCompany\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -91,7 +91,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

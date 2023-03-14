@@ -13,12 +13,12 @@ using Xamarin.Forms.Xaml;
 
 namespace VistasSecuriDoor.Views
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class dashboardPage : ContentPage
-	{
-		public dashboardPage ()
-		{
-			InitializeComponent ();
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class dashboardPage : ContentPage
+    {
+        public dashboardPage()
+        {
+            InitializeComponent();
             this.BindingContext = new NotificationsViewModel(Navigation);
         }
 
