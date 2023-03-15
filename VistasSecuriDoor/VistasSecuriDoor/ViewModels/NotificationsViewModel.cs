@@ -14,13 +14,20 @@ namespace VistasSecuriDoor.ViewModels
         public ObservableCollection<NotificationsModel> _notificationsList;
         public ObservableCollection<NotificationsModel> _lastNotifs;
 
+        public string _title { get; set; }
 
         public NotificationsViewModel(INavigation navigation)
         {
             Navigation = navigation;
             ShowNotification();
+            Title = "Notificaciones";
         }
 
+        public string Title 
+        {
+            get { return _title; }
+            set { _title = value; }
+        }
 
         public ObservableCollection<NotificationsModel> notificationsList
         {

@@ -39,8 +39,8 @@
                 </StackLayout.Resources>
 
                 <Label Text="Integrantes del equipo" FontSize="Title"/>
-                <Label Text="Jorge Arturo Bernal Espinoza" FontSize="16" Padding="0,0,0,0"/>
-                <Label Text="Misael Sarabia Molina" FontSize="16" Padding="0,0,0,0"/>
+                <Label Text="Jorge Arturo Bernal Espinoza" FontSize="20"/>
+                <Label Text="Misael Sarabia Molina" FontSize="20"/>
             </StackLayout>
             </Frame>
 
@@ -53,15 +53,14 @@
                 
                 <StackLayout.Resources>
                     <Style TargetType="Label">
-                        <Setter Property="TextColor" Value="Black"/>
-                        <Setter Property="FontSize" Value="20"/>
-                    </Style>
+                            <Setter Property="TextColor" Value="Black"/>
+                        </Style>
                 </StackLayout.Resources>
                 
                 
                 
                 <Label Text="Sobre nuestro proyecto" FontSize="Title"/>
-                <Label Text="{Binding ProjDescription}" FontSize="16" Padding="0,0,0,0" FontAttributes="Italic"/>
+                <Label Text="{Binding ProjDescription}" FontSize="20" FontAttributes="Italic"/>
             </StackLayout>
             </Frame>
         </ScrollView>

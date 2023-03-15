@@ -7,7 +7,6 @@ using Xamarin.Forms;
 namespace VistasSecuriDoor.ViewModels
 {
     public class DashboardViewModel : BaseViewModel {
-        string title;
         string pageSource;
 
         public string PageSource 
@@ -15,13 +14,10 @@ namespace VistasSecuriDoor.ViewModels
             get { return pageSource; }
             set { SetProperty(ref pageSource, value); }
         }
-        public string Title {
-            get { return title; }
-            set { title = value; }
-        }
+
 
         public DashboardViewModel() {
-            Title = "Dashboard";
+
             OpenWebCommand = new Command(async () => await Browser.OpenAsync("https://aka.ms/xamarin-quickstart"));
 
             PageSource = "https://www.youtube.com";

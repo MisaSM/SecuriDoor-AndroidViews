@@ -5,7 +5,7 @@
              x:Class="VistasSecuriDoor.Views.dashboardPage"
              xmlns:vm="clr-namespace:VistasSecuriDoor.ViewModels"
              Visual="Material"
-             Title="{Binding Title}">
+             Title="Dashboard">
 
     <ContentPage.BindingContext>
         <vm:DashboardViewModel/>
