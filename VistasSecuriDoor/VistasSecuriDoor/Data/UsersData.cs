@@ -19,7 +19,7 @@ namespace VistasSecuriDoor.Data
             try
             {
                 var client = new HttpClient();
-                var response = await client.GetAsync("https://securidoor-web-api.onrender.com/api/owner");
+                var response = await client.GetAsync("https://securidoor-web-api.onrender.com/api/guest");
 
                 if (response.IsSuccessStatusCode)
                 {

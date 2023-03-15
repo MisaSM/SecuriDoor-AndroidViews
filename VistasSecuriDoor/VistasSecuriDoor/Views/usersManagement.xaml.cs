@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Rg.Plugins.Popup.Extensions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,6 +17,11 @@ namespace VistasSecuriDoor.Views
         {
             InitializeComponent();
             this.BindingContext = new usersManagementViewModel(Navigation);
+        }
+
+        private void OpenPopup(object sender, EventArgs e)
+        {
+            Navigation.PushPopupAsync(new guestsPopup());
         }
     }
 }

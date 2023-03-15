@@ -48,6 +48,25 @@
           }
         }
       },
+      "Rg.Plugins.Popup/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "5.0.0.2012"
+        },
+        "frameworkAssemblies": [
+          "Java.Interop"
+        ],
+        "compile": {
+          "lib/monoandroid10.0/Rg.Plugins.Popup.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/monoandroid10.0/Rg.Plugins.Popup.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "SkiaSharp/2.80.2": {
         "type": "package",
         "compile": {
@@ -1945,6 +1964,7 @@
           "Microcharts": "0.9.5.9",
           "Microcharts.Forms": "0.9.5.9",
           "Newtonsoft.Json": "13.0.2",
+          "Rg.Plugins.Popup": "2.1.0",
           "Xamarin.CommunityToolkit": "2.0.5",
           "Xamarin.Essentials": "1.7.5",
           "Xamarin.Forms": "5.0.0.2545",
@@ -2021,6 +2041,51 @@
         "newtonsoft.json.13.0.2.nupkg.sha512",
         "newtonsoft.json.nuspec",
         "packageIcon.png"
+      ]
+    },
+    "Rg.Plugins.Popup/2.1.0": {
+      "sha512": "caKjkvimzpUqk4pO/WSFn3uOX43uZNW5rPWCx7eXkOlGG9Br90MTwNVS1nxhtyypB69uUe/0GQPEC3rz+kscbA==",
+      "type": "package",
+      "path": "rg.plugins.popup/2.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "icon.png",
+        "lib/monoandroid10.0/Rg.Plugins.Popup.dll",
+        "lib/monoandroid10.0/Rg.Plugins.Popup.pdb",
+        "lib/monoandroid10.0/Rg.Plugins.Popup.xml",
+        "lib/net472/Rg.Plugins.Popup.dll",
+        "lib/net472/Rg.Plugins.Popup.pdb",
+        "lib/net472/Rg.Plugins.Popup.xml",
+        "lib/netcoreapp3.1/Rg.Plugins.Popup.dll",
+        "lib/netcoreapp3.1/Rg.Plugins.Popup.pdb",
+        "lib/netcoreapp3.1/Rg.Plugins.Popup.xml",
+        "lib/netstandard2.0/Rg.Plugins.Popup.dll",
+        "lib/netstandard2.0/Rg.Plugins.Popup.pdb",
+        "lib/netstandard2.0/Rg.Plugins.Popup.xml",
+        "lib/tizen80/Rg.Plugins.Popup.dll",
+        "lib/tizen80/Rg.Plugins.Popup.pdb",
+        "lib/tizen80/Rg.Plugins.Popup.xml",
+        "lib/uap10.0.18362/Rg.Plugins.Popup.dll",
+        "lib/uap10.0.18362/Rg.Plugins.Popup.pdb",
+        "lib/uap10.0.18362/Rg.Plugins.Popup.pri",
+        "lib/uap10.0.18362/Rg.Plugins.Popup.xml",
+        "lib/xamarinios10/Rg.Plugins.Popup.dll",
+        "lib/xamarinios10/Rg.Plugins.Popup.pdb",
+        "lib/xamarinios10/Rg.Plugins.Popup.xml",
+        "lib/xamarinmac20/Rg.Plugins.Popup.dll",
+        "lib/xamarinmac20/Rg.Plugins.Popup.pdb",
+        "lib/xamarinmac20/Rg.Plugins.Popup.xml",
+        "lib/xamarintvos10/Rg.Plugins.Popup.dll",
+        "lib/xamarintvos10/Rg.Plugins.Popup.pdb",
+        "lib/xamarintvos10/Rg.Plugins.Popup.xml",
+        "lib/xamarinwatchos10/Rg.Plugins.Popup.dll",
+        "lib/xamarinwatchos10/Rg.Plugins.Popup.pdb",
+        "lib/xamarinwatchos10/Rg.Plugins.Popup.xml",
+        "readme.txt",
+        "rg.plugins.popup.2.1.0.nupkg.sha512",
+        "rg.plugins.popup.nuspec"
       ]
     },
     "SkiaSharp/2.80.2": {
@@ -3895,6 +3960,7 @@
     "MonoAndroid,Version=v13.0": [
       "Microcharts >= 0.9.5.9",
       "Microcharts.Forms >= 0.9.5.9",
+      "Rg.Plugins.Popup >= 2.1.0",
       "VistasSecuriDoor >= 1.0.0",
       "Xamarin.CommunityToolkit >= 2.0.5",
       "Xamarin.Essentials >= 1.7.5",
@@ -3903,24 +3969,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ShadowCompany\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Anemone\\.nuget\\packages\\": {},
+    "D:\\Microsoft\\VSShared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ShadowCompany\\Desktop\\SecuriDoor-AndroidViews\\VistasSecuriDoor\\VistasSecuriDoor.Android\\VistasSecuriDoor.Android.csproj",
+      "projectUniqueName": "D:\\Test\\SecuriDoor-AndroidViews\\VistasSecuriDoor\\VistasSecuriDoor.Android\\VistasSecuriDoor.Android.csproj",
       "projectName": "VistasSecuriDoor.Android",
-      "projectPath": "C:\\Users\\ShadowCompany\\Desktop\\SecuriDoor-AndroidViews\\VistasSecuriDoor\\VistasSecuriDoor.Android\\VistasSecuriDoor.Android.csproj",
-      "packagesPath": "C:\\Users\\ShadowCompany\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ShadowCompany\\Desktop\\SecuriDoor-AndroidViews\\VistasSecuriDoor\\VistasSecuriDoor.Android\\obj\\",
+      "projectPath": "D:\\Test\\SecuriDoor-AndroidViews\\VistasSecuriDoor\\VistasSecuriDoor.Android\\VistasSecuriDoor.Android.csproj",
+      "packagesPath": "C:\\Users\\Anemone\\.nuget\\packages\\",
+      "outputPath": "D:\\Test\\SecuriDoor-AndroidViews\\VistasSecuriDoor\\VistasSecuriDoor.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "D:\\Microsoft\\VSShared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\ShadowCompany\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Anemone\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3934,8 +4000,8 @@
       "frameworks": {
         "monoandroid13.0": {
           "projectReferences": {
-            "C:\\Users\\ShadowCompany\\Desktop\\SecuriDoor-AndroidViews\\VistasSecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor.csproj": {
-              "projectPath": "C:\\Users\\ShadowCompany\\Desktop\\SecuriDoor-AndroidViews\\VistasSecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor.csproj"
+            "D:\\Test\\SecuriDoor-AndroidViews\\VistasSecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor.csproj": {
+              "projectPath": "D:\\Test\\SecuriDoor-AndroidViews\\VistasSecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor.csproj"
             }
           }
         }
@@ -3951,6 +4017,10 @@
           "Microcharts.Forms": {
             "target": "Package",
             "version": "[0.9.5.9, )"
+          },
+          "Rg.Plugins.Popup": {
+            "target": "Package",
+            "version": "[2.1.0, )"
           },
           "Xamarin.CommunityToolkit": {
             "target": "Package",

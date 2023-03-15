@@ -410,3 +410,6 @@ C:\Users\ShadowCompany\Desktop\SecuriDoor-AndroidViews\VistasSecuriDoor\VistasSe
 C:\Users\ShadowCompany\Desktop\SecuriDoor-AndroidViews\VistasSecuriDoor\VistasSecuriDoor.iOS\obj\iPhone\Debug\VistasSecuriDoor.iOS.csproj.CopyComplete
 C:\Users\ShadowCompany\Desktop\SecuriDoor-AndroidViews\VistasSecuriDoor\VistasSecuriDoor.iOS\obj\iPhone\Debug\VistasSecuriDoor.iOS.exe
 C:\Users\ShadowCompany\Desktop\SecuriDoor-AndroidViews\VistasSecuriDoor\VistasSecuriDoor.iOS\obj\iPhone\Debug\VistasSecuriDoor.iOS.pdb
+D:\Test\SecuriDoor-AndroidViews\VistasSecuriDoor\VistasSecuriDoor.iOS\bin\iPhone\Debug\Newtonsoft.Json.dll
+D:\Test\SecuriDoor-AndroidViews\VistasSecuriDoor\VistasSecuriDoor.iOS\bin\iPhone\Debug\Rg.Plugins.Popup.dll
+D:\Test\SecuriDoor-AndroidViews\VistasSecuriDoor\VistasSecuriDoor.iOS\bin\iPhone\Debug\Rg.Plugins.Popup.pdb

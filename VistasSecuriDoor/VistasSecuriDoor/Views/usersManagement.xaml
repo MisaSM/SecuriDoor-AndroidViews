@@ -6,59 +6,69 @@
              Title="{Binding Title}">
     <ContentPage.Content>
 
+        <StackLayout>
+
+            <Button Margin="0, 20" 
+                    HorizontalOptions="Center" 
+                    WidthRequest="120" 
+                    HeightRequest="60" 
+                    Text="Registrar invitado" 
+                    CornerRadius="5"
+                    Clicked="OpenPopup"/>
+
+            <CollectionView ItemsSource="{Binding Users}" x:Name="_usersList">
+                <CollectionView.ItemTemplate>
 
 
-        <CollectionView ItemsSource="{Binding Users}" x:Name="_usersList">
-            <CollectionView.ItemTemplate>
-                
-                
-                <DataTemplate>
-                    <Frame CornerRadius="5" HasShadow="True" BorderColor="LightGray" Margin="0,0,10,0">
-                        <StackLayout>
-                            <StackLayout.Resources>
-                                <Style TargetType="Label">
-                                    <Setter Property="TextColor" Value="Black"/>
-                                    <Setter Property="FontSize" Value="20"/>
-                                </Style>
-                            </StackLayout.Resources>
-
-                            <StackLayout Orientation="Horizontal">
-                                <Label Text="{Binding Name}"/>
-                            </StackLayout>
-                            <StackLayout Orientation="Horizontal">
-                                <Label Text="{Binding userName}"/>
-                            </StackLayout>
-                            <StackLayout Orientation="Horizontal">
-                                <Label Text="{Binding Id}"/>
-                            </StackLayout>
-
-                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="20">
-
+                    <DataTemplate>
+                        <Frame CornerRadius="5" HasShadow="True" BorderColor="LightGray" Margin="0,0,10,0">
+                            <StackLayout>
                                 <StackLayout.Resources>
-                                    <Style TargetType="ImageButton">
-                                        <Setter Property="CornerRadius" Value="15"/>
-                                        <Setter Property="WidthRequest" Value="50"/>
+                                    <Style TargetType="Label">
+                                        <Setter Property="TextColor" Value="Black"/>
+                                        <Setter Property="FontSize" Value="20"/>
                                     </Style>
                                 </StackLayout.Resources>
 
-                                <Button BackgroundColor="#003a81" Text="&#xf14b;"
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding Name}"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding userName}"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding Id}"/>
+                                </StackLayout>
+
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="20">
+
+                                    <StackLayout.Resources>
+                                        <Style TargetType="ImageButton">
+                                            <Setter Property="CornerRadius" Value="15"/>
+                                            <Setter Property="WidthRequest" Value="50"/>
+                                        </Style>
+                                    </StackLayout.Resources>
+
+                                    <Button BackgroundColor="#003a81" Text="&#xf14b;"
                                 FontFamily="{StaticResource FontAwesomeSolid}"
                                 FontSize="Large"/>
 
-                                <Button BackgroundColor="red" Text="&#xf2ed;"
+                                    <Button BackgroundColor="red" Text="&#xf2ed;"
                                 FontFamily="{StaticResource FontAwesomeSolid}"
                                 FontSize="Large"/>
+
+                                </StackLayout>
+
 
                             </StackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
 
 
-                        </StackLayout>
-                    </Frame>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
 
-
+        </StackLayout>
 
     </ContentPage.Content>
 </ContentPage>

@@ -7,6 +7,12 @@ vistassecuridoor.droid.SplashActivity;crc649c3cd105dc69ff13.SplashActivity
 Microcharts.Droid.ChartView, Microcharts.Droid;crc64e9f97cf19b8286a9.ChartView
 Microcharts.Droid.ChartView;crc64e9f97cf19b8286a9.ChartView
 microcharts.droid.ChartView;crc64e9f97cf19b8286a9.ChartView
+Rg.Plugins.Popup.Droid.Renderers.PopupPageRenderer, Rg.Plugins.Popup;crc643dd37f507f3d9710.PopupPageRenderer
+Rg.Plugins.Popup.Droid.Renderers.PopupPageRenderer;crc643dd37f507f3d9710.PopupPageRenderer
+rg.plugins.popup.droid.renderers.PopupPageRenderer;crc643dd37f507f3d9710.PopupPageRenderer
+Rg.Plugins.Popup.Droid.Gestures.RgGestureDetectorListener, Rg.Plugins.Popup;crc64fdbeeba101bd56dc.RgGestureDetectorListener
+Rg.Plugins.Popup.Droid.Gestures.RgGestureDetectorListener;crc64fdbeeba101bd56dc.RgGestureDetectorListener
+rg.plugins.popup.droid.gestures.RgGestureDetectorListener;crc64fdbeeba101bd56dc.RgGestureDetectorListener
 SkiaSharp.Views.Android.GLTextureView, SkiaSharp.Views.Android;crc648e35430423bd4943.GLTextureView
 SkiaSharp.Views.Android.GLTextureView;crc648e35430423bd4943.GLTextureView
 skiasharp.views.android.GLTextureView;crc648e35430423bd4943.GLTextureView

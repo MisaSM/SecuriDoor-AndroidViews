@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Rg.Plugins.Popup.Extensions;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
@@ -8,12 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using VistasSecuriDoor.Data;
 using VistasSecuriDoor.Models;
+using VistasSecuriDoor.Views;
 using Xamarin.Forms;
 
 namespace VistasSecuriDoor.ViewModels
 {
     public class usersManagementViewModel : BaseViewModel {
-        string _title = "Control de usuarios";
+        string _title = "Gestión de invitados";
         public ObservableCollection<UsersModel> _usersList;
 
         public usersManagementViewModel(INavigation navigation) {
@@ -39,6 +41,7 @@ namespace VistasSecuriDoor.ViewModels
                 Debug.WriteLine($"{user.Name} {user.userName} {user.Id}");
             }
         }   
+
 
     }
 }
