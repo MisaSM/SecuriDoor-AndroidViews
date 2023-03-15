@@ -27,15 +27,18 @@ namespace VistasSecuriDoor.Views
                 Name = guest_name.Text,
                 userName = guest_user.Text,
                 Password = guest_pwd.Text,
-                IdRol = "640ee55a7027f674e8df3772"
+                IdRol = new string[] { "640ee55a7027f674e8df3772" }
             };
 
             try
             {
+                Debug.WriteLine($"{user.Name} {user.userName} {user.Password} {user.IdRol}");
                 Uri RequestUri = new Uri("https://securidoor-web-api.onrender.com/api/guest");
                 var client = new HttpClient();
                 var json = JsonConvert.SerializeObject(user);
                 var contentJson = new StringContent(json, Encoding.UTF8, "application/json");
+                var jsonString = await contentJson.ReadAsStringAsync();
+                Debug.WriteLine(jsonString);
                 var response = await client.PostAsync(RequestUri, contentJson);
                 if (response.StatusCode == System.Net.HttpStatusCode.OK)
                 {

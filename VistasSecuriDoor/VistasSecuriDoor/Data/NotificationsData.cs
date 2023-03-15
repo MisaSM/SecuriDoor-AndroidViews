@@ -16,6 +16,7 @@ namespace VistasSecuriDoor.Data
             {
                 new NotificationsModel()
                 {
+                    NotificationId = 1,
                     NotificationTitle = "Oficina",
                     Notification = "Se detectó un indicio de forcejeo",
                     DateNotification = DateTime.Now,
@@ -23,6 +24,7 @@ namespace VistasSecuriDoor.Data
                 },
                 new NotificationsModel()
                 {
+                    NotificationId = 2,
                     NotificationTitle = "Escuela",
                     Notification = "Se detectó una entrada forzada",
                     DateNotification = DateTime.Parse("2/1/2023"),
@@ -30,6 +32,7 @@ namespace VistasSecuriDoor.Data
                 },
                 new NotificationsModel()
                 {
+                    NotificationId = 3,
                     NotificationTitle = "Hola",
                     Notification = "Se detectó un indicio de forcejeo",
                     DateNotification = DateTime.Now,
@@ -37,6 +40,7 @@ namespace VistasSecuriDoor.Data
                 },
                 new NotificationsModel()
                 {
+                    NotificationId = 4,
                     NotificationTitle = "Adios",
                     Notification = "Se detectó una entrada forzada",
                     DateNotification = DateTime.Parse("2/1/2023"),
@@ -44,6 +48,7 @@ namespace VistasSecuriDoor.Data
                 },
                 new NotificationsModel()
                 {
+                    NotificationId = 5,
                     NotificationTitle = "Golpe",
                     Notification = "Se detectó una entrada forzada",
                     DateNotification = DateTime.Parse("2/1/2023"),
@@ -51,6 +56,7 @@ namespace VistasSecuriDoor.Data
                 },
                 new NotificationsModel()
                 {
+                    NotificationId = 6,
                     NotificationTitle = "Golpe 2!",
                     Notification = "Se detectó una entrada forzada",
                     DateNotification = DateTime.Parse("2/1/2023"),

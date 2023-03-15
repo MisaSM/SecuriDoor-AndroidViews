@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Text;
+using System.Windows.Input;
 using VistasSecuriDoor.Models;
 using Xamarin.Forms;
 
@@ -46,6 +49,14 @@ namespace VistasSecuriDoor.ViewModels
             lastNotifs = new ObservableCollection<NotificationsModel>(notificationsList.Skip(Math.Max(0, notificationsList.Count - 5)));
         }
 
+        public ICommand DeleteCommand => new Command<int>((notificationId) => 
+        {
+            var notifToRemove = notificationsList.FirstOrDefault(n => n.NotificationId == notificationId);
+            if (notifToRemove != null) 
+            {
+                notificationsList.Remove(notifToRemove);
+            }
+        });
 
     }
 }

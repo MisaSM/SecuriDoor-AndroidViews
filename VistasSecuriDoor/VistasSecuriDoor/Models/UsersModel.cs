@@ -7,8 +7,8 @@ namespace VistasSecuriDoor.Models
 {
     public class UsersModel {
         //change the properties to the according BD model dammit!!!!
-        [JsonProperty("_id")]
-        public string Id { get; set; }
+        //[JsonProperty("_id")]
+        //public string Id { get; set; }
 
         [JsonProperty("guest_name")]
         public string Name { get; set; }
@@ -19,6 +19,6 @@ namespace VistasSecuriDoor.Models
         public string Password { get; set; }
         
         [JsonProperty("owner_id")]
-        public string IdRol { get; set; }
+        public string[] IdRol { get; set; }
     }
 }

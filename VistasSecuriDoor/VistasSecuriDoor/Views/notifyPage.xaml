@@ -9,7 +9,7 @@
         <StackLayout>
             <StackLayout Padding="10">
 
-                <CollectionView ItemsSource="{Binding lastNotifs}" x:Name="notificationsList">
+                <CollectionView ItemsSource="{Binding notificationsList}" x:Name="notificationsList">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
 
@@ -19,7 +19,10 @@
                                     <SwipeView.RightItems>
                                         <SwipeItems>
                                             <SwipeItem Text="Eliminar"
-                                                           BackgroundColor="Red"/>
+                                                           BackgroundColor="Red"
+                                                       Command="{Binding Source={x:Reference notificationsList},
+                                                Path=BindingContext.DeleteCommand}"
+                                                CommandParameter="{Binding NotificationId}"/>
                                         </SwipeItems>
                                     </SwipeView.RightItems>
 
@@ -36,6 +39,7 @@
                                                 <Label Text="{Binding NotificationTitle}" 
                                                        FontSize="18"
                                                        FontAttributes="Bold"/>
+                                                <Label Text="{Binding NotificationId}"/>
                                             </StackLayout>
                                             <StackLayout Grid.Row="0" Grid.Column="2">
 
