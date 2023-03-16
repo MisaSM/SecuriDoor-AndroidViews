@@ -16,12 +16,24 @@
                     CornerRadius="5"
                     Clicked="OpenPopup"/>
 
+            <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand">
+                <ActivityIndicator VerticalOptions="CenterAndExpand" IsRunning="{Binding IsLoading}"
+                                           IsVisible="{Binding SpinnerVisible}"/>
+            </StackLayout>
+            
+            
+            
             <CollectionView ItemsSource="{Binding Users}" x:Name="_usersList">
                 <CollectionView.ItemTemplate>
 
 
                     <DataTemplate>
+
+
+
                         <Frame CornerRadius="5" HasShadow="True" BorderColor="LightGray" Margin="0,0,10,0">
+
+
                             <StackLayout>
                                 <StackLayout.Resources>
                                     <Style TargetType="Label">
@@ -58,8 +70,6 @@
                                 FontSize="Large"/>
 
                                 </StackLayout>
-
-
                             </StackLayout>
                         </Frame>
                     </DataTemplate>

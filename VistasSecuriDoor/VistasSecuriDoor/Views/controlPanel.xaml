@@ -6,6 +6,12 @@
              Title="{Binding Title}">
     <ContentPage.Content>
         <StackLayout BindableLayout.ItemsSource="{Binding Groups}">
+
+            <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand">
+                <ActivityIndicator VerticalOptions="CenterAndExpand" IsRunning="{Binding IsLoading}"
+                                           IsVisible="{Binding SpinnerVisible}"/>
+            </StackLayout>
+
             <StackLayout.Resources>
                 <Style TargetType="Label">
                     <Setter Property="TextColor" Value="Black"/>

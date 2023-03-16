@@ -14,6 +14,8 @@ namespace VistasSecuriDoor.ViewModels
     {
         #region Variables
         string _title = "Control de puertas";
+        bool _isLoading = false;
+        bool _spinnerVisible = false;
         public ObservableCollection<DoorsModel> _doorsList;
         public ObservableCollection<DoorGroupModel> _doorGroups;
         #endregion
@@ -40,6 +42,17 @@ namespace VistasSecuriDoor.ViewModels
             set  { SetProperty(ref _doorGroups, value); }
         }
 
+        public bool IsLoading
+        {
+            get { return _isLoading; }
+            set { SetProperty(ref _isLoading, value); }
+        }
+
+        public bool SpinnerVisible
+        {
+            get { return _spinnerVisible; }
+            set { SetProperty(ref _spinnerVisible, value); }
+        }
 
 
         #endregion
@@ -50,7 +63,13 @@ namespace VistasSecuriDoor.ViewModels
 
         public async Task ShowGroups() 
         {
+            IsLoading = true;
+            SpinnerVisible = true;
+
+            await Task.Delay(2000);
             Groups = await Data.DoorsData.ShowGroups();
+            IsLoading = false;
+            SpinnerVisible = false;
         }
 
 
