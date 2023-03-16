@@ -1,4 +1,5 @@
 ﻿using Rg.Plugins.Popup.Extensions;
+using Rg.Plugins.Popup.Services;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -57,8 +58,12 @@ namespace VistasSecuriDoor.ViewModels
             Users = await UsersData.ShowUsers();
             IsLoading = false;
             SpinnerVisible = false;
-        }   
+        }
 
+        public ICommand ShowPopupCommand => new Command(async () =>
+        {
+            await PopupNavigation.Instance.PushAsync(new guestsPopup());
+        });
 
     }
 }

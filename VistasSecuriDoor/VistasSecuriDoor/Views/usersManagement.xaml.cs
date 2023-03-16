@@ -19,9 +19,5 @@ namespace VistasSecuriDoor.Views
             this.BindingContext = new usersManagementViewModel(Navigation);
         }
 
-        private void OpenPopup(object sender, EventArgs e)
-        {
-            Navigation.PushPopupAsync(new guestsPopup());
-        }
     }
 }

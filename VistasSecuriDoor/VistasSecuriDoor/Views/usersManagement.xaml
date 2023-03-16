@@ -14,7 +14,7 @@
                     HeightRequest="60" 
                     Text="Registrar invitado" 
                     CornerRadius="5"
-                    Clicked="OpenPopup"/>
+                    Command="{Binding ShowPopupCommand}"/>
 
             <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand">
                 <ActivityIndicator VerticalOptions="CenterAndExpand" IsRunning="{Binding IsLoading}"

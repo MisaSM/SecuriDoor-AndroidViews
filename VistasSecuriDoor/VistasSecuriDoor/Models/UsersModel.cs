@@ -6,12 +6,15 @@ using System.Text;
 namespace VistasSecuriDoor.Models
 {
     public class UsersModel {
-        //change the properties to the according BD model dammit!!!!
-        //[JsonProperty("_id")]
-        //public string Id { get; set; }
+        
+        [JsonProperty("_id")]
+        public string Id { get; set; }
 
         [JsonProperty("guest_name")]
         public string Name { get; set; }
+
+        [JsonProperty("guest_lastName")]
+        public string LastName { get; set; }
 
         [JsonProperty("guest_user")]
         public string userName { get; set; }
