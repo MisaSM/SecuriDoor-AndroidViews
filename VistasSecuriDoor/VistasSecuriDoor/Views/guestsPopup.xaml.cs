@@ -27,7 +27,7 @@ namespace VistasSecuriDoor.Views
                 Name = guest_name.Text,
                 userName = guest_user.Text,
                 Password = guest_pwd.Text,
-                IdRol = new string[] { "640ee55a7027f674e8df3772" }
+                IdRol = new string[] { "640ee57c7027f674e8df3774" }
             };
 
             try
@@ -40,6 +40,8 @@ namespace VistasSecuriDoor.Views
                 var jsonString = await contentJson.ReadAsStringAsync();
                 Debug.WriteLine(jsonString);
                 var response = await client.PostAsync(RequestUri, contentJson);
+                var responseContent = await response.Content.ReadAsStringAsync();
+                Debug.WriteLine(responseContent);
                 if (response.StatusCode == System.Net.HttpStatusCode.OK)
                 {
                     Debug.WriteLine($"Respuesta: {response.StatusCode}");
