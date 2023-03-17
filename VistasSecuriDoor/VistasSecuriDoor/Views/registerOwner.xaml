@@ -1,10 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
-             x:Class="VistasSecuriDoor.Views.LoginPage"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewmodels="clr-namespace:VistasSecuriDoor.ViewModels" x:DataType="viewmodels:registerViewModel"
+             x:Class="VistasSecuriDoor.Views.registerOwner"
              Shell.NavBarIsVisible="False"
              BackgroundColor="#08141c">
     <ContentPage.Content>
@@ -28,29 +25,35 @@
 
             <Frame BackgroundColor="#382c2c" CornerRadius="10">
                 <StackLayout Orientation="Vertical">
-                    <Label Text="Inicio de sesion"
+                    <Label Text="Registrar Cuenta"
                            HorizontalOptions="Center"
                            FontSize="24"
                            TextColor="White"
                            FontAttributes="Bold"/>
-                    <Label Text="Introduzca su nombre de usuario y contraseña"
+                    <Label Text="Introduzca los datos requeridos"
                            HorizontalOptions="Center"
                            FontSize="14"
                            TextColor="LightGray"
                            FontAttributes="Bold"/>
 
-                    <Entry PlaceholderColor="LightGray" TextColor="White" Placeholder="Nombre de usuario"/>
-                    <Entry IsPassword="True" PlaceholderColor="LightGray" TextColor="White" Placeholder="Contraseña"/>
+                    <Entry Text="{Binding OwnerName}" PlaceholderColor="LightGray" TextColor="White" Placeholder="Nombre(s)"/>
+                    <Entry Text="{Binding OwnerLName}" PlaceholderColor="LightGray" TextColor="White" Placeholder="Apellido(s)"/>
+                    <Entry Text="{Binding OwnerUser}" PlaceholderColor="LightGray" TextColor="White" Placeholder="Nombre de usuario"/>
+                    <Entry Text="{Binding OwnerEmail}" PlaceholderColor="LightGray" TextColor="White" Placeholder="Correo electrónico"/>
+                    <Entry Text="{Binding OwnerPwd}" IsPassword="True" PlaceholderColor="LightGray" TextColor="White" Placeholder="Contraseña"/>
 
-                    <Button Margin="0, 20, 0, 0" BackgroundColor="#382c2c" VerticalOptions="Center" Text="Iniciar sesión" Command="{Binding LoginCommand}"/>
-                    <Label Padding="0, 10" HorizontalOptions="Center" TextDecorations="Underline" TextColor="LightGray" Text="¿No tiene una cuenta? Registrese aquí">
+                    <Button Margin="0, 20, 0, 0" BackgroundColor="#382c2c" VerticalOptions="Center" Text="Registrarse"
+                            Command="{Binding PostOwnerCommand}"/>
+
+
+                    <Label Padding="0, 10" HorizontalOptions="Center" TextDecorations="Underline" TextColor="LightGray" Text="Ya tiene una cuenta? Inicie sesión aquí">
                         <Label.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding RegisterCommand}"/>
+                            <TapGestureRecognizer Command="{Binding ReturnToLoginCommand}"/>
                         </Label.GestureRecognizers>
                     </Label>
                 </StackLayout>
             </Frame>
-            
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

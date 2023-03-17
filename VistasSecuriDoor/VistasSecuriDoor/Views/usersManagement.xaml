@@ -67,7 +67,10 @@
 
                                     <Button BackgroundColor="red" Text="&#xf2ed;"
                                 FontFamily="{StaticResource FontAwesomeSolid}"
-                                FontSize="Large"/>
+                                FontSize="Large"
+                                            Command="{Binding Source={x:Reference _usersList},
+                                        Path=BindingContext.DeleteUserCommand}"
+                                            CommandParameter="{Binding Id}"/>
 
                                 </StackLayout>
                             </StackLayout>

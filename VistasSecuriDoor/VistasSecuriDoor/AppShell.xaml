@@ -4,7 +4,7 @@
        xmlns:local="clr-namespace:VistasSecuriDoor.Views"
        Title="VistasSecuriDoor"
        x:Class="VistasSecuriDoor.AppShell">
-
+    
     <!--
         The overall app visual hierarchy is defined here, along with navigation.
     
@@ -94,6 +94,9 @@
         FlyoutDisplayOptions="AsMultipleItems" will create a separate flyout item for each child element    
         https://docs.microsoft.com/dotnet/api/xamarin.forms.shellgroupitem.flyoutdisplayoptions?view=xamarin-forms
     -->
+
+    <ShellContent Route="registerOwner" ContentTemplate="{DataTemplate local:registerOwner}"/>
+
     <FlyoutItem Title="Dashboard" FlyoutIcon="dashbIcon.png">
         <ShellContent Route="dashboardPage" ContentTemplate="{DataTemplate local:dashboardPage}"/>
     </FlyoutItem>

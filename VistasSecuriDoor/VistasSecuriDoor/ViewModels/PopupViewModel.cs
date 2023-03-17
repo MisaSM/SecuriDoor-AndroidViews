@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Rg.Plugins.Popup.Services;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -7,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using VistasSecuriDoor.Models;
+using VistasSecuriDoor.Views;
 using Xamarin.Forms;
 
 namespace VistasSecuriDoor.ViewModels
@@ -19,31 +21,31 @@ namespace VistasSecuriDoor.ViewModels
         public string guest_pwd;
 
 
-        public string GuestName 
+        public string GuestName
         {
             get { return guest_name; }
             set { SetProperty(ref guest_name, value); }
         }
 
-        public string GuestLName 
+        public string GuestLName
         {
             get { return guest_lastname; }
             set { SetProperty(ref guest_lastname, value); }
         }
 
-        public string GuestUser 
+        public string GuestUser
         {
             get { return guest_user; }
             set { SetProperty(ref guest_user, value); }
         }
 
-        public string GuestPwd 
+        public string GuestPwd
         {
             get { return guest_pwd; }
-            set { SetProperty(ref guest_pwd, value);}
+            set { SetProperty(ref guest_pwd, value); }
         }
 
-        public PopupViewModel(INavigation navigation) 
+        public PopupViewModel(INavigation navigation)
         {
             Navigation = navigation;
         }
@@ -54,7 +56,7 @@ namespace VistasSecuriDoor.ViewModels
             {
                 Name = GuestName,
                 userName = GuestUser,
-                LastName= guest_lastname,
+                LastName = guest_lastname,
                 Password = GuestPwd,
                 IdRol = new string[] { "640ee57c7027f674e8df3774" }
             };
@@ -63,6 +65,11 @@ namespace VistasSecuriDoor.ViewModels
             {
                 Uri RequestUri = new Uri("https://securidoor-web-api.onrender.com/api/guest");
                 var client = new HttpClient();
+                if (string.IsNullOrEmpty(GuestName) || string.IsNullOrEmpty(GuestLName) || string.IsNullOrEmpty(GuestUser) || string.IsNullOrEmpty(GuestPwd))
+                {
+                    await Application.Current.MainPage.DisplayAlert("Error", "Por favor llene todos los campos", "OK");
+                    return;
+                }
                 var json = JsonConvert.SerializeObject(user);
                 var contentJson = new StringContent(json, Encoding.UTF8, "application/json");
                 var jsonString = await contentJson.ReadAsStringAsync();
@@ -87,6 +94,8 @@ namespace VistasSecuriDoor.ViewModels
             }
 
         }
+
+
 
         public ICommand PostDataCommand => new Command(async () => await postData());
 

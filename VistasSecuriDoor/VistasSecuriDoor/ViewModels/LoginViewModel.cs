@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Input;
 using VistasSecuriDoor.Views;
 using Xamarin.Forms;
 
@@ -13,6 +14,7 @@ namespace VistasSecuriDoor.ViewModels
         public LoginViewModel()
         {
             LoginCommand = new Command(OnLoginClicked);
+           
         }
 
         private async void OnLoginClicked(object obj)
@@ -20,5 +22,11 @@ namespace VistasSecuriDoor.ViewModels
             // Prefixing with `//` switches to a different navigation stack instead of pushing to the active one
             await Shell.Current.GoToAsync($"//{nameof(dashboardPage)}");
         }
+
+        public ICommand RegisterCommand => new Command(async () => 
+        {
+            await Shell.Current.GoToAsync("//registerOwner");
+        });
+
     }
 }

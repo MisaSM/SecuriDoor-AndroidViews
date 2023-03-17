@@ -10,7 +10,8 @@ namespace VistasSecuriDoor
     {
         public AppShell()
         {
-            InitializeComponent();      
+            InitializeComponent();
+            Routing.RegisterRoute(nameof(registerOwner), typeof(registerOwner));
         }
 
         private async void OnMenuItemClicked(object sender, EventArgs e)
