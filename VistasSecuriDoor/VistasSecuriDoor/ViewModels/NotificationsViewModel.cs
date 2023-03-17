@@ -15,7 +15,6 @@ namespace VistasSecuriDoor.ViewModels
     {
 
         public ObservableCollection<NotificationsModel> _notificationsList;
-        public ObservableCollection<NotificationsModel> _lastNotifs;
 
         public string _title { get; set; }
 
@@ -37,16 +36,11 @@ namespace VistasSecuriDoor.ViewModels
             get { return _notificationsList; }
             set { SetProperty(ref _notificationsList, value); }
         }
-        public ObservableCollection<NotificationsModel> lastNotifs
-        {
-            get { return _lastNotifs; }
-            set { SetProperty(ref _lastNotifs, value); }
-        }
+
 
         public void ShowNotification()
         {
             notificationsList = Data.NotificationsData.ShowNotification();
-            lastNotifs = new ObservableCollection<NotificationsModel>(notificationsList.Skip(Math.Max(0, notificationsList.Count - 5)));
         }
 
         public ICommand DeleteCommand => new Command<int>((notificationId) => 

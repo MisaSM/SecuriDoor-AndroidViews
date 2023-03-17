@@ -84,6 +84,7 @@ namespace VistasSecuriDoor.ViewModels
                 }
                 else
                 {
+                    await Application.Current.MainPage.DisplayAlert("Error", "Fallo al conectar a la base de datos", "OK");
                     Debug.WriteLine($"Server Error: {response.StatusCode} - {response.ReasonPhrase}");
                     Debug.WriteLine($"Respuesta: {response.StatusCode}");
                 }

@@ -96,7 +96,7 @@
     -->
 
     <ShellContent Route="registerOwner" ContentTemplate="{DataTemplate local:registerOwner}"/>
-
+    
     <FlyoutItem Title="Dashboard" FlyoutIcon="dashbIcon.png">
         <ShellContent Route="dashboardPage" ContentTemplate="{DataTemplate local:dashboardPage}"/>
     </FlyoutItem>

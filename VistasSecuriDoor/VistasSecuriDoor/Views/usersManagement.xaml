@@ -61,10 +61,17 @@
                                         </Style>
                                     </StackLayout.Resources>
 
+
+                                    <!--Button for editing users based on their ID! -->
                                     <Button BackgroundColor="#003a81" Text="&#xf14b;"
                                 FontFamily="{StaticResource FontAwesomeSolid}"
-                                FontSize="Large"/>
-
+                                FontSize="Large"
+                                            Command="{Binding Source={x:Reference _usersList},
+                                        Path=BindingContext.EditUserCommand}"
+                                            CommandParameter="{Binding Id}"/>
+        
+                                    
+                                    <!--Button for deleting users based on their ID! -->
                                     <Button BackgroundColor="red" Text="&#xf2ed;"
                                 FontFamily="{StaticResource FontAwesomeSolid}"
                                 FontSize="Large"

@@ -101,18 +101,16 @@ namespace VistasSecuriDoor.ViewModels
             
         });
 
-        //public ICommand EditUserCommand => new Command<string>(async (userId) => 
-        //{
-        //    var userToEdit = Users.FirstOrDefault(n => n.Id == userId);
-        //    if (userToEdit != null) 
-        //    {
-        //        await PopupNavigation.Instance.PushAsync(new guestsPopup());
-        //        GuestName = userToEdit.Name;
-        //        GuestLName = userToEdit.LastName;
-        //        GuestUser = userToEdit.userName;
-        //        GuestPwd = userToEdit.Password;
-        //    }
-        //});
+        public ICommand EditUserCommand => new Command<string>(async (userId) => 
+        {
+            
+            var userToEdit = Users.FirstOrDefault(n => n.Id == userId);
+            if (userToEdit != null) 
+            {
+                Debug.WriteLine($"{userToEdit.userName} {userToEdit.Id} {userToEdit.Name}");
+                await PopupNavigation.Instance.PushAsync(new editGuestPopup());
+            }
+        });
 
         public ICommand ShowPopupCommand => new Command(async () =>
         {

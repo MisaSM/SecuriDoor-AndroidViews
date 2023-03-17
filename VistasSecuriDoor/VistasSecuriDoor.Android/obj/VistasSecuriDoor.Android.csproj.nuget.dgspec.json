@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Test\\SecuriDoor-AndroidViews\\VistasSecuriDoor\\VistasSecuriDoor.Android\\VistasSecuriDoor.Android.csproj": {}
+    "C:\\Users\\cd10\\Desktop\\SecuriDoor-AndroidViews\\VistasSecuriDoor\\VistasSecuriDoor.Android\\VistasSecuriDoor.Android.csproj": {}
   },
   "projects": {
-    "D:\\Test\\SecuriDoor-AndroidViews\\VistasSecuriDoor\\VistasSecuriDoor.Android\\VistasSecuriDoor.Android.csproj": {
+    "C:\\Users\\cd10\\Desktop\\SecuriDoor-AndroidViews\\VistasSecuriDoor\\VistasSecuriDoor.Android\\VistasSecuriDoor.Android.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Test\\SecuriDoor-AndroidViews\\VistasSecuriDoor\\VistasSecuriDoor.Android\\VistasSecuriDoor.Android.csproj",
+        "projectUniqueName": "C:\\Users\\cd10\\Desktop\\SecuriDoor-AndroidViews\\VistasSecuriDoor\\VistasSecuriDoor.Android\\VistasSecuriDoor.Android.csproj",
         "projectName": "VistasSecuriDoor.Android",
-        "projectPath": "D:\\Test\\SecuriDoor-AndroidViews\\VistasSecuriDoor\\VistasSecuriDoor.Android\\VistasSecuriDoor.Android.csproj",
-        "packagesPath": "C:\\Users\\Anemone\\.nuget\\packages\\",
-        "outputPath": "D:\\Test\\SecuriDoor-AndroidViews\\VistasSecuriDoor\\VistasSecuriDoor.Android\\obj\\",
+        "projectPath": "C:\\Users\\cd10\\Desktop\\SecuriDoor-AndroidViews\\VistasSecuriDoor\\VistasSecuriDoor.Android\\VistasSecuriDoor.Android.csproj",
+        "packagesPath": "C:\\Users\\cd10\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\cd10\\Desktop\\SecuriDoor-AndroidViews\\VistasSecuriDoor\\VistasSecuriDoor.Android\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
-          "D:\\Microsoft\\VSShared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Anemone\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\cd10\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -32,8 +32,8 @@
         "frameworks": {
           "monoandroid13.0": {
             "projectReferences": {
-              "D:\\Test\\SecuriDoor-AndroidViews\\VistasSecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor.csproj": {
-                "projectPath": "D:\\Test\\SecuriDoor-AndroidViews\\VistasSecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor.csproj"
+              "C:\\Users\\cd10\\Desktop\\SecuriDoor-AndroidViews\\VistasSecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor.csproj": {
+                "projectPath": "C:\\Users\\cd10\\Desktop\\SecuriDoor-AndroidViews\\VistasSecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor.csproj"
               }
             }
           }
@@ -74,20 +74,20 @@
         }
       }
     },
-    "D:\\Test\\SecuriDoor-AndroidViews\\VistasSecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor.csproj": {
+    "C:\\Users\\cd10\\Desktop\\SecuriDoor-AndroidViews\\VistasSecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Test\\SecuriDoor-AndroidViews\\VistasSecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor.csproj",
+        "projectUniqueName": "C:\\Users\\cd10\\Desktop\\SecuriDoor-AndroidViews\\VistasSecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor.csproj",
         "projectName": "VistasSecuriDoor",
-        "projectPath": "D:\\Test\\SecuriDoor-AndroidViews\\VistasSecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor.csproj",
-        "packagesPath": "C:\\Users\\Anemone\\.nuget\\packages\\",
-        "outputPath": "D:\\Test\\SecuriDoor-AndroidViews\\VistasSecuriDoor\\VistasSecuriDoor\\obj\\",
+        "projectPath": "C:\\Users\\cd10\\Desktop\\SecuriDoor-AndroidViews\\VistasSecuriDoor\\VistasSecuriDoor\\VistasSecuriDoor.csproj",
+        "packagesPath": "C:\\Users\\cd10\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\cd10\\Desktop\\SecuriDoor-AndroidViews\\VistasSecuriDoor\\VistasSecuriDoor\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\Microsoft\\VSShared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Anemone\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\cd10\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
