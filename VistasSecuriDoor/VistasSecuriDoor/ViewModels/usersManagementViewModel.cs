@@ -103,12 +103,11 @@ namespace VistasSecuriDoor.ViewModels
 
         public ICommand EditUserCommand => new Command<string>(async (userId) => 
         {
-            
             var userToEdit = Users.FirstOrDefault(n => n.Id == userId);
             if (userToEdit != null) 
             {
-                Debug.WriteLine($"{userToEdit.userName} {userToEdit.Id} {userToEdit.Name}");
-                await PopupNavigation.Instance.PushAsync(new editGuestPopup());
+                var editViewModel = new editViewModel(Navigation, userToEdit);
+                await PopupNavigation.PushAsync(new editGuestPopup() { BindingContext = editViewModel });
             }
         });
 

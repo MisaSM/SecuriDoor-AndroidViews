@@ -15,7 +15,6 @@ namespace VistasSecuriDoor.Views
         public editGuestPopup()
         {
             InitializeComponent();
-            this.BindingContext = new editViewModel(Navigation);
         }
     }
 }

@@ -34,10 +34,10 @@
                            FontAttributes="Bold"/>
 
 
-                <Entry Text="{Binding GuestUser}" Placeholder="Nombre de usuario"/>
-                <Entry Text="{Binding GuestName}" Placeholder="Nombre"/>
-                <Entry Text="{Binding GuestLName}" Placeholder="Apellido(s)"/>
-                <Entry Text="{Binding GuestPwd}" IsPassword="True" Placeholder="Contraseña"/>
+                <Entry Text="{Binding guestEditUser}" Placeholder="Nombre de usuario"/>
+                <Entry Text="{Binding guestEditName}" Placeholder="Nombre"/>
+                <Entry Text="{Binding guestEditLName}" Placeholder="Apellido(s)"/>
+                <Entry Text="{Binding guestEditPwd}" IsPassword="True" Placeholder="Contraseña"/>
 
                 <Button Margin="0, 20, 0, 0" 
                     BackgroundColor="#382c2c" 

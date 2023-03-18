@@ -149,3 +149,4 @@ C:\Users\cd10\Desktop\SecuriDoor-AndroidViews\VistasSecuriDoor\VistasSecuriDoor\
 C:\Users\cd10\Desktop\SecuriDoor-AndroidViews\VistasSecuriDoor\VistasSecuriDoor\obj\Debug\netstandard2.0\VistasSecuriDoor.pdb
 C:\Users\cd10\Desktop\SecuriDoor-AndroidViews\VistasSecuriDoor\VistasSecuriDoor\obj\Debug\netstandard2.0\ref\VistasSecuriDoor.dll
 C:\Users\cd10\Desktop\SecuriDoor-AndroidViews\VistasSecuriDoor\VistasSecuriDoor\obj\Debug\netstandard2.0\Views\editGuestPopup.xaml.g.cs
+D:\Test\SecuriDoor-AndroidViews\VistasSecuriDoor\VistasSecuriDoor\obj\Debug\netstandard2.0\Views\editGuestPopup.xaml.g.cs
