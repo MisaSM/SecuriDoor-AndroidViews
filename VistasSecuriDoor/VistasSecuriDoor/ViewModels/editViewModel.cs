@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -72,16 +73,14 @@ namespace VistasSecuriDoor.ViewModels
 
         public ICommand EditUserCommand => new Command(async () =>
         {
-            Debug.WriteLine($"{guestEditName} {guestEditUser} {guestEditId}");
-            Uri RequestUri = new Uri($"https://securidoor-web-api.onrender.com/api/guest/{guestEditId}");
-            var client = new HttpClient();
+            
             if (string.IsNullOrEmpty(guestEditName) || string.IsNullOrEmpty(guestEditLName) || string.IsNullOrEmpty(guestEditUser) || string.IsNullOrEmpty(guestEditPwd))
             {
                 await Application.Current.MainPage.DisplayAlert("Error", "Por favor llene todos los campos", "OK");
                 return;
             }
 
-            UsersModel editUser = new UsersModel
+            var editUser = new UsersModel
             {
                 Id = guestEditId,
                 Name = guestEditName,
@@ -90,30 +89,20 @@ namespace VistasSecuriDoor.ViewModels
                 Password = guestEditPwd
             };
 
-            var json = JsonConvert.SerializeObject(editUser);
-            var contentJson = new StringContent(json, Encoding.UTF8, "application/json");
-            var jsonString = await contentJson.ReadAsStringAsync();
+            var client = new HttpClient();
+            var contentJson = new StringContent(JsonConvert.SerializeObject(editUser), Encoding.UTF8, "application/json");
 
-            Debug.WriteLine($"{editUser.Name} {editUser.userName}");
-        
-            
-            var response = await client.PutAsync(RequestUri, contentJson);
+            var response = await client.PutAsync($"https://securidoor-web-api.onrender.com/api/guest/{guestEditId}", contentJson);
 
-            Debug.WriteLine(await contentJson.ReadAsStringAsync());
-            Debug.WriteLine($"Server Error: {response.StatusCode} - {response.ReasonPhrase}");
-
-            if (response.StatusCode == System.Net.HttpStatusCode.OK)
+            if (response.StatusCode == HttpStatusCode.OK)
             {
-                Debug.WriteLine($"Respuesta: {response.StatusCode}");
                 await Application.Current.MainPage.DisplayAlert("", "Informacion de invitado editada correctamente", "OK");
             }
             else
             {
                 await Application.Current.MainPage.DisplayAlert("Error", "Fallo al conectar a la base de datos", "OK");
                 Debug.WriteLine($"Server Error: {response.StatusCode} - {response.ReasonPhrase}");
-                Debug.WriteLine($"Respuesta: {response.StatusCode}");
             }
-
         });
     }
 }

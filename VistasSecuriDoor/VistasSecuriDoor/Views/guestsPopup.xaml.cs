@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
@@ -16,10 +17,10 @@ namespace VistasSecuriDoor.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class guestsPopup : Rg.Plugins.Popup.Pages.PopupPage
     {
-        public guestsPopup()
+        public guestsPopup(usersManagementViewModel uservm)
         {
             InitializeComponent();
-            this.BindingContext = new PopupViewModel(Navigation);
+            this.BindingContext = new PopupViewModel(Navigation, uservm);
         }
     }
 }

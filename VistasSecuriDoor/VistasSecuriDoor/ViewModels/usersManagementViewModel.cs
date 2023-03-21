@@ -58,14 +58,7 @@ namespace VistasSecuriDoor.ViewModels
         public ObservableCollection<UsersModel> Users
         {
             get { return _usersList; }
-            set
-            {
-                if (_usersList != value)
-                {
-                    _usersList = value;
-                    OnPropertyChanged(nameof(Users));
-                }
-            }
+            set { SetProperty(ref _usersList, value); }
         }
 
         public async Task ShowUsers()
@@ -80,25 +73,18 @@ namespace VistasSecuriDoor.ViewModels
 
         public ICommand DeleteUserCommand => new Command<string>(async (userId) =>
         {
-            bool answer = await Application.Current.MainPage.DisplayAlert("Advertencia", "Esta acción no puede ser revertida", "OK", "Cancelar");
-            
-            if (answer == true) 
+            bool shouldDelete = await Application.Current.MainPage.DisplayAlert("Advertencia", "Esta acción no se puede revertir", "OK", "Cancelar");
+
+            if (shouldDelete)
             {
                 var userToDelete = Users.FirstOrDefault(n => n.Id == userId);
                 if (userToDelete != null)
                 {
-                    Debug.WriteLine(userToDelete.Id, userToDelete.Name);
-                    Uri RequestUri = new Uri($"https://securidoor-web-api.onrender.com/api/guest/{userToDelete.Id}");
                     var client = new HttpClient();
-                    var response = await client.DeleteAsync(RequestUri);
+                    var response = await client.DeleteAsync($"https://securidoor-web-api.onrender.com/api/guest/{userToDelete.Id}");
                     Users.Remove(userToDelete);
-                    Debug.WriteLine(response.StatusCode);
                 }
-            } else if (answer == false) 
-            {
-                return;
             }
-            
         });
 
         public ICommand EditUserCommand => new Command<string>(async (userId) => 
@@ -107,20 +93,14 @@ namespace VistasSecuriDoor.ViewModels
             if (userToEdit != null) 
             {
                 var editViewModel = new editViewModel(Navigation, userToEdit);
-                await PopupNavigation.PushAsync(new editGuestPopup() { BindingContext = editViewModel });
+                await PopupNavigation.Instance.PushAsync(new editGuestPopup() { BindingContext = editViewModel });
             }
         });
 
         public ICommand ShowPopupCommand => new Command(async () =>
         {
-            await PopupNavigation.Instance.PushAsync(new guestsPopup());
+            await PopupNavigation.Instance.PushAsync(new guestsPopup(this));
         });
 
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
     }
 }

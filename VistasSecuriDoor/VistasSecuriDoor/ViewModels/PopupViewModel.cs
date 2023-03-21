@@ -2,11 +2,14 @@
 using Rg.Plugins.Popup.Services;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 using System.Diagnostics;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using VistasSecuriDoor.Data;
 using VistasSecuriDoor.Models;
 using VistasSecuriDoor.Views;
 using Xamarin.Forms;
@@ -15,6 +18,8 @@ namespace VistasSecuriDoor.ViewModels
 {
     public class PopupViewModel : BaseViewModel
     {
+        public usersManagementViewModel _uservm;
+
         public string guest_name;
         public string guest_lastname;
         public string guest_user;
@@ -45,13 +50,20 @@ namespace VistasSecuriDoor.ViewModels
             set { SetProperty(ref guest_pwd, value); }
         }
 
-        public PopupViewModel(INavigation navigation)
+        public PopupViewModel(INavigation navigation, usersManagementViewModel uservm)
         {
             Navigation = navigation;
+            _uservm = uservm;
         }
 
         public async Task postData()
         {
+            if (string.IsNullOrEmpty(GuestName) || string.IsNullOrEmpty(GuestLName) || string.IsNullOrEmpty(GuestUser) || string.IsNullOrEmpty(GuestPwd))
+            {
+                await Application.Current.MainPage.DisplayAlert("Error", "Por favor llene todos los campos", "OK");
+                return;
+            }
+
             UsersModel user = new UsersModel
             {
                 Name = GuestName,
@@ -63,39 +75,36 @@ namespace VistasSecuriDoor.ViewModels
 
             try
             {
-                Uri RequestUri = new Uri("https://securidoor-web-api.onrender.com/api/guest");
                 var client = new HttpClient();
-                if (string.IsNullOrEmpty(GuestName) || string.IsNullOrEmpty(GuestLName) || string.IsNullOrEmpty(GuestUser) || string.IsNullOrEmpty(GuestPwd))
-                {
-                    await Application.Current.MainPage.DisplayAlert("Error", "Por favor llene todos los campos", "OK");
-                    return;
-                }
                 var json = JsonConvert.SerializeObject(user);
                 var contentJson = new StringContent(json, Encoding.UTF8, "application/json");
-                var jsonString = await contentJson.ReadAsStringAsync();
-                Debug.WriteLine(jsonString);
-                var response = await client.PostAsync(RequestUri, contentJson);
-                var responseContent = await response.Content.ReadAsStringAsync();
-                Debug.WriteLine(responseContent);
+
+                var response = await client.PostAsync("https://securidoor-web-api.onrender.com/api/guest", contentJson);
+
                 if (response.StatusCode == System.Net.HttpStatusCode.OK)
                 {
-                    Debug.WriteLine($"Respuesta: {response.StatusCode}");
+
+
+                    _uservm.IsLoading = true;
+                    _uservm.SpinnerVisible = true;
+                    await Task.Delay(2000);
+                    _uservm.Users.Clear();
+                    _uservm.Users = await UsersData.ShowUsers();
+                    _uservm.IsLoading = false;
+                    _uservm.SpinnerVisible = false;
                     await Application.Current.MainPage.DisplayAlert("", "Se dio de alta correctamente al invitado", "OK");
+
                 }
                 else
                 {
                     await Application.Current.MainPage.DisplayAlert("Error", "Fallo al conectar a la base de datos", "OK");
-                    Debug.WriteLine($"Server Error: {response.StatusCode} - {response.ReasonPhrase}");
-                    Debug.WriteLine($"Respuesta: {response.StatusCode}");
                 }
             }
             catch (Exception ex)
             {
                 Debug.WriteLine($"Network Error: {ex.Message}");
             }
-
         }
-
 
 
         public ICommand PostDataCommand => new Command(async () => await postData());
