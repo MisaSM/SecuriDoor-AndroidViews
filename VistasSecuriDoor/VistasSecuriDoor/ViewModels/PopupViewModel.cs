@@ -70,7 +70,7 @@ namespace VistasSecuriDoor.ViewModels
                 userName = GuestUser,
                 LastName = guest_lastname,
                 Password = GuestPwd,
-                IdRol = new string[] { "640ee57c7027f674e8df3774" }
+                IdRol = "640ee55a7027f674e8df3772"
             };
 
             try
@@ -83,16 +83,14 @@ namespace VistasSecuriDoor.ViewModels
 
                 if (response.StatusCode == System.Net.HttpStatusCode.OK)
                 {
-
-
+                    await Application.Current.MainPage.DisplayAlert("", "Se dio de alta correctamente al invitado", "OK");
+                    _uservm.Users.Clear();
                     _uservm.IsLoading = true;
                     _uservm.SpinnerVisible = true;
                     await Task.Delay(2000);
-                    _uservm.Users.Clear();
                     _uservm.Users = await UsersData.ShowUsers();
                     _uservm.IsLoading = false;
                     _uservm.SpinnerVisible = false;
-                    await Application.Current.MainPage.DisplayAlert("", "Se dio de alta correctamente al invitado", "OK");
 
                 }
                 else

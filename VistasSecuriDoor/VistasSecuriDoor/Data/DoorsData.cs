@@ -19,31 +19,25 @@ namespace VistasSecuriDoor.Data
         {
             try
             {
-                using (var request = new HttpRequestMessage())
+                var client = new HttpClient();
+                var response = await client.GetAsync("https://securidoor-web-api.onrender.com/api/door");
+
+
+                var responseContent = await response.Content.ReadAsStringAsync();
+
+                
+                Debug.WriteLine($"Response status code: {response.StatusCode}");
+                Debug.WriteLine($"Response content: {responseContent}");
+
+                if (response.IsSuccessStatusCode)
                 {
-                    request.RequestUri = new Uri("http://www.securidoorapi.somee.com/api/doors");
-                    request.Method = HttpMethod.Get;
-
-                    using (var client = new HttpClient())
-                    {
-                        HttpResponseMessage response = await client.SendAsync(request).ConfigureAwait(false);
-
-                        switch (response.StatusCode)
-                        {
-                            case HttpStatusCode.OK:
-                                string content = await response.Content.ReadAsStringAsync();
-                                var result = JsonConvert.DeserializeObject<ObservableCollection<DoorsModel>>(content);
-                                return result;
-
-                            case HttpStatusCode.NotFound:
-                                Debug.WriteLine("Server Error: Not Found");
-                                return null;
-
-                            default:
-                                Debug.WriteLine($"Server Error: {response.StatusCode} - {response.ReasonPhrase}");
-                                return null;
-                        }
-                    }
+                    var content = await response.Content.ReadAsStringAsync();
+                    return JsonConvert.DeserializeObject<ObservableCollection<DoorsModel>>(content);
+                }
+                else
+                {
+                    Debug.WriteLine($"Server Error: {response.StatusCode} - {response.ReasonPhrase}");
+                    return null;
                 }
             }
             catch (Exception ex)
@@ -53,20 +47,20 @@ namespace VistasSecuriDoor.Data
             }
         }
 
-        public static async Task<ObservableCollection<DoorGroupModel>> ShowGroups()
-        {
-            var groups = await ShowDoors().ConfigureAwait(false);
+        //public static async Task<ObservableCollection<DoorGroupModel>> ShowGroups()
+        //{
+        //    var groups = await ShowDoors().ConfigureAwait(false);
 
-            var result = groups.GroupBy(d => d.DoorLocation);
+        //    var result = groups.GroupBy(d => d.DoorLocation);
 
-            var groupsList = result.Select(g => new DoorGroupModel
-            {
-                Location = g.Key,
-                GroupedDoors = new ObservableCollection<DoorsModel>(g)
-            });
+        //    var groupsList = result.Select(g => new DoorGroupModel
+        //    {
+        //        Location = g.Key,
+        //        GroupedDoors = new ObservableCollection<DoorsModel>(g)
+        //    });
 
-            return new ObservableCollection<DoorGroupModel>(groupsList);
-        }
+        //    return new ObservableCollection<DoorGroupModel>(groupsList);
+        //}
 
 
     }

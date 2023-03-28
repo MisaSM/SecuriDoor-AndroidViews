@@ -7,6 +7,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using VistasSecuriDoor.Data;
 using VistasSecuriDoor.Models;
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -22,6 +23,8 @@ namespace VistasSecuriDoor.ViewModels
         public string guestEdit_pwd;
 
         public UsersModel _user;
+
+        public usersManagementViewModel _uservm;
 
         public string guestEditId 
         {
@@ -60,7 +63,7 @@ namespace VistasSecuriDoor.ViewModels
         }
 
 
-        public editViewModel(INavigation navigation, UsersModel user)
+        public editViewModel(INavigation navigation, UsersModel user, usersManagementViewModel uservm)
         {
             Navigation = navigation;
             User = user;
@@ -68,7 +71,8 @@ namespace VistasSecuriDoor.ViewModels
             guestEditUser = User.userName;
             guestEditName = User.Name;
             guestEditLName = User.LastName;
-            guestEditPwd = User.Password;
+           // guestEditPwd = User.Password;
+            _uservm = uservm;
         }
 
         public ICommand EditUserCommand => new Command(async () =>
@@ -94,9 +98,21 @@ namespace VistasSecuriDoor.ViewModels
 
             var response = await client.PutAsync($"https://securidoor-web-api.onrender.com/api/guest/{guestEditId}", contentJson);
 
+            var responseContent = await response.Content.ReadAsStringAsync();
+            Debug.WriteLine($"{guestEditName} {guestEditUser} {guestEditId}");
+            Debug.WriteLine($"Response status code: {response.StatusCode}");
+            Debug.WriteLine($"Response content: {responseContent}");
+            Debug.WriteLine(await contentJson.ReadAsStringAsync());
             if (response.StatusCode == HttpStatusCode.OK)
             {
                 await Application.Current.MainPage.DisplayAlert("", "Informacion de invitado editada correctamente", "OK");
+                _uservm.Users.Clear();
+                _uservm.IsLoading = true;
+                _uservm.SpinnerVisible = true;
+                await Task.Delay(2000);
+                _uservm.Users = await UsersData.ShowUsers();
+                _uservm.IsLoading = false;
+                _uservm.SpinnerVisible = false;
             }
             else
             {

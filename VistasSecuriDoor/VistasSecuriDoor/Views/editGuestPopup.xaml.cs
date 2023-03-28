@@ -12,7 +12,7 @@ namespace VistasSecuriDoor.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class editGuestPopup : Rg.Plugins.Popup.Pages.PopupPage
     {
-        public editGuestPopup()
+        public editGuestPopup(usersManagementViewModel uservm)
         {
             InitializeComponent();
         }

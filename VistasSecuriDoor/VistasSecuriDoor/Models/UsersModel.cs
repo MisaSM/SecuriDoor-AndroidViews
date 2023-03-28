@@ -23,6 +23,6 @@ namespace VistasSecuriDoor.Models
         public string Password { get; set; }
         
         [JsonProperty("owner_id")]
-        public string[] IdRol { get; set; }
+        public string IdRol { get; set; }
     }
 }

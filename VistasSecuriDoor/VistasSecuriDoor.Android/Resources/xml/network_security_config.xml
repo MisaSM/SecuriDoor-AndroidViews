@@ -4,5 +4,6 @@
 	<domain-config cleartextTrafficPermitted="true">
 		<domain includeSubdomains="true">www.securidoorapi.somee.com</domain>
 		<domain includeSubdomains="true">www.securidoor.somee.com</domain>
-	</domain-config>
+		<domain includeSubdomains="true">localhost:80</domain>	
+</domain-config>
 </network-security-config>

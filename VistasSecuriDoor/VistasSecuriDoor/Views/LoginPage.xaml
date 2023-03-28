@@ -39,8 +39,10 @@
                            TextColor="LightGray"
                            FontAttributes="Bold"/>
 
-                    <Entry PlaceholderColor="LightGray" TextColor="White" Placeholder="Nombre de usuario"/>
-                    <Entry IsPassword="True" PlaceholderColor="LightGray" TextColor="White" Placeholder="Contraseña"/>
+                    <Entry PlaceholderColor="LightGray" TextColor="White" Placeholder="Nombre de usuario"
+                           Text="{Binding currentUserName}"/>
+                    <Entry IsPassword="True" PlaceholderColor="LightGray" TextColor="White" Placeholder="Contraseña"
+                           Text="{Binding currentPassword}"/>
 
                     <Button Margin="0, 20, 0, 0" BackgroundColor="#382c2c" VerticalOptions="Center" Text="Iniciar sesión" Command="{Binding LoginCommand}"/>
                     <Label Padding="0, 10" HorizontalOptions="Center" TextDecorations="Underline" TextColor="LightGray" Text="¿No tiene una cuenta? Registrese aquí">

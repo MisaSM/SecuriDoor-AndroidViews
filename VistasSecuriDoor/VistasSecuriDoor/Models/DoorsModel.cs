@@ -8,13 +8,21 @@ namespace VistasSecuriDoor.Models
 {
     public class DoorsModel : BaseViewModel {
 
-        [JsonProperty("door1")]
+        [JsonProperty("_id")]
+        public string DoorId { get; set; }
+
+        [JsonProperty("door_name")]
         public string DoorName { get; set; }
 
-        [JsonProperty("location")]
-        public string DoorLocation { get; set;}
+        [JsonProperty("room_id")]
+        public string[] DoorLocation { get; set;}
 
-        public bool DoorState { get; set; }
+        [JsonProperty("door_status")]
+        public string DoorState { get; set; }
+
+        
+        public int door_proximity { get; set; }
+
 
         public string _backgroundColor;
         public bool _buttonWasClicked;
