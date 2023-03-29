@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using VistasSecuriDoor.Data;
 using VistasSecuriDoor.Models;
 using VistasSecuriDoor.Views;
 using Xamarin.Forms;
@@ -21,12 +22,15 @@ namespace VistasSecuriDoor.ViewModels
         bool _spinnerVisible = false;
         public ObservableCollection<DoorsModel> _doorsList;
         public ObservableCollection<DoorGroupModel> _doorGroups;
+        public ObservableCollection<DoorsModel> _groupedDoors;
 
         public controlPanelViewModel _cpVM;
         #endregion
         #region Contructor
         public controlPanelViewModel(INavigation navigation) { 
-            ShowDoors();
+            //ShowDoors();
+            
+            ShowGroups();
         }
         #endregion
         #region Objetos
@@ -37,6 +41,12 @@ namespace VistasSecuriDoor.ViewModels
         public ObservableCollection<DoorsModel> Doors {
             get { return _doorsList; }
             set { SetProperty(ref _doorsList, value); }
+        }
+
+        public ObservableCollection<DoorsModel> GroupedDoors
+        {
+            get { return _groupedDoors; }
+            set { SetProperty(ref _groupedDoors, value); }
         }
 
         public ObservableCollection<DoorGroupModel> Groups 
@@ -61,27 +71,19 @@ namespace VistasSecuriDoor.ViewModels
         #endregion
         #region Procesos
         public async Task ShowDoors() {
+           Doors = await DoorsData.ShowDoors();
+        }
+
+        public async Task ShowGroups() 
+        {
             IsLoading = true;
             SpinnerVisible = true;
 
             await Task.Delay(2000);
-            Doors = await Data.DoorsData.ShowDoors();
+            Groups = await DoorsData.GroupDoors();
             IsLoading = false;
             SpinnerVisible = false;
-
-
         }
-
-        //public async Task ShowGroups() 
-        //{
-        //    IsLoading = true;
-        //    SpinnerVisible = true;
-
-        //    await Task.Delay(2000);
-        //    //Doors = await Data.DoorsData.ShowDoors();
-        //    IsLoading = false;
-        //    SpinnerVisible = false;
-        //}
 
 
 
@@ -112,7 +114,19 @@ namespace VistasSecuriDoor.ViewModels
                 var controlViewModel = new doorPopupViewModel(Navigation, doorToEdit, this);
                 await PopupNavigation.Instance.PushAsync(new doorPopup(this) {BindingContext =  controlViewModel});
             }
-        }); 
+        });
+
+
+        public ICommand ChangeDoorStatus => new Command<string>(async (doorId) =>
+        {
+            var doorToOpen = Doors.FirstOrDefault(n => n.DoorId == doorId);
+            if (doorToOpen != null)
+            {
+                doorToOpen.DoorState = doorToOpen.DoorState == "abierto" ? "cerrado" : "abierto";
+                doorToOpen.BackgroundColor = doorToOpen.BackgroundColor == "red" ? "green" : "red";
+            }
+            Debug.WriteLine(doorToOpen.DoorState);
+        });
 
         public ICommand ButtonCmd => new Command<DoorsModel>((p) => updateState(p));
         #endregion

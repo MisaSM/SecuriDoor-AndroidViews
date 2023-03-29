@@ -32,8 +32,6 @@
                            TextColor="White"
                            FontAttributes="Bold"/>
 
-            <Label Text="{Binding EditDoorName}"/>
-
             <Entry Text="{Binding EditDoorProx}" Placeholder="Distancia del Sensor"
                    Keyboard="Numeric"/>
 

@@ -35,5 +35,6 @@ namespace VistasSecuriDoor.Models
             get { return _buttonWasClicked; }
             set { SetProperty(ref _buttonWasClicked, value); }
         }
+
     }
 }

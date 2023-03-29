@@ -16,7 +16,6 @@ namespace VistasSecuriDoor.Views
     {
         public controlPanel()
         {
-            
             InitializeComponent();
             this.BindingContext = new controlPanelViewModel(Navigation);
         }
