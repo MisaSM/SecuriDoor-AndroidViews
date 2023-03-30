@@ -15,7 +15,7 @@ namespace VistasSecuriDoor.Models
         public string DoorName { get; set; }
 
         [JsonProperty("room_id")]
-        public string[] DoorLocation { get; set;}
+        public string DoorLocation { get; set;}
 
         [JsonProperty("door_status")]
         public string DoorState { get; set; }

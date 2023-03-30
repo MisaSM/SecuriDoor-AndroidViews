@@ -1,24 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:microcharts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
+             xmlns:microcharts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms" xmlns:viewmodels="clr-namespace:VistasSecuriDoor.ViewModels" x:DataType="viewmodels:LoginViewModel"
              x:Class="VistasSecuriDoor.Views.dashboardPage"
-             xmlns:vm="clr-namespace:VistasSecuriDoor.ViewModels"
              Visual="Material"
              Title="Dashboard">
 
-    <ContentPage.BindingContext>
+    <!--<ContentPage.BindingContext>
         <vm:DashboardViewModel/>
-    </ContentPage.BindingContext>
+    </ContentPage.BindingContext>-->
 
     <ContentPage.Content>
         <StackLayout>
             <Frame CornerRadius="5" HasShadow="True" BorderColor="Gray">
                 <StackLayout>
-
                     <microcharts:ChartView x:Name="chartView" HeightRequest="200"/>
-
-
+                    
                 </StackLayout>
             </Frame>
 

@@ -21,7 +21,7 @@ namespace VistasSecuriDoor.ViewModels
         public string _editDoorLocation;
         public int _editDoorProx;
         public string _editDoorId;
-        public string[] _doorRoomId;
+        public string _doorRoomId;
         public string _doorStatus;
 
         public int EditDoorProx 
@@ -51,7 +51,7 @@ namespace VistasSecuriDoor.ViewModels
             }
         }
 
-        public string[] EditDoorRoomId 
+        public string EditDoorRoomId 
         {
             get { return _doorRoomId; }
             set { SetProperty(ref _doorRoomId, value); }

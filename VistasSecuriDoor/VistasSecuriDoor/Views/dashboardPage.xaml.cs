@@ -19,7 +19,7 @@ namespace VistasSecuriDoor.Views
         public dashboardPage()
         {
             InitializeComponent();
-            this.BindingContext = new NotificationsViewModel(Navigation);
+            this.BindingContext = new LoginViewModel();
         }
 
         protected override void OnAppearing()

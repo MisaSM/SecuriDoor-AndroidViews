@@ -9,6 +9,8 @@ using System.Text;
 using System.Net;
 using System.Threading.Tasks;
 using VistasSecuriDoor.Models;
+using System.Net.Http.Headers;
+using Xamarin.Forms;
 
 namespace VistasSecuriDoor.Data
 {
@@ -18,7 +20,17 @@ namespace VistasSecuriDoor.Data
         {
             try
             {
+                string token = Application.Current.Properties["token"] as string;
+                //if (Application.Current.Properties.ContainsKey("token"))
+                //{
+                //    token = 
+
+                //    Debug.WriteLine($"Token adquirido! {token}");
+                //}
+
+
                 var client = new HttpClient();
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
                 var response = await client.GetAsync("https://securidoor-web-api.onrender.com/api/guest");
                 if (response.IsSuccessStatusCode)
                 {

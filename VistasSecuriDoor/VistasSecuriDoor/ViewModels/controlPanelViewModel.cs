@@ -1,9 +1,13 @@
-﻿using Rg.Plugins.Popup.Services;
+﻿using Newtonsoft.Json;
+using Rg.Plugins.Popup.Services;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -28,9 +32,9 @@ namespace VistasSecuriDoor.ViewModels
         #endregion
         #region Contructor
         public controlPanelViewModel(INavigation navigation) { 
-            //ShowDoors();
-            
-            ShowGroups();
+            ShowDoors();
+            Navigation = navigation;
+            //ShowGroups();
         }
         #endregion
         #region Objetos
@@ -71,19 +75,24 @@ namespace VistasSecuriDoor.ViewModels
         #endregion
         #region Procesos
         public async Task ShowDoors() {
-           Doors = await DoorsData.ShowDoors();
-        }
-
-        public async Task ShowGroups() 
-        {
             IsLoading = true;
             SpinnerVisible = true;
-
             await Task.Delay(2000);
-            Groups = await DoorsData.GroupDoors();
+           Doors = await DoorsData.ShowDoors();
             IsLoading = false;
             SpinnerVisible = false;
         }
+
+        //public async Task ShowGroups() 
+        //{
+        //    IsLoading = true;
+        //    SpinnerVisible = true;
+
+        //    await Task.Delay(2000);
+        //    Groups = await DoorsData.GroupDoors();
+        //    IsLoading = false;
+        //    SpinnerVisible = false;
+        //}
 
 
 
@@ -126,6 +135,19 @@ namespace VistasSecuriDoor.ViewModels
                 doorToOpen.BackgroundColor = doorToOpen.BackgroundColor == "red" ? "green" : "red";
             }
             Debug.WriteLine(doorToOpen.DoorState);
+
+
+            DoorsModel selectedDoor = new DoorsModel 
+            {
+                DoorState= doorToOpen.DoorState,
+                DoorId=doorToOpen.DoorId,
+            };
+
+            var client = new HttpClient();
+            var contentJson = new StringContent(JsonConvert.SerializeObject(selectedDoor), Encoding.UTF8, "application/json");
+            var response = await client.PutAsync($"https://securidoor-web-api.onrender.com/api/door/{selectedDoor.DoorId}", contentJson);
+
+            var responseContent = await response.Content.ReadAsStringAsync();
         });
 
         public ICommand ButtonCmd => new Command<DoorsModel>((p) => updateState(p));

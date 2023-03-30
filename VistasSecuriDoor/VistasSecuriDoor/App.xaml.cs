@@ -1,4 +1,9 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
+using System.Diagnostics;
+using System.Net.Http.Headers;
+using System.Net.Http;
+using VistasSecuriDoor.Data;
 using VistasSecuriDoor.Services;
 using VistasSecuriDoor.Views;
 using Xamarin.Forms;
@@ -19,10 +24,19 @@ namespace VistasSecuriDoor
 
         protected override void OnStart()
         {
+            //Debug.WriteLine(Application.Current.Properties["token"]);
+            //clearCache();
         }
 
         protected override void OnSleep()
         {
+            clearCache();
+        }
+
+        public void clearCache() 
+        {
+            Application.Current.Properties["token"] = "";
+            Application.Current.SavePropertiesAsync();
         }
 
         protected override void OnResume()

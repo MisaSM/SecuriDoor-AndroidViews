@@ -9,11 +9,13 @@ namespace VistasSecuriDoor.ViewModels
     public class DashboardViewModel : BaseViewModel {
         string pageSource;
 
+
         public string PageSource 
         {
             get { return pageSource; }
             set { SetProperty(ref pageSource, value); }
         }
+
 
 
         public DashboardViewModel() {

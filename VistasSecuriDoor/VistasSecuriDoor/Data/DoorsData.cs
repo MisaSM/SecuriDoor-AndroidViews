@@ -47,22 +47,22 @@ namespace VistasSecuriDoor.Data
             }
         }
 
-        public static async Task<ObservableCollection<DoorGroupModel>> GroupDoors()
-        {
-            var doors = await ShowDoors().ConfigureAwait(false);
-            var groups = await GroupData.ShowGroups().ConfigureAwait(false);
+        //public static async Task<ObservableCollection<DoorGroupModel>> GroupDoors()
+        //{
+        //    var doors = await ShowDoors().ConfigureAwait(false);
+        //    var groups = await GroupData.ShowGroups().ConfigureAwait(false);
 
-            var query = from door in doors
-                        join room in groups on door.DoorLocation[0] equals room.LocationId[0]
-                        group door by room.Location into g
-                        select new DoorGroupModel
-                        {
-                            Location = g.Key,
-                            GroupedDoors = new ObservableCollection<DoorsModel>(g)
-                        };
+        //    var query = from door in doors
+        //                join room in groups on door.DoorLocation[0] equals room.LocationId[0]
+        //                group door by room.Location into g
+        //                select new DoorGroupModel
+        //                {
+        //                    Location = g.Key,
+        //                    GroupedDoors = new ObservableCollection<DoorsModel>(g)
+        //                };
 
-            return new ObservableCollection<DoorGroupModel>(query);
-        }
+        //    return new ObservableCollection<DoorGroupModel>(query);
+        //}
 
 
     }

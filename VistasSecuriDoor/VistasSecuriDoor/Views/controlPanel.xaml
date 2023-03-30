@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:extensions="http://xamarin.com/schemas/2020/toolkit"
-             
              x:Class="VistasSecuriDoor.Views.controlPanel"
              Visual="Material"
              Title="{Binding Title}">
@@ -22,10 +21,72 @@
                                            IsVisible="{Binding SpinnerVisible}"/>
             </StackLayout>
 
-            
-            
-            
-            <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand" BindableLayout.ItemsSource="{Binding Groups}">
+            <StackLayout>
+
+                <CollectionView ItemsSource="{Binding Doors, Mode=TwoWay}" x:Name="_doorList">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame CornerRadius="5" HasShadow="True" BorderColor="LightGray">
+                                <StackLayout>
+
+                                    <StackLayout.Resources>
+                                        <Style TargetType="Label">
+                                            <Setter Property="TextColor" Value="Black"/>
+                                            <Setter Property="FontSize" Value="20"/>
+                                        </Style>
+                                    </StackLayout.Resources>
+
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="Cerradura: "/>
+                                        <Label Text="{Binding DoorName}"/>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="Distancia configurada: "/>
+                                        <Label Text="{Binding door_proximity}"/>
+                                    </StackLayout>
+
+
+
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="20">
+
+                                        <StackLayout.Resources>
+                                            <Style TargetType="ImageButton">
+                                                <Setter Property="CornerRadius" Value="15"/>
+                                                <Setter Property="WidthRequest" Value="50"/>
+                                            </Style>
+                                        </StackLayout.Resources>
+
+                                        <Button BackgroundColor="#003a81" Text="&#xf14b;"
+                                            FontFamily="{StaticResource FontAwesomeSolid}"
+                                            FontSize="Large"
+                                                Command="{Binding Source={x:Reference _doorList},
+                                            Path=BindingContext.EditDoorProx}"
+                                                CommandParameter="{Binding DoorId}"
+                                                />
+
+                                        <Button BackgroundColor="red" Text="&#xf2ed;"
+                                                    FontFamily="{StaticResource FontAwesomeSolid}"
+                                                    FontSize="Large"/>
+
+                                    </StackLayout>
+                                    <Button BackgroundColor="{Binding BackgroundColor}" Text="&#xf011;"
+                                                    FontFamily="{StaticResource FontAwesomeSolid}"
+                                                    CornerRadius="50"    
+                                                    WidthRequest="50"
+                                                    Command="{Binding Source={x:Reference _doorList},
+                                        Path=BindingContext.ChangeDoorStatus}"
+                                            CommandParameter="{Binding DoorId}"/>
+
+                                </StackLayout>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+
+            </StackLayout>
+
+            <!--<StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand" BindableLayout.ItemsSource="{Binding Groups}">
 
                 <BindableLayout.ItemTemplate>
                     <DataTemplate>
@@ -43,66 +104,6 @@
                             <extensions:Expander.ContentTemplate>
                                 <DataTemplate>
 
-
-                                    <CollectionView ItemsSource="{Binding GroupedDoors}" x:Name="_bundledDoors">
-                                        <CollectionView.ItemTemplate>
-                                            <DataTemplate>
-                                                <Frame CornerRadius="5" HasShadow="True" BorderColor="LightGray">
-                                                    <StackLayout>
-
-                                                        <StackLayout.Resources>
-                                                            <Style TargetType="Label">
-                                                                <Setter Property="TextColor" Value="Black"/>
-                                                                <Setter Property="FontSize" Value="20"/>
-                                                            </Style>
-                                                        </StackLayout.Resources>
-
-                                                        <StackLayout Orientation="Horizontal">
-                                                            <Label Text="Cerradura: "/>
-                                                            <Label Text="{Binding DoorName}"/>
-                                                        </StackLayout>
-
-                                                        <StackLayout Orientation="Horizontal">
-                                                            <Label Text="Distancia configurada: "/>
-                                                            <Label Text="{Binding door_proximity}"/>
-                                                        </StackLayout>
-
-
-
-                                                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="20">
-
-                                                            <StackLayout.Resources>
-                                                                <Style TargetType="ImageButton">
-                                                                    <Setter Property="CornerRadius" Value="15"/>
-                                                                    <Setter Property="WidthRequest" Value="50"/>
-                                                                </Style>
-                                                            </StackLayout.Resources>
-
-                                                            <Button BackgroundColor="#003a81" Text="&#xf14b;"
-                                            FontFamily="{StaticResource FontAwesomeSolid}"
-                                            FontSize="Large"
-                                            Command="{Binding Source={x:Reference _bundledDoors}, Path=BindingContext.EditDoorProximity}" 
-                                                       CommandParameter="{Binding DoorId}" />
-
-                                                            <Button BackgroundColor="red" Text="&#xf2ed;"
-                                                    FontFamily="{StaticResource FontAwesomeSolid}"
-                                                    FontSize="Large"/>
-
-                                                        </StackLayout>
-                                                        <Button BackgroundColor="{Binding BackgroundColor}" Text="&#xf011;"
-                                                    FontFamily="{StaticResource FontAwesomeSolid}"
-                                                    CornerRadius="50"    
-                                                    WidthRequest="50"
-                                                   Command="{Binding Source={x:Reference _bundledDoors}, Path=BindingContext.ChangeDoorStatus}" 
-                                                       CommandParameter="{Binding DoorId}" />
-
-                                                    </StackLayout>
-                                                </Frame>
-                                            </DataTemplate>
-                                        </CollectionView.ItemTemplate>
-                                    </CollectionView>
-
-
                                 </DataTemplate>
                             </extensions:Expander.ContentTemplate>
                         </extensions:Expander>
@@ -111,7 +112,7 @@
                 </BindableLayout.ItemTemplate>
 
 
-            </StackLayout>
+            </StackLayout>-->
 
                 
         </StackLayout>

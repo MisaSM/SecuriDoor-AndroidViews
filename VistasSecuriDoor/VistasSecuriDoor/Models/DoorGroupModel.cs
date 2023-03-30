@@ -16,7 +16,7 @@ namespace VistasSecuriDoor.Models
         public string Location { get; set; }
 
         [JsonProperty("rooms")]
-        public string[] LocationId { get; set; }
+        public string LocationId { get; set; }
 
         public ObservableCollection<DoorsModel> GroupedDoors { get; set; }   
         
