@@ -20,7 +20,7 @@ namespace VistasSecuriDoor.ViewModels
     public class LoginViewModel : BaseViewModel
     {
         
-
+        
         public string _currentuserName;
         public string _currentpassword;
 
@@ -34,7 +34,7 @@ namespace VistasSecuriDoor.ViewModels
             set
             {
                 SetProperty(ref _isOwner, value);
-                //OnPropertyChanged(nameof(IsOwner);
+                OnPropertyChanged(nameof(IsOwner));
             }
 
         }
@@ -96,10 +96,10 @@ namespace VistasSecuriDoor.ViewModels
 
             if (response.StatusCode == System.Net.HttpStatusCode.OK)
             {
+                
                 var tokenjson = JObject.Parse(responseContent);
 
                 var token = tokenjson["token"].ToString();
-
 
                 Application.Current.Properties["token"] = token;
 
@@ -108,12 +108,35 @@ namespace VistasSecuriDoor.ViewModels
                 Debug.WriteLine(Application.Current.Properties["token"]);
 
 
-                IsLoggedIn();
+                var authClient = new HttpClient();
 
-                Task.Delay(10000);
+                //Provee el token y el bearer
+                authClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+                //Debug.WriteLine($"Token preservado? {token}");
+                var authRequestData = await authClient.GetAsync("https://securidoor-web-api.onrender.com/api/isOwner");
+                var responseObject = await authRequestData.Content.ReadAsStringAsync();
+
+                if (authRequestData.IsSuccessStatusCode)
+                {
+                    var testing = JsonConvert.DeserializeObject<authRequest>(responseObject);
+                    //Crea la llave "isOwner" y le asigna el valor retornado por el responseObject, este será true o false.
+                    Application.Current.Properties["isOwner"] = testing.isOwner;
+                    await Application.Current.SavePropertiesAsync();
+                    IsOwner = testing.isOwner;
+                    Debug.WriteLine($"Es owner? {IsOwner}");
+                }
+                else
+                {
+                    //var testing = JsonConvert.DeserializeObject<authRequest>(responseObject);
+                    Application.Current.Properties["isOwner"] = false;
+                    await Application.Current.SavePropertiesAsync();
+                    IsOwner = false;
+                    //Debug.WriteLine(otherVM.UserAuth);
+                    Debug.WriteLine($"Es owner? {Application.Current.Properties["isOwner"]}");
+                }
 
                 await Shell.Current.GoToAsync($"//{nameof(dashboardPage)}");
-
+                Debug.WriteLine(IsOwner);
                 currentUserName = string.Empty;
                 currentPassword = string.Empty;
             }
@@ -130,46 +153,48 @@ namespace VistasSecuriDoor.ViewModels
         });
 
 
-        public async void IsLoggedIn()
-        {
-            // Debug.WriteLine(Application.Current.Properties.ContainsKey("token"));
+        //public async void IsLoggedIn()
+        //{
+        //    // Debug.WriteLine(Application.Current.Properties.ContainsKey("token"));
+        //    var otherVM = AppShellVM.AppShellVMInstance;
+        //    //crea variable local token a partir del token almacenado en cache, tal vez se pueda refactorizar
+        //    string token = Application.Current.Properties["token"] as string;
 
-            //crea variable local token a partir del token almacenado en cache, tal vez se pueda refactorizar
-            string token = Application.Current.Properties["token"] as string;
+        //    // Debug.WriteLine($"Token adquirido! {token}");
+        //    var client = new HttpClient();
 
-            // Debug.WriteLine($"Token adquirido! {token}");
-            var client = new HttpClient();
-
-            //Provee el token y el bearer
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-            //Debug.WriteLine($"Token preservado? {token}");
-            var authRequestData = await client.GetAsync("https://securidoor-web-api.onrender.com/api/isOwner");
-            var responseObject = await authRequestData.Content.ReadAsStringAsync();
-            //responseObject retorna el valor de isOwner además del 200 o Unauthorized access
-
-
-            Debug.WriteLine(responseObject);
-
-            if (authRequestData.IsSuccessStatusCode)
-            {
-                var testing = JsonConvert.DeserializeObject<authRequest>(responseObject);
-                
-                //Crea la llave "isOwner" y le asigna el valor retornado por el responseObject, este será true o false.
-                Application.Current.Properties["isOwner"] = testing.isOwner;
-                await Application.Current.SavePropertiesAsync();
-                Debug.WriteLine($"Es owner? {Application.Current.Properties["isOwner"]}");
-
-            }
-            else
-            {
-                var testing = JsonConvert.DeserializeObject<authRequest>(responseObject);
-                Application.Current.Properties["isOwner"] = testing.isOwner;
-                await Application.Current.SavePropertiesAsync();
-                Debug.WriteLine($"Es owner? {Application.Current.Properties["isOwner"]}");
-            }
+        //    //Provee el token y el bearer
+        //    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+        //    //Debug.WriteLine($"Token preservado? {token}");
+        //    var authRequestData = await client.GetAsync("https://securidoor-web-api.onrender.com/api/isOwner");
+        //    var responseObject = await authRequestData.Content.ReadAsStringAsync();
+        //    //responseObject retorna el valor de isOwner además del 200 o Unauthorized access
 
 
-        }
+        //    Debug.WriteLine(responseObject);
+
+        //    if (authRequestData.IsSuccessStatusCode)
+        //    {
+        //        var testing = JsonConvert.DeserializeObject<authRequest>(responseObject);
+        //        otherVM.UserAuth = testing.isOwner;
+        //        //Crea la llave "isOwner" y le asigna el valor retornado por el responseObject, este será true o false.
+        //        Application.Current.Properties["isOwner"] = testing.isOwner;
+        //        await Application.Current.SavePropertiesAsync();
+        //        //Debug.WriteLine($"Es owner? {Application.Current.Properties["isOwner"]}");
+        //        Debug.WriteLine(otherVM.UserAuth);
+        //    }
+        //    else
+        //    {
+        //        var testing = JsonConvert.DeserializeObject<authRequest>(responseObject);
+        //        Application.Current.Properties["isOwner"] = testing.isOwner;
+        //        await Application.Current.SavePropertiesAsync();
+        //        otherVM.UserAuth = testing.isOwner;
+        //        Debug.WriteLine(otherVM.UserAuth);
+        //        //Debug.WriteLine($"Es owner? {Application.Current.Properties["isOwner"]}");
+        //    }
+
+
+        //}
 
 
     }

@@ -44,7 +44,12 @@
                     <Entry IsPassword="True" PlaceholderColor="LightGray" TextColor="White" Placeholder="Contraseña"
                            Text="{Binding currentPassword}"/>
 
-                    <Button Margin="0, 20, 0, 0" BackgroundColor="#382c2c" VerticalOptions="Center" Text="Iniciar sesión" Command="{Binding LoginCommand}"/>
+                    <Button Margin="0, 20, 0, 0" 
+                            BackgroundColor="#382c2c" 
+                            VerticalOptions="Center" 
+                            Text="Iniciar sesión" 
+                            Command="{Binding LoginCommand}"/>
+
                     <Label Padding="0, 10" HorizontalOptions="Center" TextDecorations="Underline" TextColor="LightGray" Text="¿No tiene una cuenta? Registrese aquí">
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding RegisterCommand}"/>

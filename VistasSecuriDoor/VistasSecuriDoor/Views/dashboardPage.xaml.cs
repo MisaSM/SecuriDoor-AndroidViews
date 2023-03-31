@@ -54,7 +54,7 @@ namespace VistasSecuriDoor.Views
                 }
             };
 
-            var chart = new RadialGaugeChart() { Entries = entries };
+            var chart = new PieChart() { Entries = entries };
 
             chartView.Chart = chart;
         }

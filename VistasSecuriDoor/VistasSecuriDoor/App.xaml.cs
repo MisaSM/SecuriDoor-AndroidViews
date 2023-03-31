@@ -8,12 +8,12 @@ using VistasSecuriDoor.Services;
 using VistasSecuriDoor.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using VistasSecuriDoor.ViewModels;
 
 namespace VistasSecuriDoor
 {
     public partial class App : Application
     {
-
         public App()
         {
             InitializeComponent();

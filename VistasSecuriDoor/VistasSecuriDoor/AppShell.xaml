@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Shell xmlns="http://xamarin.com/schemas/2014/forms" 
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-       xmlns:local="clr-namespace:VistasSecuriDoor.Views" xmlns:vistassecuridoor="clr-namespace:VistasSecuriDoor" xmlns:viewmodels="clr-namespace:VistasSecuriDoor.ViewModels" x:DataType="viewmodels:AppShellVM"
+       xmlns:local="clr-namespace:VistasSecuriDoor.Views" xmlns:vistassecuridoor="clr-namespace:VistasSecuriDoor" xmlns:viewmodels="clr-namespace:VistasSecuriDoor.ViewModels" x:DataType="viewmodels:LoginViewModel"
        Title="VistasSecuriDoor"
-       x:Class="VistasSecuriDoor.AppShell">
+       x:Class="VistasSecuriDoor.AppShell"
+       >
     
     <!--
         The overall app visual hierarchy is defined here, along with navigation.
@@ -110,7 +111,10 @@
         <ShellContent Route="controlPanel" ContentTemplate="{DataTemplate local:controlPanel}"/>
     </FlyoutItem>
 
-    <FlyoutItem x:Name="authFlyout" IsVisible="true" FlyoutIcon="usersIcon.png" Title="Gestión de Invitados">
+    <FlyoutItem FlyoutIcon="usersIcon.png" Title="Gestión de Invitados">
+        <FlyoutItem.IsVisible>
+            <Binding Path="IsOwner" Mode="OneWay"/>
+        </FlyoutItem.IsVisible>
         <ShellContent Route="usersManagement" ContentTemplate="{DataTemplate local:usersManagement}"/>
     </FlyoutItem>
 

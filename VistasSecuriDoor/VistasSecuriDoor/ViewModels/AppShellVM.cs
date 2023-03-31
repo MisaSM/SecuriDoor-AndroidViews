@@ -25,12 +25,7 @@ namespace VistasSecuriDoor.ViewModels
 
         public AppShellVM()
         {
-            Debug.WriteLine(Application.Current.Properties["isOwner"]);
-            
         }
-
-        
-
 
     }
 }

@@ -13,13 +13,12 @@ using System.Windows.Input;
 namespace VistasSecuriDoor
 {
     public partial class AppShell : Xamarin.Forms.Shell
-    {
-
+    { 
         public AppShell()
         {
             InitializeComponent();
             Routing.RegisterRoute(nameof(registerOwner), typeof(registerOwner));
-            
+
         }
 
         public async void LogoutItem_Clicked(object sender, EventArgs e)
@@ -28,7 +27,7 @@ namespace VistasSecuriDoor
             Application.Current.Properties["token"] = null;
             Application.Current.Properties["isOwner"] = null;
             await Application.Current.SavePropertiesAsync();
-            await Shell.Current.GoToAsync("//LoginPage");
+            await Current.GoToAsync("//LoginPage");
 
             Debug.WriteLine(Application.Current.Properties["token"]);
             Debug.WriteLine(Application.Current.Properties["isOwner"]);
