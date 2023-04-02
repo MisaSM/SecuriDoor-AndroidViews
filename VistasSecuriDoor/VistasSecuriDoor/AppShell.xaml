@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Shell xmlns="http://xamarin.com/schemas/2014/forms" 
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-       xmlns:local="clr-namespace:VistasSecuriDoor.Views" xmlns:vistassecuridoor="clr-namespace:VistasSecuriDoor" xmlns:viewmodels="clr-namespace:VistasSecuriDoor.ViewModels" x:DataType="viewmodels:LoginViewModel"
+       xmlns:local="clr-namespace:VistasSecuriDoor.Views" xmlns:vistassecuridoor="clr-namespace:VistasSecuriDoor" xmlns:viewmodels="clr-namespace:VistasSecuriDoor.ViewModels" x:DataType="viewmodels:AppShellVM"
        Title="VistasSecuriDoor"
        x:Class="VistasSecuriDoor.AppShell"
        >
@@ -112,10 +112,7 @@
     </FlyoutItem>
 
     <FlyoutItem FlyoutIcon="usersIcon.png" Title="Gestión de Invitados">
-        <FlyoutItem.IsVisible>
-            <Binding Path="IsOwner" Mode="OneWay"/>
-        </FlyoutItem.IsVisible>
-        <ShellContent Route="usersManagement" ContentTemplate="{DataTemplate local:usersManagement}"/>
+        <ShellContent IsVisible="{Binding UserAuth}" Route="usersManagement" ContentTemplate="{DataTemplate local:usersManagement}"/>
     </FlyoutItem>
 
     <FlyoutItem Title="Acerca de nosotros" Icon="infoIcon.png">

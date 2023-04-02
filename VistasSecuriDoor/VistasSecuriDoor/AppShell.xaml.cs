@@ -18,7 +18,7 @@ namespace VistasSecuriDoor
         {
             InitializeComponent();
             Routing.RegisterRoute(nameof(registerOwner), typeof(registerOwner));
-
+            this.BindingContext = new AppShellVM();
         }
 
         public async void LogoutItem_Clicked(object sender, EventArgs e)
