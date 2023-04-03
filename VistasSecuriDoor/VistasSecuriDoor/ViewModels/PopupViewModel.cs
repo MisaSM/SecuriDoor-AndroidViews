@@ -6,6 +6,7 @@ using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.Diagnostics;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -69,13 +70,18 @@ namespace VistasSecuriDoor.ViewModels
                 Name = GuestName,
                 userName = GuestUser,
                 LastName = guest_lastname,
-                Password = GuestPwd,
-                IdRol = "640ee55a7027f674e8df3772"
+                Password = GuestPwd
             };
 
             try
             {
                 var client = new HttpClient();
+
+                var token = Application.Current.Properties["token"] as string;
+                Debug.WriteLine(token);
+
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
                 var json = JsonConvert.SerializeObject(user);
                 var contentJson = new StringContent(json, Encoding.UTF8, "application/json");
 

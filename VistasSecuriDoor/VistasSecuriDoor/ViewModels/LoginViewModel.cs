@@ -121,6 +121,7 @@ namespace VistasSecuriDoor.ViewModels
 
                     IsOwner = testing.isOwner;
 
+
                     MessagingCenter.Send(this, "IsOwner?", testing.isOwner);
 
                     Debug.WriteLine($"Es owner? {IsOwner}");

@@ -31,7 +31,7 @@ namespace VistasSecuriDoor.Data
 
                 var client = new HttpClient();
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-                var response = await client.GetAsync("https://securidoor-web-api.onrender.com/api/guest");
+                var response = await client.GetAsync("https://securidoor-web-api.onrender.com/api/guest/all");
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
