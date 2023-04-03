@@ -25,12 +25,11 @@ namespace VistasSecuriDoor
         {
             //Despeja los datos almacenados en cache
             Application.Current.Properties["token"] = null;
-            Application.Current.Properties["isOwner"] = null;
             await Application.Current.SavePropertiesAsync();
+
             await Current.GoToAsync("//LoginPage");
 
             Debug.WriteLine(Application.Current.Properties["token"]);
-            Debug.WriteLine(Application.Current.Properties["isOwner"]);
         }
     }
 }

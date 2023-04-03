@@ -118,9 +118,7 @@ namespace VistasSecuriDoor.ViewModels
                 if (authRequestData.IsSuccessStatusCode)
                 {
                     var testing = JsonConvert.DeserializeObject<authRequest>(responseObject);
-                    //Crea la llave "isOwner" y le asigna el valor retornado por el responseObject, este será true o false.
-                    Application.Current.Properties["isOwner"] = testing.isOwner;
-                    await Application.Current.SavePropertiesAsync();
+
                     IsOwner = testing.isOwner;
 
                     MessagingCenter.Send(this, "IsOwner?", testing.isOwner);
@@ -129,16 +127,13 @@ namespace VistasSecuriDoor.ViewModels
                 }
                 else
                 {
-                    //var testing = JsonConvert.DeserializeObject<authRequest>(responseObject);
-                    Application.Current.Properties["isOwner"] = false;
-                    await Application.Current.SavePropertiesAsync();
                     IsOwner = false;
+                    MessagingCenter.Send(this, "IsOwner?", false);
                     //Debug.WriteLine(otherVM.UserAuth);
-                    Debug.WriteLine($"Es owner? {Application.Current.Properties["isOwner"]}");
+                    Debug.WriteLine($"Es owner? {IsOwner}");
                 }
 
                 await Shell.Current.GoToAsync($"//{nameof(dashboardPage)}");
-                Debug.WriteLine(IsOwner);
                 currentUserName = string.Empty;
                 currentPassword = string.Empty;
             }
