@@ -11,11 +11,18 @@ namespace VistasSecuriDoor.ViewModels
     public class AppShellVM : BaseViewModel
     {
         public bool _userAuth;
-        
+
+        public string _msg;
         public bool UserAuth
         {
             get { return _userAuth; }
             set { SetProperty(ref _userAuth, value); }
+        }
+
+        public string Message 
+        {
+            get { return _msg; }
+            set { SetProperty(ref _msg, value);}
         }
 
         public AppShellVM()
@@ -24,6 +31,11 @@ namespace VistasSecuriDoor.ViewModels
             {
                 UserAuth = isOwner;
                 Debug.WriteLine($"IsOwner? {UserAuth}");
+            });
+            MessagingCenter.Subscribe<LoginViewModel, string>(this, "messageStatus", (sender, messageStatus) => 
+            {
+                Message = messageStatus;
+                Debug.WriteLine(Message);
             });
         }
 

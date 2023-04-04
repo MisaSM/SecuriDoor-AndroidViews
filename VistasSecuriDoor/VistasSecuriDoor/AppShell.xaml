@@ -95,10 +95,7 @@
         FlyoutDisplayOptions="AsMultipleItems" will create a separate flyout item for each child element    
         https://docs.microsoft.com/dotnet/api/xamarin.forms.shellgroupitem.flyoutdisplayoptions?view=xamarin-forms
     -->
-
-    <ShellContent Route="registerOwner" ContentTemplate="{DataTemplate local:registerOwner}"/>
-
-    
+ 
     <FlyoutItem Title="Dashboard" FlyoutIcon="dashbIcon.png">
         <ShellContent Route="dashboardPage" ContentTemplate="{DataTemplate local:dashboardPage}"/>
     </FlyoutItem>
@@ -123,6 +120,20 @@
     <MenuItem IconImageSource="logoutIcon.png" Text="Logout" StyleClass="MenuItemLayoutStyle" Clicked="LogoutItem_Clicked">
     </MenuItem>
 
+    <Shell.FlyoutFooterTemplate>
+        <DataTemplate>
+            <StackLayout Orientation="Vertical" BackgroundColor="#102c44" HeightRequest="100">
+                <Label Text="{Binding Message}"
+                       TextColor="GhostWhite"
+                       VerticalOptions="CenterAndExpand"
+                       HorizontalOptions="Center"
+                       FontAttributes="Bold"
+                       FontSize="18"
+                       Padding="8"/>
+            </StackLayout>
+        </DataTemplate>
+    </Shell.FlyoutFooterTemplate>
+    
 
     <!-- Optional Templates 
     // These may be provided inline as below or as separate classes.

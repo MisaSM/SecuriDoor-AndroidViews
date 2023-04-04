@@ -123,6 +123,7 @@ namespace VistasSecuriDoor.ViewModels
 
 
                     MessagingCenter.Send(this, "IsOwner?", testing.isOwner);
+                    MessagingCenter.Send(this, "messageStatus", $"Bienvenido {currentUserName}!");
 
                     Debug.WriteLine($"Es owner? {IsOwner}");
                 }
@@ -130,6 +131,7 @@ namespace VistasSecuriDoor.ViewModels
                 {
                     IsOwner = false;
                     MessagingCenter.Send(this, "IsOwner?", false);
+                    MessagingCenter.Send(this, "messageStatus", $"Bienvenido {currentUserName}!");
                     //Debug.WriteLine(otherVM.UserAuth);
                     Debug.WriteLine($"Es owner? {IsOwner}");
                 }
