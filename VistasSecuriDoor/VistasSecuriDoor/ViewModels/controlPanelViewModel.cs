@@ -145,7 +145,7 @@ namespace VistasSecuriDoor.ViewModels
 
             var client = new HttpClient();
             var contentJson = new StringContent(JsonConvert.SerializeObject(selectedDoor), Encoding.UTF8, "application/json");
-            var response = await client.PutAsync($"https://securidoor-web-api.onrender.com/api/door/{selectedDoor.DoorId}", contentJson);
+            var response = await client.PutAsync($"https://securidoor-web-api.onrender.com/api/door/{selectedDoor.DoorId}/status", contentJson);
 
             var responseContent = await response.Content.ReadAsStringAsync();
         });
