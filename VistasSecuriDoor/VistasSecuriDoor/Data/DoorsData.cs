@@ -19,7 +19,7 @@ namespace VistasSecuriDoor.Data
 {
     public class DoorsData
     {
-        public static async Task<ObservableCollection<DoorsModel>> ShowDoors()
+        public static async Task<ObservableCollection<PlaceModel>> ShowDoors()
         {
             try
             {
@@ -28,6 +28,9 @@ namespace VistasSecuriDoor.Data
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
                 var placeResponse = await client.GetAsync("https://securidoor-web-api.onrender.com/api/places/");
+
+                //Un lugar tiene habitaciones, y las habitaciones tienen puertas.
+                //Esta nota no es mi descenso a la esquizofrenia, es una simple nota sobre el modelado.
 
 
 
@@ -40,24 +43,21 @@ namespace VistasSecuriDoor.Data
                 if (placeResponse.IsSuccessStatusCode)
                 {
                     var content = await placeResponse.Content.ReadAsStringAsync();
-                    var places = JsonConvert.DeserializeObject<List<PlaceModel>>(content);
+                    var places = JsonConvert.DeserializeObject<ObservableCollection<PlaceModel>>(content);
 
-                    var doors = new ObservableCollection<DoorsModel>();
-                    foreach (var place in places)
+                    foreach (var thing in places) 
                     {
-                        foreach (var room in place.rooms)
+                        foreach (var room in thing.rooms) 
                         {
-                            foreach (var door in room.doors)
+                            foreach (var door in room.doors) 
                             {
-                                Debug.WriteLine($"Door: {door.DoorName}");
-                                var doorModel = new DoorsModel();
-                                // asigna los valores a doorModel
-                                doors.Add(doorModel);
+                                Debug.WriteLine(door.DoorName);
                             }
                         }
                     }
 
-                    return doors;
+                    return places;
+
                 }
                 else
                 {

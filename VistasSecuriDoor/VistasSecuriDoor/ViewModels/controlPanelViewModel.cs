@@ -15,6 +15,7 @@ using VistasSecuriDoor.Data;
 using VistasSecuriDoor.Models;
 using VistasSecuriDoor.Views;
 using Xamarin.Forms;
+using static VistasSecuriDoor.Models.DoorsModel;
 
 namespace VistasSecuriDoor.ViewModels
 {
@@ -24,8 +25,8 @@ namespace VistasSecuriDoor.ViewModels
         string _title = "Control de puertas";
         bool _isLoading = false;
         bool _spinnerVisible = false;
+        public ObservableCollection<PlaceModel> _placeList;
         public ObservableCollection<DoorsModel> _doorsList;
-
 
         public controlPanelViewModel _cpVM;
         #endregion
@@ -41,13 +42,18 @@ namespace VistasSecuriDoor.ViewModels
             get { return _title; }
             set { SetValue(ref _title, value); }
         }
-        public ObservableCollection<DoorsModel> Doors {
+
+        public ObservableCollection<DoorsModel> Doors 
+        {
             get { return _doorsList; }
             set { SetProperty(ref _doorsList, value); }
         }
 
-
-
+        public ObservableCollection<PlaceModel> Places 
+        {
+            get { return _placeList; }
+            set { SetProperty(ref _placeList, value); }
+        }
 
         public bool IsLoading
         {
@@ -68,7 +74,7 @@ namespace VistasSecuriDoor.ViewModels
             IsLoading = true;
             SpinnerVisible = true;
             await Task.Delay(2000);
-           Doors = await DoorsData.ShowDoors();
+            Places = await DoorsData.ShowDoors();
             IsLoading = false;
             SpinnerVisible = false;
         }

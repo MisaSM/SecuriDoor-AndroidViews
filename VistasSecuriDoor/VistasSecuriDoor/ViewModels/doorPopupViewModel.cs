@@ -76,7 +76,7 @@ namespace VistasSecuriDoor.ViewModels
             EditDoorName = Door.DoorName;
             EditDoorId = Door.DoorId;
             EditDoorProx = Door.door_proximity;
-            EditDoorRoomId = Door.DoorLocation;
+            //EditDoorRoomId = Door.DoorLocation;
             EditDoorState = Door.DoorState;
             _cpVM = cpVM;
         }
@@ -100,7 +100,7 @@ namespace VistasSecuriDoor.ViewModels
                 DoorId = EditDoorId,
                 DoorName = EditDoorName,
                 DoorState = EditDoorState,
-                DoorLocation = EditDoorRoomId,
+                //DoorLocation = EditDoorRoomId,
                 door_proximity = EditDoorProx,
             };
 
@@ -120,7 +120,7 @@ namespace VistasSecuriDoor.ViewModels
                 _cpVM.IsLoading = true;
                 _cpVM.SpinnerVisible = true;
                 await Task.Delay(2000);
-                _cpVM.Doors = await DoorsData.ShowDoors();
+                //_cpVM.Doors = await DoorsData.ShowDoors();
                 _cpVM.IsLoading = false;
                 _cpVM.SpinnerVisible = false;
             }

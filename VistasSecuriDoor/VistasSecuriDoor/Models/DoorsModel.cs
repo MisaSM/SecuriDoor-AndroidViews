@@ -2,6 +2,7 @@
 using Newtonsoft.Json.Bson;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 using VistasSecuriDoor.ViewModels;
 
@@ -19,8 +20,6 @@ namespace VistasSecuriDoor.Models
         [JsonProperty("door_status")]
         public string DoorState { get; set; }
 
-        [JsonProperty("room_id")]
-        public string DoorLocation { get; set; }
         public int door_proximity { get; set; }
 
 
@@ -36,14 +35,18 @@ namespace VistasSecuriDoor.Models
             set { SetProperty(ref _buttonWasClicked, value); }
         }
 
-        public class RoomsModel : BaseViewModel 
+        public class RoomsModel : BaseViewModel
         {
-            
+
 
             [JsonProperty("room_name")]
             public string Name { get; set; }
 
-            public List<DoorsModel> doors { get; set; }
+
+            [JsonProperty("room_id")]
+            public string DoorLocation { get; set; }
+
+            public ObservableCollection<DoorsModel> doors { get; set; }
 
         }
 
@@ -54,7 +57,8 @@ namespace VistasSecuriDoor.Models
             [JsonProperty("place_name")]
             public string PlaceName { get; set; }
             public string owner_id { get; set; }
-            public List<RoomsModel> rooms { get; set; }
+            
+            public ObservableCollection<RoomsModel> rooms { get; set; }
         }
 
     }
