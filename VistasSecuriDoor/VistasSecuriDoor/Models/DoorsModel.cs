@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Bson;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -14,13 +15,12 @@ namespace VistasSecuriDoor.Models
         [JsonProperty("door_name")]
         public string DoorName { get; set; }
 
-        [JsonProperty("room_id")]
-        public string DoorLocation { get; set;}
 
         [JsonProperty("door_status")]
         public string DoorState { get; set; }
 
-        
+        [JsonProperty("room_id")]
+        public string DoorLocation { get; set; }
         public int door_proximity { get; set; }
 
 
@@ -34,6 +34,27 @@ namespace VistasSecuriDoor.Models
         public bool ButtonWasClicked {
             get { return _buttonWasClicked; }
             set { SetProperty(ref _buttonWasClicked, value); }
+        }
+
+        public class RoomsModel : BaseViewModel 
+        {
+            
+
+            [JsonProperty("room_name")]
+            public string Name { get; set; }
+
+            public List<DoorsModel> doors { get; set; }
+
+        }
+
+        public class PlaceModel : BaseViewModel 
+        {
+            public string _id { get; set; }
+
+            [JsonProperty("place_name")]
+            public string PlaceName { get; set; }
+            public string owner_id { get; set; }
+            public List<RoomsModel> rooms { get; set; }
         }
 
     }

@@ -25,8 +25,7 @@ namespace VistasSecuriDoor.ViewModels
         bool _isLoading = false;
         bool _spinnerVisible = false;
         public ObservableCollection<DoorsModel> _doorsList;
-        public ObservableCollection<DoorGroupModel> _doorGroups;
-        public ObservableCollection<DoorsModel> _groupedDoors;
+
 
         public controlPanelViewModel _cpVM;
         #endregion
@@ -47,17 +46,8 @@ namespace VistasSecuriDoor.ViewModels
             set { SetProperty(ref _doorsList, value); }
         }
 
-        public ObservableCollection<DoorsModel> GroupedDoors
-        {
-            get { return _groupedDoors; }
-            set { SetProperty(ref _groupedDoors, value); }
-        }
 
-        public ObservableCollection<DoorGroupModel> Groups 
-        {
-            get { return _doorGroups; }
-            set  { SetProperty(ref _doorGroups, value); }
-        }
+
 
         public bool IsLoading
         {
@@ -121,7 +111,7 @@ namespace VistasSecuriDoor.ViewModels
             if (doorToEdit != null)
             {
                 var controlViewModel = new doorPopupViewModel(Navigation, doorToEdit, this);
-                await PopupNavigation.Instance.PushAsync(new doorPopup(this) {BindingContext =  controlViewModel});
+                await PopupNavigation.Instance.PushAsync(new doorPopup(this) { BindingContext = controlViewModel });
             }
         });
 
@@ -148,6 +138,24 @@ namespace VistasSecuriDoor.ViewModels
             var response = await client.PutAsync($"https://securidoor-web-api.onrender.com/api/door/{selectedDoor.DoorId}/status", contentJson);
 
             var responseContent = await response.Content.ReadAsStringAsync();
+        });
+
+        public ICommand DeleteDoor => new Command<string>(async (doorId) =>
+        {
+
+            bool shouldDelete = await Application.Current.MainPage.DisplayAlert("Advertencia", "Esta acción no se puede revertir", "OK", "Cancelar");
+
+            if (shouldDelete)
+            {
+                var doorToDelete = Doors.FirstOrDefault(n => n.DoorId == doorId);
+                if (doorToDelete != null)
+                {
+                    var client = new HttpClient();
+                    var response = await client.DeleteAsync($"https://securidoor-web-api.onrender.com/api/door/{doorToDelete.DoorId}");
+                    Doors.Remove(doorToDelete);
+                }
+            }
+
         });
 
         public ICommand ButtonCmd => new Command<DoorsModel>((p) => updateState(p));

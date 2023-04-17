@@ -21,42 +21,48 @@
                                            IsVisible="{Binding SpinnerVisible}"/>
             </StackLayout>
 
-            <StackLayout>
 
-                <CollectionView ItemsSource="{Binding Doors, Mode=TwoWay}" x:Name="_doorList">
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate>
-                            <Frame CornerRadius="5" HasShadow="True" BorderColor="LightGray">
-                                <StackLayout>
+            <CollectionView ItemsSource="{Binding Doors}" x:Name="_doorList">
+
+                <CollectionView.ItemTemplate>
+
+                    <DataTemplate>
+
+                        <Frame CornerRadius="5" HasShadow="True" BorderColor="LightGray">
+                            <StackLayout>
+
+
+
+
+
+                                <StackLayout.Resources>
+                                    <Style TargetType="Label">
+                                        <Setter Property="TextColor" Value="Black"/>
+                                        <Setter Property="FontSize" Value="20"/>
+                                    </Style>
+                                </StackLayout.Resources>
+
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Cerradura: "/>
+                                    <Label Text="{Binding DoorName}"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Distancia configurada: "/>
+                                    <Label Text="{Binding door_proximity}"/>
+                                </StackLayout>
+
+
+
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="20">
 
                                     <StackLayout.Resources>
-                                        <Style TargetType="Label">
-                                            <Setter Property="TextColor" Value="Black"/>
-                                            <Setter Property="FontSize" Value="20"/>
+                                        <Style TargetType="ImageButton">
+                                            <Setter Property="CornerRadius" Value="15"/>
+                                            <Setter Property="WidthRequest" Value="50"/>
                                         </Style>
                                     </StackLayout.Resources>
 
-                                    <StackLayout Orientation="Horizontal">
-                                        <Label Text="Cerradura: "/>
-                                        <Label Text="{Binding DoorName}"/>
-                                    </StackLayout>
-                                    <StackLayout Orientation="Horizontal">
-                                        <Label Text="Distancia configurada: "/>
-                                        <Label Text="{Binding door_proximity}"/>
-                                    </StackLayout>
-
-
-
-                                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="20">
-
-                                        <StackLayout.Resources>
-                                            <Style TargetType="ImageButton">
-                                                <Setter Property="CornerRadius" Value="15"/>
-                                                <Setter Property="WidthRequest" Value="50"/>
-                                            </Style>
-                                        </StackLayout.Resources>
-
-                                        <Button BackgroundColor="#003a81" Text="&#xf14b;"
+                                    <Button BackgroundColor="#003a81" Text="&#xf14b;"
                                             FontFamily="{StaticResource FontAwesomeSolid}"
                                             FontSize="Large"
                                                 Command="{Binding Source={x:Reference _doorList},
@@ -64,12 +70,15 @@
                                                 CommandParameter="{Binding DoorId}"
                                                 />
 
-                                        <Button BackgroundColor="red" Text="&#xf2ed;"
+                                    <Button BackgroundColor="red" Text="&#xf2ed;"
                                                     FontFamily="{StaticResource FontAwesomeSolid}"
-                                                    FontSize="Large"/>
+                                                    FontSize="Large"
+                                                Command="{Binding Source={x:Reference _doorList},
+                                            Path=BindingContext.DeleteDoor}"
+                                                CommandParameter="{Binding DoorId}"/>
 
-                                    </StackLayout>
-                                    <Button BackgroundColor="{Binding BackgroundColor}" Text="&#xf011;"
+                                </StackLayout>
+                                <Button BackgroundColor="{Binding BackgroundColor}" Text="&#xf011;"
                                                     FontFamily="{StaticResource FontAwesomeSolid}"
                                                     CornerRadius="50"    
                                                     WidthRequest="50"
@@ -77,22 +86,25 @@
                                         Path=BindingContext.ChangeDoorStatus}"
                                             CommandParameter="{Binding DoorId}"/>
 
-                                </StackLayout>
-                            </Frame>
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
+                            </StackLayout>
+                        </Frame>
 
 
-            </StackLayout>
+                    </DataTemplate>
 
-            <!--<StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand" BindableLayout.ItemsSource="{Binding Groups}">
+                </CollectionView.ItemTemplate>
+
+            </CollectionView>
+
+
+            <!--<StackLayout BindableLayout.ItemsSource="{Binding Doors}" x:Name="_doorList">
+
 
                 <BindableLayout.ItemTemplate>
                     <DataTemplate>
                         <extensions:Expander>
                             <extensions:Expander.Header>
-                                <Label Text="{Binding Location}"
+                                <Label Text="{Binding PlaceName}"
                                            TextColor="Black"
                                            FontAttributes="Bold"
                                            FontSize="20"
@@ -112,9 +124,13 @@
                 </BindableLayout.ItemTemplate>
 
 
+
+
+
             </StackLayout>-->
 
-                
+
+
         </StackLayout>
 
 

@@ -17,6 +17,8 @@ namespace VistasSecuriDoor.ViewModels
     {
         public controlPanelViewModel _cpVM;
 
+        public bool _imgPopup;
+
         public string _editDoorName;
         public string _editDoorLocation;
         public int _editDoorProx;
@@ -28,6 +30,12 @@ namespace VistasSecuriDoor.ViewModels
         {
             get { return _editDoorProx; }
             set { SetProperty(ref _editDoorProx, value); }
+        }
+
+        public bool SuccessPopup 
+        {
+            get { return _imgPopup; }
+            set { SetProperty(ref _imgPopup, value); }
         }
 
         public string EditDoorName 
@@ -63,14 +71,14 @@ namespace VistasSecuriDoor.ViewModels
             set { SetProperty(ref _doorStatus, value); }
         }
 
-        public doorPopupViewModel(INavigation Navigation,DoorsModel Door , controlPanelViewModel cpVM)
+        public doorPopupViewModel(INavigation Navigation, DoorsModel Door, controlPanelViewModel cpVM)
         {
             EditDoorName = Door.DoorName;
             EditDoorId = Door.DoorId;
             EditDoorProx = Door.door_proximity;
             EditDoorRoomId = Door.DoorLocation;
             EditDoorState = Door.DoorState;
-            _cpVM= cpVM;
+            _cpVM = cpVM;
         }
 
         public ICommand EditDoorCommand => new Command(async () =>
@@ -80,7 +88,7 @@ namespace VistasSecuriDoor.ViewModels
                 await App.Current.MainPage.DisplayAlert("Error", "Valor inválido para distancia, verifiquelo otra vez", "OK");
                 return;
             }
-            if (EditDoorProx > 48 ) 
+            if (EditDoorProx > 48)
             {
                 await App.Current.MainPage.DisplayAlert("Error", "Distancia no puede superar valores a 48", "OK");
                 EditDoorProx = 48;
@@ -93,7 +101,7 @@ namespace VistasSecuriDoor.ViewModels
                 DoorName = EditDoorName,
                 DoorState = EditDoorState,
                 DoorLocation = EditDoorRoomId,
-                door_proximity= EditDoorProx,
+                door_proximity = EditDoorProx,
             };
 
             var client = new HttpClient();
@@ -106,7 +114,8 @@ namespace VistasSecuriDoor.ViewModels
             Debug.WriteLine(await contentJson.ReadAsStringAsync());
             if (response.StatusCode == HttpStatusCode.OK)
             {
-                await Application.Current.MainPage.DisplayAlert("", "Distancia del sensor editada correctamente", "OK");
+               
+               
                 _cpVM.Doors.Clear();
                 _cpVM.IsLoading = true;
                 _cpVM.SpinnerVisible = true;
@@ -117,6 +126,14 @@ namespace VistasSecuriDoor.ViewModels
             }
             else
             {
+                //show the success image
+                SuccessPopup = true;
+
+                // Wait for another 2 seconds
+                await Task.Delay(2000);
+
+                // Hide the success popup
+                SuccessPopup = false;
                 await Application.Current.MainPage.DisplayAlert("Error", "Fallo al conectar a la base de datos", "OK");
                 Debug.WriteLine($"Server Error: {response.StatusCode} - {response.ReasonPhrase}");
             }

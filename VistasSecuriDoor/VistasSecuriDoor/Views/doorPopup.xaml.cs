@@ -16,5 +16,15 @@ namespace VistasSecuriDoor.Views
         {
             InitializeComponent();
         }
+
+        public class AnimatePopupAction : TriggerAction<Grid>
+        {
+            protected override async void Invoke(Grid sender)
+            {
+                await sender.ScaleTo(1.2, 100);
+                await sender.ScaleTo(1, 100);
+            }
+        }
+
     }
 }
