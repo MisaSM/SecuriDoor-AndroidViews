@@ -45,17 +45,6 @@ namespace VistasSecuriDoor.Data
                     var content = await placeResponse.Content.ReadAsStringAsync();
                     var places = JsonConvert.DeserializeObject<ObservableCollection<PlaceModel>>(content);
 
-                    foreach (var thing in places) 
-                    {
-                        foreach (var room in thing.rooms) 
-                        {
-                            foreach (var door in room.doors) 
-                            {
-                                Debug.WriteLine(door.DoorName);
-                            }
-                        }
-                    }
-
                     return places;
 
                 }

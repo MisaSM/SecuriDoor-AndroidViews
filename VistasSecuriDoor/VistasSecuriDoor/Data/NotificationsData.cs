@@ -1,70 +1,46 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
+using System.Net.Http.Headers;
+using System.Net.Http;
 using System.Text;
 using VistasSecuriDoor.Models;
 using VistasSecuriDoor.ViewModels;
+using Xamarin.Forms;
+using System.Threading.Tasks;
 
 namespace VistasSecuriDoor.Data
 {
     public class NotificationsData
     {
-        public static ObservableCollection<NotificationsModel> ShowNotification()
+        public static async Task<ObservableCollection<NotificationsModel>> ShowNotification()
         {
-            return new ObservableCollection<NotificationsModel>()
+            try
             {
-                new NotificationsModel()
+                var client = new HttpClient();
+                var response = await client.GetAsync("https://securidoor-web-api.onrender.com/api/photo/");
+                if (response.IsSuccessStatusCode)
                 {
-                    NotificationId = 1,
-                    NotificationTitle = "Oficina",
-                    Notification = "Se detectó un indicio de forcejeo",
-                    DateNotification = DateTime.Now,
-                    NotificationType = "https://i.ibb.co/DDHdc3z/26a0.png"
-                },
-                new NotificationsModel()
-                {
-                    NotificationId = 2,
-                    NotificationTitle = "Escuela",
-                    Notification = "Se detectó una entrada forzada",
-                    DateNotification = DateTime.Parse("2/1/2023"),
-                    NotificationType = "https://i.ibb.co/DDHdc3z/26a0.png"
-                },
-                new NotificationsModel()
-                {
-                    NotificationId = 3,
-                    NotificationTitle = "Hola",
-                    Notification = "Se detectó un indicio de forcejeo",
-                    DateNotification = DateTime.Now,
-                    NotificationType = "https://i.ibb.co/DDHdc3z/26a0.png"
-                },
-                new NotificationsModel()
-                {
-                    NotificationId = 4,
-                    NotificationTitle = "Adios",
-                    Notification = "Se detectó una entrada forzada",
-                    DateNotification = DateTime.Parse("2/1/2023"),
-                    NotificationType = "https://i.ibb.co/DDHdc3z/26a0.png"
-                },
-                new NotificationsModel()
-                {
-                    NotificationId = 5,
-                    NotificationTitle = "Golpe",
-                    Notification = "Se detectó una entrada forzada",
-                    DateNotification = DateTime.Parse("2/1/2023"),
-                    NotificationType = "https://i.ibb.co/DDHdc3z/26a0.png"
-                },
-                new NotificationsModel()
-                {
-                    NotificationId = 6,
-                    NotificationTitle = "Golpe 2!",
-                    Notification = "Se detectó una entrada forzada",
-                    DateNotification = DateTime.Parse("2/1/2023"),
-                    NotificationType = "https://i.ibb.co/DDHdc3z/26a0.png"
+                    var content = await response.Content.ReadAsStringAsync();
+                    return JsonConvert.DeserializeObject<ObservableCollection<NotificationsModel>>(content);
                 }
-            };
+                else
+                {
+                    Debug.WriteLine($"Server Error: {response.StatusCode} - {response.ReasonPhrase}");
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Network Error: {ex.Message}");
+                return null;
+            }
         }
+    }
 
 
     }
-}
+

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Page:PopupPage  xmlns:Page="http://rotorgames.com" xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewmodels="clr-namespace:VistasSecuriDoor.ViewModels" x:DataType="viewmodels:doorPopupViewModel"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                  x:Class="VistasSecuriDoor.Views.doorPopup"
                  xmlns:local="clr-namespace:VistasSecuriDoor">
 
@@ -34,7 +34,7 @@
                            TextColor="White"
                            FontAttributes="Bold"/>
 
-            <Entry Text="{Binding EditDoorProx}" Placeholder="Distancia del Sensor"
+            <Entry Text="{Binding DoorProx}" Placeholder="Distancia del Sensor"
                    Keyboard="Numeric"/>
 
             <Button Margin="0, 20, 0, 0" 
@@ -43,15 +43,6 @@
                     Text="Editar"
                     Command="{Binding EditDoorCommand}"/>
 
-            <Grid x:Name="SuccessPopup" BackgroundColor="#CC000000" IsVisible="{Binding SuccessPopup}">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
-                <Image Source="checmark.png" VerticalOptions="Center" HorizontalOptions="Center"/>
-            </Grid>
 
 
         </StackLayout>
