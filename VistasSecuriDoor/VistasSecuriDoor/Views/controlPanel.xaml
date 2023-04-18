@@ -8,6 +8,8 @@
 
         <StackLayout>
 
+            
+            
             <StackLayout.Resources>
                 <Style TargetType="Label">
                     <Setter Property="TextColor" Value="Black"/>
@@ -22,6 +24,14 @@
             </StackLayout>
 
 
+            <Button Margin="0, 20" 
+                    HorizontalOptions="Center" 
+                    WidthRequest="130" 
+                    HeightRequest="60" 
+                    Text="Actualizar vista" 
+                    CornerRadius="5"
+                    Command="{Binding UpdateView}"/>
+            
             <!-- Una colecion view principal que muestra los lugares, una collection view anidada que muestre los rooms para finalizar con las puertas -->
 
 

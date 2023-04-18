@@ -58,7 +58,16 @@ namespace VistasSecuriDoor.ViewModels
 
             var client = new HttpClient();
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-            var contentJson = new StringContent(JsonConvert.SerializeObject(Door), Encoding.UTF8, "application/json");
+
+            var editDoor = new DoorsModel
+            {
+                DoorId = Door.DoorId,
+                DoorName= Door.DoorName,
+                DoorState = Door.DoorState,
+                door_proximity = DoorProx,
+            };
+
+            var contentJson = new StringContent(JsonConvert.SerializeObject(editDoor), Encoding.UTF8, "application/json");
             var response = await client.PutAsync($"https://securidoor-web-api.onrender.com/api/door/{Door.DoorId}", contentJson);
 
             var responseContent = await response.Content.ReadAsStringAsync();

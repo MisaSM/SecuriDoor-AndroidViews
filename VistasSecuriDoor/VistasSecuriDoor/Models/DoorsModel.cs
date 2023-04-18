@@ -81,6 +81,10 @@ namespace VistasSecuriDoor.Models
                 var response = await client.PutAsync($"https://securidoor-web-api.onrender.com/api/door/{doorToOpen.DoorId}/status", contentJson);
 
                 var responseContent = await response.Content.ReadAsStringAsync();
+
+                Debug.WriteLine(response.StatusCode);
+                Debug.WriteLine(responseContent);
+
             });
 
 

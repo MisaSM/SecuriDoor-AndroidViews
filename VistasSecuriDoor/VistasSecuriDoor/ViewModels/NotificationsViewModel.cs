@@ -71,6 +71,12 @@ namespace VistasSecuriDoor.ViewModels
             SpinnerVisible = false;
         }
 
+        public ICommand UpdateView => new Command(async () =>
+        {
+            Photos.Clear();
+            ShowNotification();
+        });
+
         public ICommand DeleteCommand => new Command<NotificationsModel>( async (PhotoToDelete) =>
         {
             bool shouldDelete = await Application.Current.MainPage.DisplayAlert("Advertencia", "Esta acción no se puede revertir", "OK", "Cancelar");

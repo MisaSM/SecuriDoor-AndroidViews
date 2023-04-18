@@ -102,5 +102,7 @@ namespace VistasSecuriDoor.ViewModels
             await PopupNavigation.Instance.PushAsync(new guestsPopup(this));
         });
 
+        
+
     }
 }

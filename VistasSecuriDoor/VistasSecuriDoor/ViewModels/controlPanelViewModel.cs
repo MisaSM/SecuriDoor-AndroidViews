@@ -17,6 +17,7 @@ using VistasSecuriDoor.Models;
 using VistasSecuriDoor.Views;
 using Xamarin.Forms;
 using static VistasSecuriDoor.Models.DoorsModel;
+using static Xamarin.Essentials.Permissions;
 
 namespace VistasSecuriDoor.ViewModels
 {
@@ -83,6 +84,12 @@ namespace VistasSecuriDoor.ViewModels
 
         #endregion
         #region Commands
+
+        public ICommand UpdateView => new Command(async () =>
+        {
+            Places.Clear();
+            ShowDoors();
+        });
 
         #endregion
     }
